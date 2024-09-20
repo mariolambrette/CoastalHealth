@@ -17,17 +17,11 @@ if(!dir.exists(sp)){
   dir.create(sp)
 }
 
-con <- DBI::dbConnect(RSQLite::SQLite(), paste0(sp, '\\InteractiveMap.db'))
-
 ## Connect to InteractiveMap database in temporary data store ----
-con <- RSQLite::dbConnect(
-  RSQLite::SQLite(),
-  paste0(sp, '\\InteractiveMapLeaflet.db')
-)
-
+con <- DBI::dbConnect(RSQLite::SQLite(), paste0(sp, '\\ExeAtlas_db.db'))
 
 # Should spatial tables be updated. If FALSE only the look up table is updated
-update.spatial <- F
+update.spatial <- T
 
 # Load subcatchment layer for future reference
 if(update.spatial){

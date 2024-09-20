@@ -23,7 +23,7 @@ if(!dir.exists(sp)){
   dir.create(sp)
 }
 
-con <- DBI::dbConnect(RSQLite::SQLite(), paste0(sp, '\\InteractiveMap.db'))
+con <- DBI::dbConnect(RSQLite::SQLite(), paste0(sp, '\\ExeAtlas_db.db'))
 
 ## LOAD EA SUBCATCHMENTS ----
 

@@ -7,8 +7,8 @@
 #'
 #'
 #' @param user UoE username to construct filepath
-#'
-#' @return
+#' 
+#' @return An SQL connection to the temporary ExeAtlas database
 #' @export
 #'
 #' @examples
@@ -17,6 +17,8 @@
 #' }
 #' 
 #' @importFrom RSQLite dbConnect SQLite
+#' 
+#' @seealso [DBI::dbConnect()]
 
 CreateConnection <- function(user){
   path <- paste0('C:/users/', user, '/University of Exeter/Exe Atlas - Documents/sw/InteractiveMap/ExeAtlas_db.db')

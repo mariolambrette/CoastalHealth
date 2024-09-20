@@ -51,7 +51,14 @@ mod_db_server <- function(id){
         removeModal()
         
         # Create a database connection using the entered username
-        atlas_env$con <<- CreateConnection(input$un)
+        atlas_env$con <- CreateConnection(input$un)
+        
+        if(RSQLite::dbIsValid(atlas_env$con)){
+          atlas_env$connection.ready(TRUE)
+        } else{
+          # Show an error and ask the user to try again
+          show_username_modal(error_message = "Error: Unable to connect to database. Please try again.")
+        }
       }
     })
   })
