@@ -9,8 +9,9 @@ app_ui <- function(request) {
     # Leave this function for adding external resources
     golem_add_external_resources(),
     # Your application UI logic
+    # Wrap the main map module UI inside uiOutput to make it reactive
     shiny::fluidPage(
-      mod_main_map_ui("main_map")
+      uiOutput("map_ui")  # Placeholder for rendering module UI reactively
     )
   )
 }

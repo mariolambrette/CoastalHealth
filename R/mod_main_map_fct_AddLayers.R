@@ -27,7 +27,7 @@
 AddLayers <- function(add_layers = 'none',
                          db.connection = atlas_env$con){
   
-  if(add_layers == 'none'){
+  if (add_layers == 'none') {
     return()
   }
   

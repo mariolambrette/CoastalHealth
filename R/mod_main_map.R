@@ -52,12 +52,12 @@ mod_main_map_ui <- function(id) {
           div(
             class = "mng-select",
             style = "margin-top: 24px; text-align: left; padding-left: 20px;",
-            uiOutput(NS(id, "mng_layer_select_ui"))
+            uiOutput(ns("mng_layer_select_ui"))
           ),
           div(
             class = "dat-select",
             style = "margin-top: 24px; text-align: left; padding-left: 20px;",
-            uiOutput(NS(id, "dat_layer_select_ui"))
+            uiOutput(ns("dat_layer_select_ui"))
           ),
           div(
             "Subcatchment Data",
@@ -65,11 +65,11 @@ mod_main_map_ui <- function(id) {
           ),
           div(
             class = "poly-summary",
-            reactable::reactableOutput(NS(id, "poly_summary"))
+            reactable::reactableOutput(ns("poly_summary"))
           ),
           div(
             class = "details",
-            plotly::plotlyOutput(NS(id, "details"))
+            plotly::plotlyOutput(ns("details"))
           )
         )
       )
@@ -82,7 +82,7 @@ mod_main_map_ui <- function(id) {
 #' @noRd
 #' 
 #' @importFrom magrittr `%>%`
-#' @importFrom dplyr filter tbl collect
+#' @importFrom dplyr filter tbl collect sql
 #' @importFrom shinyWidgets pickerInput
 #' @importFrom leaflet renderLeaflet leafletProxy clearGroup
 
@@ -92,7 +92,7 @@ mod_main_map_server <- function(id){
     
     # Read in layer index file to provide dropdown menu of plotting options
     SHP_index <- dplyr::tbl(atlas_env$con, "SHP_lookup") %>%
-      dplyr::filter(!(sql('SUBSTR(SHP_name, INSTR(SHP_name, "SPA"), 3) COLLATE BINARY = "SPA"'))) %>%
+      dplyr::filter(!(dplyr::sql('SUBSTR(SHP_name, INSTR(SHP_name, "SPA"), 3) COLLATE BINARY = "SPA"'))) %>%
       dplyr::collect()
     
     # Extract list of layers for the user to choose from
@@ -119,7 +119,7 @@ mod_main_map_server <- function(id){
           `actions-box` = TRUE,  # Enable actions box to provide "Deselect All" functionality
           `deselect-all-text` = "Deselect All"
         ),
-        multiple = FALSE  # Single selection only
+        multiple = TRUE  # Allow multiple selection
       )
     })
     
@@ -148,11 +148,11 @@ mod_main_map_server <- function(id){
     observe({
       lyr <- input$mng_layer
       
-      leaflet::leafletProxy("map") %>%
+      leaflet::leafletProxy(ns("map")) %>%
         leaflet::clearGroup("MNG")
       
       # Create and execute plotting command based on the selected layer
-      if(!is.null(lyr)){
+      if (!is.null(lyr)) {
         cmd <- AddLayers(add_layers = lyr)
         eval(parse(text = cmd))
       }
@@ -162,11 +162,11 @@ mod_main_map_server <- function(id){
     observe({
       lyrs <- input$dat_layer
       
-      leaflet::leafletProxy("map") %>%
+      leaflet::leafletProxy(ns("map")) %>%
         leaflet::clearGroup("DAT")
       
       # Get the plotting command for each selected layer and execute it
-      if(length(lyrs) > 0){
+      if (length(lyrs) > 0) {
         sapply(
           lyrs,
           function(lyr){
