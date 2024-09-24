@@ -145,7 +145,7 @@ BaseMap <- function(shps = ImportSPA(db.connection = atlas_env$con)){
                           lat1 = 50.13,
                           lng2 = -2.39,
                           lat2 = 51.35)
-  print(map)
+
   return(map)
 }
 

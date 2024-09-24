@@ -27,7 +27,7 @@ mod_db_server <- function(id){
       showModal(modalDialog(
         title = "Enter you UoE username",
         textInput(ns("un"), "Username", value = ""),
-        if(!is.null(error_message)) div(style = "color: red;", error_message),
+        if (!is.null(error_message)) div(style = "color: red;", error_message),
         footer = tagList(
           modalButton("Cancel"),
           actionButton(ns("submit_un"), "Submit")
@@ -42,9 +42,9 @@ mod_db_server <- function(id){
     observeEvent(input$submit_un, {
       
       # Check the user name is valid after user submits
-      if(!validate_username(input$un)){
+      if (!validate_username(input$un)) {
         # Show an error and ask the user to try again
-        show_username_modal(error_message = "Error: path to database not found. Check username and try again.")
+        un_input_modal(error_message = "Error: path to database not found. Check username and try again.")
       } else{
         
         # remove dialogue box if input is correct
@@ -53,11 +53,11 @@ mod_db_server <- function(id){
         # Create a database connection using the entered username
         atlas_env$con <- CreateConnection(input$un)
         
-        if(RSQLite::dbIsValid(atlas_env$con)){
+        if (RSQLite::dbIsValid(atlas_env$con)) {
           atlas_env$connection.ready(TRUE)
         } else{
           # Show an error and ask the user to try again
-          show_username_modal(error_message = "Error: Unable to connect to database. Please try again.")
+          un_input_modal(error_message = "Error: Unable to connect to database. Please try again.")
         }
       }
     })

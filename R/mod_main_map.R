@@ -36,42 +36,44 @@ mod_main_map_ui <- function(id) {
               font-weight: 600 !important; /* Override font size for specific elements */
             }
           ")
-        )
+        ),
+        tags$link(rel = "stylesheet", href = "https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"),
+        tags$script(src = "https://unpkg.com/leaflet@1.7.1/dist/leaflet.js")
       ),
       sidebarLayout(
         mainPanel(
-          leaflet::leafletOutput(ns("map"), width = "100%", height = "100%")
+          leaflet::leafletOutput(ns("basemap"), width = "100%", height = "100vh")
         ),
-        sidebarPanel(
-          class = "sidebar",
-          width = 4.8,  # Adjust this value to make the sidebar wider
-          div(
-            "Layer Selection",
-            class = "header-font"
-          ),
-          div(
-            class = "mng-select",
-            style = "margin-top: 24px; text-align: left; padding-left: 20px;",
-            uiOutput(ns("mng_layer_select_ui"))
-          ),
-          div(
-            class = "dat-select",
-            style = "margin-top: 24px; text-align: left; padding-left: 20px;",
-            uiOutput(ns("dat_layer_select_ui"))
-          ),
-          div(
-            "Subcatchment Data",
-            class = "header-font"
-          ),
-          div(
-            class = "poly-summary",
-            reactable::reactableOutput(ns("poly_summary"))
-          ),
-          div(
-            class = "details",
-            plotly::plotlyOutput(ns("details"))
-          )
-        )
+         sidebarPanel(
+           class = "sidebar",
+           width = 4.8,  # Adjust this value to change sidebar width
+           div(
+             "Layer Selection",
+             class = "header-font"
+           ),
+           div(
+             class = "mng-select",
+             style = "margin-top: 24px; text-align: left; padding-left: 20px;",
+             uiOutput(ns("mng_layer_select_ui"))
+           ),
+           div(
+             class = "dat-select",
+             style = "margin-top: 24px; text-align: left; padding-left: 20px;",
+             uiOutput(ns("dat_layer_select_ui"))
+           ),
+           div(
+             "Subcatchment Data",
+             class = "header-font"
+           ),
+           div(
+             class = "poly-summary",
+             reactable::reactableOutput(ns("poly_summary"))
+           ),
+           div(
+             class = "details",
+             plotly::plotlyOutput(ns("details"))
+           )
+         )
       )
     )
   )
@@ -140,31 +142,32 @@ mod_main_map_server <- function(id){
     })
     
     # Leaflet base map - contains empty panes for additional data layers
-    output$map <- leaflet::renderLeaflet(
+    output$basemap <- leaflet::renderLeaflet({
       BaseMap()
-    )
-    
+    })
+
     # Reactively add management layers based on selection
     observe({
       lyr <- input$mng_layer
-      
-      leaflet::leafletProxy(ns("map")) %>%
+
+      leaflet::leafletProxy(ns("basemap")) %>%
         leaflet::clearGroup("MNG")
-      
+
       # Create and execute plotting command based on the selected layer
       if (!is.null(lyr)) {
+        print("adding layer")
         cmd <- AddLayers(add_layers = lyr)
         eval(parse(text = cmd))
       }
     })
-    
+
     # Reactively add data layers based on selection
     observe({
       lyrs <- input$dat_layer
-      
-      leaflet::leafletProxy(ns("map")) %>%
+
+      leaflet::leafletProxy(ns("basemap")) %>%
         leaflet::clearGroup("DAT")
-      
+
       # Get the plotting command for each selected layer and execute it
       if (length(lyrs) > 0) {
         sapply(

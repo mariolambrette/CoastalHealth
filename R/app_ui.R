@@ -3,15 +3,20 @@
 #' @param request Internal parameter for `{shiny}`.
 #'     DO NOT REMOVE.
 #' @import shiny
+#' @export
 #' @noRd
 app_ui <- function(request) {
   tagList(
     # Leave this function for adding external resources
     golem_add_external_resources(),
     # Your application UI logic
+    
     # Wrap the main map module UI inside uiOutput to make it reactive
     shiny::fluidPage(
       uiOutput("map_ui")  # Placeholder for rendering module UI reactively
+      
+      ## DEBUGGING
+      # leaflet::leafletOutput("simple_map")
     )
   )
 }
