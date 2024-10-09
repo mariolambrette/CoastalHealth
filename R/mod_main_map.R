@@ -40,36 +40,36 @@ mod_main_map_ui <- function(id) {
         tags$link(rel = "stylesheet", href = "https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"),
         tags$script(src = "https://unpkg.com/leaflet@1.7.1/dist/leaflet.js")
       ),
-      sidebarLayout(
-        mainPanel(
+      shiny::sidebarLayout(
+        shiny::mainPanel(
           leaflet::leafletOutput(ns("basemap"), width = "100%", height = "100vh")
         ),
-         sidebarPanel(
+        shiny::sidebarPanel(
            class = "sidebar",
            width = 4.8,  # Adjust this value to change sidebar width
-           div(
+           htmltools::div(
              "Layer Selection",
              class = "header-font"
            ),
-           div(
+           htmltools::div(
              class = "mng-select",
              style = "margin-top: 24px; text-align: left; padding-left: 20px;",
-             uiOutput(ns("mng_layer_select_ui"))
+             shiny::uiOutput(ns("mng_layer_select_ui"))
            ),
-           div(
+           htmltools::div(
              class = "dat-select",
              style = "margin-top: 24px; text-align: left; padding-left: 20px;",
-             uiOutput(ns("dat_layer_select_ui"))
+             shiny::uiOutput(ns("dat_layer_select_ui"))
            ),
-           div(
+           htmltools::div(
              "Subcatchment Data",
              class = "header-font"
            ),
-           div(
+           htmltools::div(
              class = "poly-summary",
              reactable::reactableOutput(ns("poly_summary"))
            ),
-           div(
+           htmltools::div(
              class = "details",
              plotly::plotlyOutput(ns("details"))
            )
@@ -89,10 +89,13 @@ mod_main_map_ui <- function(id) {
 #' @importFrom leaflet renderLeaflet leafletProxy clearGroup
 
 mod_main_map_server <- function(id){
-  moduleServer(id, function(input, output, session){
+  shiny::moduleServer(id, function(input, output, session){
     ns <- session$ns
     
-    # Read in layer index file to provide dropdown menu of plotting options
+    # Ensure that the database connection is ready before rendering the map
+    req(atlas_env$connection.ready())
+    
+    # Read in layer index file to provide drop down menu of plotting options
     SHP_index <- dplyr::tbl(atlas_env$con, "SHP_lookup") %>%
       dplyr::filter(!(dplyr::sql('SUBSTR(SHP_name, INSTR(SHP_name, "SPA"), 3) COLLATE BINARY = "SPA"'))) %>%
       dplyr::collect()
@@ -112,7 +115,7 @@ mod_main_map_server <- function(id){
     # Management layer select drop down menu
     output$mng_layer_select_ui <- shiny::renderUI({
       shinyWidgets::pickerInput(
-        inputId = "mng_layer",
+        inputId = ns("mng_layer"),
         label = "Select Management Type:",
         choices = layers[grepl("MNG", layers)],
         options = list(
@@ -129,7 +132,7 @@ mod_main_map_server <- function(id){
     # layers can be displayed at the same time)
     output$dat_layer_select_ui <- shiny::renderUI({
       shinyWidgets::pickerInput(
-        inputId = "dat_layer",
+        inputId = ns("dat_layer"),
         label = "Select Data Layer: ",
         choices = layers[grepl("DAT", layers)],
         options = list(
@@ -147,31 +150,35 @@ mod_main_map_server <- function(id){
     })
 
     # Reactively add management layers based on selection
-    observe({
-      lyr <- input$mng_layer
+    shiny::observe({
+      mng_lyrs <- input$mng_layer
 
       leaflet::leafletProxy(ns("basemap")) %>%
         leaflet::clearGroup("MNG")
 
       # Create and execute plotting command based on the selected layer
-      if (!is.null(lyr)) {
-        print("adding layer")
-        cmd <- AddLayers(add_layers = lyr)
-        eval(parse(text = cmd))
+      if (!is.null(input$mng_layer)) {
+        sapply(
+          mng_lyrs,
+          function(lyr){
+            cmd <- AddLayers(add_layers = lyr)
+            eval(parse(text = cmd))
+          }
+        )
       }
     })
 
     # Reactively add data layers based on selection
-    observe({
-      lyrs <- input$dat_layer
+    shiny::observe({
+      dat_lyrs <- input$dat_layer
 
       leaflet::leafletProxy(ns("basemap")) %>%
         leaflet::clearGroup("DAT")
 
       # Get the plotting command for each selected layer and execute it
-      if (length(lyrs) > 0) {
+      if (length(dat_lyrs) > 0) {
         sapply(
-          lyrs,
+          dat_lyrs,
           function(lyr){
             cmd <- AddLayers(add_layers = lyr)
             eval(parse(text = cmd))
@@ -180,7 +187,103 @@ mod_main_map_server <- function(id){
       }
     })
     
-    
+    # Observe polygon clicks
+    observeEvent(input$basemap_shape_click, {
+      
+      # Extract ID of clicked polygon
+      atlas_env$polyID <- input$basemap_shape_click["id"] %>%
+        as.numeric()
+      
+      # Highlight clicked polygon & upstream and downstream
+      toHighlight <- HighlightPolys(selectID = atlas_env$polyID)
+      
+      leafletProxy(ns("basemap")) %>%
+        clearGroup("highlighted") %>%
+        addPolygons(
+          data = toHighlight,
+          color = NA,
+          weight = 0,
+          opacity = 1,
+          fill = T,
+          fillOpacity = 1,
+          fillColor = toHighlight$colour,
+          group = 'highlighted',
+          options = pathOptions(pane = "highlight_polys",
+                                clickable = F)
+        )
+      
+      ## Create a summary table to be rendered in the UI
+      # Filter polygon data to selected polygon
+      data <- poly_data %>%
+        filter(ID == atlas_env$polyID)
+      
+      # Create template df for rendered output table
+      tbl_out <- tibble::tibble(
+        `Water body`          = if_else(is.na(data$wb_name), 'NA', data$wb_name),
+        `Water body ID`       = if_else(is.na(data$wb_id), 'NA', data$wb_id),
+        `Subcatchment area`   = round(data$shp_area / 1000000, digits = 2) %>%
+          paste0(., ' km2'),
+        `Management areas`    = MAs_list(data),
+        `Dominant land cover` = DominantLC(data),
+        `Priority species`    = KS_list(data),
+        `Continuous Sewage Discharges` = CSD()
+      ) %>%
+        mutate_all(as.character()) %>%
+        t() %>%
+        as.data.frame() %>%
+        tibble::rownames_to_column(var = 'type') %>%
+        rename(value = V1) %>%
+        cbind(., details = NA)
+      
+      
+      # Create reactable object to be rendered in UI
+      output$poly_summary <- reactable::renderReactable(
+        reactable::reactable(
+          tbl_out,
+          columns = list(
+            type = reactable::colDef(
+              width = 115,  # Set the width for the first column
+              style = reactablefmtr::cell_style(background_color = '#698EDF',
+                                                font_weight = 'normal')
+            ),
+            # Adjust the width of the 'value' column (Column 2)
+            value = reactable::colDef(
+              width = 370  # Set the width for the second column (wider)
+            ),
+            # Render a 'show details' button in the last column (Column 3)
+            details = reactable::colDef(
+              name = '',
+              sortable = FALSE,
+              width = 90,  # Set the width for the third column
+              cell = function() htmltools::tags$button('Show details'),
+              align = 'right'
+            )
+          ),
+          onClick = htmlwidgets::JS("function(rowInfo, column) {
+              // Only handle click events on the 'details' column
+              if (column.id !== 'details') {
+                return
+              }
+
+              // Send the click event to Shiny, which will be available in input$show_details
+              // Note that the row index starts at 0 in JavaScript, so we add 1
+              if (window.Shiny) {
+                Shiny.setInputValue('show_details', { index: rowInfo.index + 1 }, { priority: 'event' })
+              }
+            }"),
+          wrap = TRUE, # wrap text in cells
+          theme = reactable::reactableTheme(
+            headerStyle = list(
+              display = "none"
+            ),
+            borderWidth = 0
+          )
+        )
+      )
+      
+      # Reset 'show_details' row to NULL
+      session$sendInputMessage("show_details", 'none')
+    })
   })
 }
     

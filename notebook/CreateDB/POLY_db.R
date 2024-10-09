@@ -19,7 +19,7 @@ rel.save.path <- file.path('..', 'sw', 'InteractiveMap')
 sp <- file.path(getwd(), rel.save.path) %>%
   normalizePath()
 
-if(!dir.exists(sp)){
+if (!dir.exists(sp)) {
   dir.create(sp)
 }
 
@@ -211,7 +211,7 @@ RSQLite::dbWriteTable(
 )
 
 # Get vector of column numbers and add required columns to db
-cols <- c(5:(5+(length(MA_files)-1)))
+cols <- c(5:(5 + (length(MA_files) - 1)))
 poly_data[,cols] <- NA
 
 # Loop over columns and add the % area of the polygon that is covered by each management type
@@ -219,12 +219,12 @@ plyr::llply(
   cols,
   function(x){
     # Get filename
-    f <- MA_files[[x-4]]
+    f <- MA_files[[x - 4]]
 
     # Check that filename exists
-    if(is.null(f)){
+    if (is.null(f)) {
       poly_data[,x] <<- NA
-      colnames(poly_data)[x] <<- names(MA_files)[[x-4]] %>%
+      colnames(poly_data)[x] <<- names(MA_files)[[x - 4]] %>%
         tolower() %>%
         paste0('ma_', .)
       return()
@@ -256,7 +256,7 @@ plyr::llply(
     poly_data[,x] <<- (poly_data[,x]/poly_data$shp_area)*100
     poly_data[,x] <<- round(poly_data[,x], digits = 2)
 
-    colnames(poly_data)[x] <<- names(MA_files)[[x-4]] %>%
+    colnames(poly_data)[x] <<- names(MA_files)[[x - 4]] %>%
       tolower() %>%
       paste0('ma_', .)
 
@@ -295,14 +295,14 @@ RSQLite::dbWriteTable(
 )
 
 # Column indices in database
-cols <- c(21:(20+nrow(lc_lu)))
+cols <- c(21:(20 + nrow(lc_lu)))
 
 plyr::llply(
   cols,
   function(x){
 
     # Extract habitat name
-    h <- lc_lu$class[x-20]
+    h <- lc_lu$class[x - 20]
 
     # Subset landcover file
     l <- terra::subset(
@@ -335,7 +335,7 @@ plyr::llply(
     poly_data[,x] <<- round(poly_data[,x], digits = 2)
 
     # Set column name
-    colnames(poly_data)[x] <<- paste0('lc_', lc_lu$code[x-20]) %>%
+    colnames(poly_data)[x] <<- paste0('lc_', lc_lu$code[x - 20]) %>%
       tolower()
 
     return()
@@ -377,14 +377,14 @@ RSQLite::dbWriteTable(
 )
 
 # Column indices in database
-cols <- c(41:(41+nrow(ct_lu)))
+cols <- c(41:(41 + nrow(ct_lu)))
 
 plyr::llply(
   cols,
   function(x){
 
     # Get the crop lucode
-    ct <- ct_lu$lucode[x-41]
+    ct <- ct_lu$lucode[x - 41]
 
     # Subset the crop type file
     ct_ext <- terra::subset(
@@ -488,18 +488,18 @@ ds.a <- lapply(
     ds.v <- c(d)
 
     # Add the second downstream polygon where applicable
-    if(!is.na(ds$Downstream2[x])){
+    if (!is.na(ds$Downstream2[x])) {
       ds.v <- append(ds.v, ds$Downstream2[x])
     }
 
     # Loop thorugh downstream polygons until an NA is reached
-    while(!is.na(d)){
+    while (!is.na(d)) {
       d <- ds$Downstream1[d]
       ds.v <- append(ds.v, d)
     }
 
     # remove the last element of the downstream vector which will alwys be an NA
-    if(length(ds.v) > 1){
+    if (length(ds.v) > 1) {
       ds.v <- ds.v[-c(length(ds.v))]
     }
 
@@ -522,7 +522,7 @@ us.a <- lapply(
       s,
       function(i){
         # Check if subcatchment 'x' is downstream of subcatchment 'i'
-        if (as.numeric(x) %in% as.numeric(ds.a[[i]])){
+        if (as.numeric(x) %in% as.numeric(ds.a[[i]])) {
           return(i)
         } else{
           return(NA)

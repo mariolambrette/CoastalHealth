@@ -8,3 +8,4 @@
 atlas_env <- new.env(parent = emptyenv())
 atlas_env$con <- NULL
 atlas_env$connection.ready <- shiny::reactiveVal(FALSE)
+atlas_env$polyID <- NULL

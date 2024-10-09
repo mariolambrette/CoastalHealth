@@ -13,7 +13,7 @@ rel.save.path <- file.path('..', 'sw', 'InteractiveMap')
 sp <- file.path(getwd(), rel.save.path) %>%
   normalizePath()
 
-if(!dir.exists(sp)){
+if (!dir.exists(sp)) {
   dir.create(sp)
 }
 
@@ -24,7 +24,7 @@ con <- DBI::dbConnect(RSQLite::SQLite(), paste0(sp, '\\ExeAtlas_db.db'))
 update.spatial <- T
 
 # Load subcatchment layer for future reference
-if(update.spatial){
+if (update.spatial) {
   sc <- sf::st_read("spatial/Sub_catchments_BNG.shp")
 }
 
@@ -68,12 +68,12 @@ spa_lu <- tibble::tibble(
 )
 
 # Loop over each of the spatial files and save them as tables into the database
-if(update.spatial){
+if (update.spatial) {
   plyr::llply(
     seq(1:length(SPA_files)),
     function(x){
 
-      if(is.null(SPA_files[[x]])){
+      if (is.null(SPA_files[[x]])) {
         return()
       }
 
@@ -147,117 +147,104 @@ ma_lu <- tibble::tibble( # To be bound into `SHP_lookup` table
                 'County Geological Sites UNAVAILABLE',
                 'Wildlife Reserves UNAVAILABLE'),
   aes = c(
-  "leafletProxy('map') %>%
-    addPolygons(data = LoadLayer(name = 'SHP_MNG_whs',
-                                 db.connection = con_ll),
+  "leafletProxy(ns('basemap')) %>%
+    addPolygons(data = LoadLayer(name = 'SHP_MNG_whs'),
                 stroke = F,
                 color = '#659665',
                 fillOpacity = 0.3,
                 fillColor = '#659665',
                 group = 'MNG',
                 options = pathOptions(pane = 'mng_layers'))",
-  "leafletProxy('map') %>%
-    addPolygons(data = LoadLayer(name = 'SHP_MNG_lnr',
-                                 db.connection = con_ll),
+  "leafletProxy(ns('basemap')) %>%
+    addPolygons(data = LoadLayer(name = 'SHP_MNG_lnr'),
                 stroke = F,
                 color = '#659665',
                 fillOpacity = 0.3,
                 fillColor = '#659665',
                 group = 'MNG',
                 options = pathOptions(pane = 'mng_layers'))",
-  "leafletProxy('map') %>%
-    addPolygons(data = LoadLayer(name = 'SHP_MNG_iba',
-                                 db.connection = con_ll),
+  "leafletProxy(ns('basemap')) %>%
+    addPolygons(data = LoadLayer(name = 'SHP_MNG_iba'),
                 stroke = F,
                 color = '#659665',
                 fillOpacity = 0.3,
                 fillColor = '#659665',
                 group = 'MNG',
                 options = pathOptions(pane = 'mng_layers'))",
-  "leafletProxy('map') %>%
-    addPolygons(data = LoadLayer(name = 'SHP_MNG_br',
-                                 db.connection = con_ll),
+  "leafletProxy(ns('basemap')) %>%
+    addPolygons(data = LoadLayer(name = 'SHP_MNG_br'),
                 stroke = F,
                 color = '#659665',
                 fillOpacity = 0.3,
                 fillColor = '#659665',
                 group = 'MNG',
                 options = pathOptions(pane = 'mng_layers'))",
-  "leafletProxy('map') %>%
-    addPolygons(data = LoadLayer(name = 'SHP_MNG_hc',
-                                 db.connection = con_ll),
+  "leafletProxy(ns('basemap')) %>%
+    addPolygons(data = LoadLayer(name = 'SHP_MNG_hc'),
                 stroke = F,
                 color = '#659665',
                 fillOpacity = 0.3,
                 fillColor = '#659665',
                 group = 'MNG',
                 options = pathOptions(pane = 'mng_layers'))",
-  "leafletProxy('map') %>%
-    addPolygons(data = LoadLayer(name = 'SHP_MNG_rspbr',
-                                 db.connection = con_ll),
+  "leafletProxy(ns('basemap')) %>%
+    addPolygons(data = LoadLayer(name = 'SHP_MNG_rspbr'),
                 stroke = F,
                 color = '#659665',
                 fillOpacity = 0.3,
                 fillColor = '#659665',
                 group = 'MNG',
                 options = pathOptions(pane = 'mng_layers'))",
-  "leafletProxy('map') %>%
-    addPolygons(data = LoadLayer(name = 'SHP_MNG_rspbpl',
-                                 db.connection = con_ll),
+  "leafletProxy(ns('basemap')) %>%
+    addPolygons(data = LoadLayer(name = 'SHP_MNG_rspbpl'),
                 stroke = F,
                 color = '#659665',
                 fillOpacity = 0.3,
                 fillColor = '#659665',
                 group = 'MNG',
                 options = pathOptions(pane = 'mng_layers'))",
-  "leafletProxy('map') %>%
-    addPolygons(data = LoadLayer(name = 'SHP_MNG_aonbs',
-                                 db.connection = con_ll),
+  "leafletProxy(ns('basemap')) %>%
+    addPolygons(data = LoadLayer(name = 'SHP_MNG_aonbs'),
                 stroke = F,
                 color = '#659665',
                 fillOpacity = 0.3,
                 fillColor = '#659665',
                 group = 'MNG',
                 options = pathOptions(pane = 'mng_layers'))",
-  "leafletProxy('map') %>%
-    addPolygons(data = LoadLayer(name = 'SHP_MNG_nps',
-                                 db.connection = con_ll),
+  "leafletProxy(ns('basemap')) %>%
+    addPolygons(data = LoadLayer(name = 'SHP_MNG_nps'),
                 stroke = F,
                 color = '#659665',
                 fillOpacity = 0.3,
                 fillColor = '#659665',
                 group = 'MNG',
                 options = pathOptions(pane = 'mng_layers'))",
-  "leafletProxy('map') %>%
-    addPolygons(data = LoadLayer(name = 'SHP_MNG_sacs',
-                                 db.connection = con_ll),
+  "leafletProxy(ns('basemap')) %>%
+    addPolygons(data = LoadLayer(name = 'SHP_MNG_sacs'),
                 stroke = F,
                 color = '#659665',
                 fillOpacity = 0.3,
                 fillColor = '#659665',
                 group = 'MNG',
                 options = pathOptions(pane = 'mng_layers'))",
-  "leafletProxy('map') %>%
-    addPolygons(data = LoadLayer(name = 'SHP_MNG_spas',
-                                 db.connection = con_ll),
+  "leafletProxy(ns('basemap')) %>%
+    addPolygons(data = LoadLayer(name = 'SHP_MNG_spas'),
                 stroke = F,
                 color = '#659665',
                 fillOpacity = 0.3,
                 fillColor = '#659665',
                 group = 'MNG',
                 options = pathOptions(pane = 'mng_layers'))",
-  "leafletProxy('map') %>%
-    addPolygons(data = LoadLayer(name = 'SHP_MNG_sssi',
-                                 db.connection = con_ll),
+  "leafletProxy(ns('basemap')) %>%
+    addPolygons(data = LoadLayer(name = 'SHP_MNG_sssi'),
                 stroke = F,
                 color = '#659665',
                 fillOpacity = 0.3,
                 fillColor = '#659665',
                 group = 'MNG',
                 options = pathOptions(pane = 'mng_layers'))",
-  "leafletProxy('map') %>%
-    addPolygons(data = LoadLayer(name = 'SHP_MNG_ramsar',
-                                 db.connection = con_ll),
+  "leafletProxy(ns('basemap')) %>%
+    addPolygons(data = LoadLayer(name = 'SHP_MNG_ramsar'),
                 stroke = F,
                 color = '#659665',
                 fillOpacity = 0.3,
@@ -272,12 +259,12 @@ ma_lu <- tibble::tibble( # To be bound into `SHP_lookup` table
 )
 
 # Loop over each of management files and save them as tables into the database
-if(update.spatial){
+if (update.spatial) {
   plyr::llply(
     seq(1:length(MA_files)),
     function(x){
 
-      if(is.null(MA_files[[x]])){
+      if (is.null(MA_files[[x]])) {
         return()
       }
 
@@ -327,10 +314,9 @@ dat_lu <- tibble::tibble(
   aes = c(
     "
      ## Land cover plotting
-     lc <- LoadLayer(name = 'SHP_DAT_lc',
-                     db.connection = con_ll)
+     lc <- LoadLayer(name = 'SHP_DAT_lc')
 
-     leafletProxy('map') %>%
+     leafletProxy(ns('basemap')) %>%
        addPolygons(data = lc,
                    stroke = F,
                    fillColor = ~colour,
@@ -345,12 +331,12 @@ dat_lu <- tibble::tibble(
 )
 
 # Loop over each of the data files and save them as tables into the database
-if(update.spatial){
+if (update.spatial) {
   plyr::llply(
     seq(1:length(DAT_files)),
     function(x){
 
-      if(is.null(DAT_files[[x]])){
+      if (is.null(DAT_files[[x]])) {
         return()
       }
 
@@ -385,7 +371,7 @@ layer_index <- bind_rows(layer_index, dat_lu)
 
 ## CONTINUOUS SEWAGE DISCHARGES ----
 
-if(update.spatial){
+if (update.spatial) {
   # Load continuous sewage discharge data
   csd <- readxl::read_xlsx("Pressures/Sewage discharges/Continuous sewage discharges to wider Exe catchment Exe estuary and Lyme Bay.xlsx")
 
@@ -429,8 +415,7 @@ if(update.spatial){
 csd_lu <- tibble::tibble(
   SHP_name = "SHP_DAT_csd",
   disp_name = "Continuous sewage discharge sites",
-  aes = "csd <- LoadLayer(name = 'SHP_DAT_csd',
-                          db.connection = con_ll)
+  aes = "csd <- LoadLayer(name = 'SHP_DAT_csd')
 
          csd$colour <- ifelse(is.na(csd$DryWeatherFlow), 'darkgrey', '#FFDB00')
 
@@ -450,7 +435,7 @@ csd_lu <- tibble::tibble(
          csd$radius <- sapply(csd$DryWeatherFlow, scale_radius, min_r = 3, max_r = 10)
 
 
-         leafletProxy('map') %>%
+         leafletProxy(ns('basemap')) %>%
            addCircleMarkers(data = csd,
                             radius = ~radius,
                             opacity = 1,
