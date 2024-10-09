@@ -3,7 +3,6 @@ Title: Interactive map for the ExeAtlas project
 Version: 0.0.0.9000
 Authors@R: 
     person("Mario", "Lambrette", , "ml673@exeter.ac.uk", role = c("aut", "cre"))
-Maintainer: Mario Lambrette (ml673@exeter.ac.uk)
 Description: A shiny-based interactive map covering the Exe and surrounding catchments. Provides access to a database of ecological, geological and polutant data for the catchments via a simple map interface.
 License: MIT + file LICENSE
 Imports: 
