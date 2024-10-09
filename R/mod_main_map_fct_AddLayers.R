@@ -3,25 +3,12 @@
 #' @description
 #' Add layers onto the basic base map, including optional data layers
 #'
-#'
-#' @param bm Basic basemap created with the BaseMap() function. Calls `BaseMap()` by default, though this not the ideal implementation when the function is used in production
-#' @param add_layers A list of file paths to the layers to add
+#' @param add_layers A list of names of layers to add
+#' @param db.connection Connection to ExeAtlas database
 #'
 #' @return A character string that contains the plotting command to be evaluated by `eval(parse(text = cmd))` to add the correct data layer to the base map
 #' 
-#'
-#' @examples
-#' 
-#' \dontrun{
-#' print(ggiraph::girafe(ggobj = AddLayers(bm)))
-#'
-#' # Complete plot
-#' p <- BaseMap()
-#' p1 <- AddLayers(bm = p)
-#' p2 <- ggiraph::girafe(ggobj = p1)
-#' print(p2)
-#' }
-#' 
+#' @importFrom magrittr `%>%`
 #' @importFrom dplyr tbl filter select collect pull
 
 AddLayers <- function(add_layers = 'none',
@@ -54,18 +41,18 @@ AddLayers <- function(add_layers = 'none',
 #' @param name Name of the database table containing the spatial data
 #' @param db.connection RSQLite database connection object
 #'
-#' @return
-#' @export
+#' @return sf object containing data layer
 #'
-#' @examples
-#'
+#' @importFrom magrittr `%>%`
+#' @importFrom dplyr tbl collect mutate select
+#' @importFrom sf st_as_sf st_set_crs
 
 LoadLayer <- function(name, db.connection = atlas_env$con){
-  lyr <- tbl(db.connection,
-             name) %>%
-    collect() %>%
-    mutate(geometry = sf::st_as_sfc(geom)) %>%
-    select(-c(geom)) %>%
+  lyr <- dplyr::tbl(db.connection,
+                    name) %>%
+    dplyr::collect() %>%
+    dplyr::mutate(geometry = sf::st_as_sfc(geom)) %>%
+    dplyr::select(-c(geom)) %>%
     sf::st_as_sf() %>%
     sf::st_set_crs(4326)
   

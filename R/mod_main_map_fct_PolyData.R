@@ -1,19 +1,18 @@
 #' Get WKT format list of management areas present
 #'
-#' @param polyID ID of selected polygon
 #' @param poly_row row from POLY_data for the corresponding polygon
 #'
-#' @return
-#' @export
-#'
-#' @examples
+#' @return List of Management areas present in selected subcatchment
+#' 
+#' @importFrom magrittr `%>%`
+#' @importFrom dplyr select tbl filter collect
 #'
 
 MAs_list <- function(poly_row = data){
   
   mas <- poly_row %>%
-    select(starts_with('ma_')) %>%
-    select(where(~ !is.na(.) & . != 0)) %>%
+    dplyr::select(starts_with('ma_')) %>%
+    dplyr::select(where(~ !is.na(.) & . != 0)) %>%
     colnames(.) %>%
     sapply(
       .,
@@ -25,13 +24,13 @@ MAs_list <- function(poly_row = data){
     )
   
   # Load relevant MA names from the database
-  names <- tbl(
-    atlas_env$con,
-    'MA_lookup'
-  ) %>%
-    filter(abrv %in% mas) %>%
-    select(disp_name) %>%
-    collect()
+  names <- dplyr::tbl(
+      atlas_env$con,
+      'MA_lookup'
+    ) %>%
+    dplyr::filter(abrv %in% mas) %>%
+    dplyr::select(disp_name) %>%
+    dplyr::collect()
   
   names <- paste(names$disp_name, collapse = ', ')
   
@@ -45,14 +44,13 @@ MAs_list <- function(poly_row = data){
 
 #' Skeleton for function to return WKT key species present list. currently returns NA
 #'
-#' @param polyID
-#' @param poly_row
+#' @param polyID selected polygon ID
+#' @param poly_row Row of polygon data
 #'
-#' @return
-#' @export
+#' @return NA
 #'
-#' @examples
-KS_list <- function(polyID, poly_row = poly_data %>% filter(ID == polyID)){
+
+KS_list <- function(polyID, poly_row = data){
   return(NA)
 }
 
@@ -60,40 +58,39 @@ KS_list <- function(polyID, poly_row = poly_data %>% filter(ID == polyID)){
 
 #' Get dominant land cover for a selected polygon
 #'
-#' @param polyID ID of selected polygon
 #' @param poly_row row from POLY_data for the corresponding polygon
 #'
-#' @return
-#' @export
+#' @return Nma eof the dominant land cover class in selected polygon
 #'
-#' @examples
-#'
+#' @importFrom magrittr `%>%`
+#' @importFrom dplyr select slice pull tbl filter collect
+#' @importFrom tidyr pivot_longer
 
 DominantLC <- function(poly_row = data){
   
   # Find the land cover class with the highest coverage
   lc <- poly_row %>%
-    select(starts_with('lc_')) %>%
+    dplyr::select(starts_with('lc_')) %>%
     tidyr::pivot_longer(
       cols = everything(),
       names_to = 'column',
       values_to = 'value'
     ) %>%
-    slice(which.max(value)) %>%
-    pull(column) %>%
+    dplyr::slice(which.max(value)) %>%
+    dplyr::pull(column) %>%
     strsplit(., '_') %>%
     unlist() %>%
     .[[2]]
   
   # Get the Natural England habitat name for the identified class
-  class <- tbl(
+  class <- dplyr::tbl(
     atlas_env$con,
     'LC_lookup'
   ) %>%
-    filter(code == as.numeric(lc)) %>%
-    select(class) %>%
-    collect() %>%
-    pull(class)
+    dplyr::filter(code == as.numeric(lc)) %>%
+    dplyr::select(class) %>%
+    dplyr::collect() %>%
+    dplyr::pull(class)
   
   return(class)
 }
@@ -101,35 +98,34 @@ DominantLC <- function(poly_row = data){
 
 #' Get Cumulative sewage discharge summary message
 #'
-#' @param polyID Selected subcatchment ID
 #' @param data cumulative sewage discharge table from database
 #'
-#' @return
-#' @export
+#' @return Description of upstream cummulative sewage discharges
 #'
-#' @examples
+#' @importFrom magrittr `%>%`
+#' @importFrom dplyr tbl select filter collect rowwise mutate pull if_else
 #'
 
 CSD <- function(data = tbl(atlas_env$con, "SHP_DAT_csd") %>%
                   collect()){
   
   # Import upstream ID data
-  us <- tbl(atlas_env$con, 'POLY_data') %>%
-    select(ID, upstream) %>%
-    filter(ID == atlas_env$polyID) %>%
-    collect() %>%
-    rowwise() %>%
-    mutate(upstream = if_else(
+  us <- dplyr::tbl(atlas_env$con, 'POLY_data') %>%
+    dplyr::select(ID, upstream) %>%
+    dplyr::filter(ID == atlas_env$polyID) %>%
+    dplyr::collect() %>%
+    dplyr::rowwise() %>%
+    dplyr::mutate(upstream = dplyr::if_else(
       length(upstream) != 0,
       list(upstream %>% strsplit(., " ") %>% unlist() %>% as.numeric()),
       NA
     )) %>%
-    pull(upstream) %>%
+    dplyr::pull(upstream) %>%
     unlist()
   
   # Filter cumulative sewage discharge sites
   csds <- data %>%
-    filter(sc_ID %in% c(us, atlas_env$polyID))
+    dplyr::filter(sc_ID %in% c(us, atlas_env$polyID))
   
   if (nrow(csds) == 0) {
     message <- "No continuous sewage discharges in selected subcatchment"

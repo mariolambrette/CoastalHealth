@@ -17,6 +17,11 @@ mod_db_ui <- function(id) {
  
 #' db Server Functions
 #'
+#' @importFrom shiny showModal textInput actionButton observeEvent removeModal
+#' @importFrom htmltools div tagList
+#' @importFrom RSQLite dbIsValid
+#' @importFrom shinyjs runjs
+#'
 #' @noRd 
 mod_db_server <- function(id){
   moduleServer(id, function(input, output, session){
@@ -24,22 +29,31 @@ mod_db_server <- function(id){
     
     # Function to create the dialogue box for username input
     un_input_modal <- function(error_message = NULL){
-      showModal(modalDialog(
+      shiny::showModal(modalDialog(
         title = "Enter you UoE username",
-        textInput(ns("un"), "Username", value = ""),
-        if (!is.null(error_message)) div(style = "color: red;", error_message),
-        footer = tagList(
-          modalButton("Cancel"),
-          actionButton(ns("submit_un"), "Submit")
+        shiny::textInput(ns("un"), "Username", value = ""),
+        if (!is.null(error_message)) htmltools::div(style = "color: red;", error_message),
+        footer = htmltools::tagList(
+          shiny::actionButton(ns("submit_un"), "Submit"),
+          shiny::actionButton(ns("quitApp"), "Quit")
         )
       ))
     }
     
     # Show username dialogue box
     un_input_modal()
+    
+    # JavaScript to trigger submit button on Enter key
+    shinyjs::runjs(sprintf('
+      $(document).on("keypress", "#%s", function(e) {
+        if(e.which == 13) {
+          $("#%s").click();
+        }
+      });
+    ', ns("un"), ns("submit_un")))
 
     # Observe the username submission
-    observeEvent(input$submit_un, {
+    shiny::observeEvent(input$submit_un, {
       
       # Check the user name is valid after user submits
       if (!validate_username(input$un)) {
@@ -48,7 +62,7 @@ mod_db_server <- function(id){
       } else{
         
         # remove dialogue box if input is correct
-        removeModal()
+        shiny::removeModal()
         
         # Create a database connection using the entered username
         atlas_env$con <- CreateConnection(input$un)
@@ -60,6 +74,11 @@ mod_db_server <- function(id){
           un_input_modal(error_message = "Error: Unable to connect to database. Please try again.")
         }
       }
+    })
+    
+    # Quit the app if needed
+    shiny::observeEvent(input$quitApp, {
+      QuitApp()
     })
   })
 }

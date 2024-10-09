@@ -6,7 +6,7 @@
 \alias{ExeAtlas-package}
 \title{ExeAtlas: Interactive map for the ExeAtlas project}
 \description{
-A shiny-based interactive map covering the Exe and surrounding catchments. Provides access to a database of ecological, eological and polutant data for the catchments.
+A shiny-based interactive map covering the Exe and surrounding catchments. Provides access to a database of ecological, geological and polutant data for the catchments via a simple map interface.
 }
 \seealso{
 Useful links:

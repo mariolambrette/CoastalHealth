@@ -6,14 +6,15 @@
 #'
 #' @noRd 
 #'
-#' @importFrom shiny NS tagList
+#' @importFrom shiny NS tagList fluidPage sidebarLayout mainPanel sidebarPanel
 #' @importFrom shinyjs useShinyjs
+#' @importFrom htmltools div
 #' @importFrom leaflet leafletOutput
 #' @importFrom reactable reactableOutput
 #' @importFrom plotly plotlyOutput
 
 mod_main_map_ui <- function(id) {
-  ns <- NS(id)
+  ns <- shiny::NS(id)
   tagList(
     shiny::fluidPage(
       shinyjs::useShinyjs(),
@@ -34,6 +35,13 @@ mod_main_map_ui <- function(id) {
             .header-font {
               font-size: 22px !important;
               font-weight: 600 !important; /* Override font size for specific elements */
+            }
+            /* Style the quit button */
+            .quit-btn {
+              position: fixed;
+              bottom: 20px;
+              right: 20px;
+              z-index: 9999; /* Ensure it stays on top of other elements */
             }
           ")
         ),
@@ -74,7 +82,9 @@ mod_main_map_ui <- function(id) {
              plotly::plotlyOutput(ns("details"))
            )
          )
-      )
+      ),
+      # Add the quit button at the bottom-right corner
+      actionButton(ns("quitApp"), "Quit", class = "btn btn-danger quit-btn")
     )
   )
 }
@@ -84,9 +94,15 @@ mod_main_map_ui <- function(id) {
 #' @noRd
 #' 
 #' @importFrom magrittr `%>%`
-#' @importFrom dplyr filter tbl collect sql
+#' @importFrom dplyr filter tbl collect sql mutate_all if_else rename
+#' @importFrom tibble tibble rownames_to_column
 #' @importFrom shinyWidgets pickerInput
-#' @importFrom leaflet renderLeaflet leafletProxy clearGroup
+#' @importFrom leaflet renderLeaflet leafletProxy clearGroup addPolygons pathOptions
+#' @importFrom shiny moduleServer renderUI observe observeEvent
+#' @importFrom reactable renderReactable reactable colDef reactableTheme
+#' @importFrom reactablefmtr cell_style
+#' @importFrom htmltools tags
+#' @importFrom htmlwidgets JS
 
 mod_main_map_server <- function(id){
   shiny::moduleServer(id, function(input, output, session){
@@ -188,7 +204,7 @@ mod_main_map_server <- function(id){
     })
     
     # Observe polygon clicks
-    observeEvent(input$basemap_shape_click, {
+    shiny::observeEvent(input$basemap_shape_click, {
       
       # Extract ID of clicked polygon
       atlas_env$polyID <- input$basemap_shape_click["id"] %>%
@@ -197,9 +213,9 @@ mod_main_map_server <- function(id){
       # Highlight clicked polygon & upstream and downstream
       toHighlight <- HighlightPolys(selectID = atlas_env$polyID)
       
-      leafletProxy(ns("basemap")) %>%
-        clearGroup("highlighted") %>%
-        addPolygons(
+      leaflet::leafletProxy(ns("basemap")) %>%
+        leaflet::clearGroup("highlighted") %>%
+        leaflet::addPolygons(
           data = toHighlight,
           color = NA,
           weight = 0,
@@ -208,19 +224,19 @@ mod_main_map_server <- function(id){
           fillOpacity = 1,
           fillColor = toHighlight$colour,
           group = 'highlighted',
-          options = pathOptions(pane = "highlight_polys",
-                                clickable = F)
+          options = leaflet::pathOptions(pane = "highlight_polys",
+                                         clickable = F)
         )
       
       ## Create a summary table to be rendered in the UI
       # Filter polygon data to selected polygon
       data <- poly_data %>%
-        filter(ID == atlas_env$polyID)
+        dplyr::filter(ID == atlas_env$polyID)
       
       # Create template df for rendered output table
       tbl_out <- tibble::tibble(
-        `Water body`          = if_else(is.na(data$wb_name), 'NA', data$wb_name),
-        `Water body ID`       = if_else(is.na(data$wb_id), 'NA', data$wb_id),
+        `Water body`          = dplyr::if_else(is.na(data$wb_name), 'NA', data$wb_name),
+        `Water body ID`       = dplyr::if_else(is.na(data$wb_id), 'NA', data$wb_id),
         `Subcatchment area`   = round(data$shp_area / 1000000, digits = 2) %>%
           paste0(., ' km2'),
         `Management areas`    = MAs_list(data),
@@ -228,11 +244,11 @@ mod_main_map_server <- function(id){
         `Priority species`    = KS_list(data),
         `Continuous Sewage Discharges` = CSD()
       ) %>%
-        mutate_all(as.character()) %>%
+        dplyr::mutate_all(as.character()) %>%
         t() %>%
         as.data.frame() %>%
         tibble::rownames_to_column(var = 'type') %>%
-        rename(value = V1) %>%
+        dplyr::rename(value = V1) %>%
         cbind(., details = NA)
       
       
@@ -283,6 +299,11 @@ mod_main_map_server <- function(id){
       
       # Reset 'show_details' row to NULL
       session$sendInputMessage("show_details", 'none')
+    })
+    
+    # Quit app when button is pressed
+    shiny::observeEvent(input$quitApp, {
+      QuitApp()
     })
   })
 }
