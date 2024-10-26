@@ -10,6 +10,7 @@
 #' 
 #' @importFrom RSQLite dbDisconnect
 #' @importFrom shiny stopApp
+#' @importFrom shinyjs runjs
 #' 
 
 QuitApp <- function(){
@@ -17,6 +18,9 @@ QuitApp <- function(){
   if (!is.null(atlas_env$con)) {
     RSQLite::dbDisconnect(atlas_env$con)
   }
+  
+  # Close the browser window
+  shinyjs::runjs("window.close();")
   
   # Quit app
   shiny::stopApp()

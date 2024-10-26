@@ -13,11 +13,6 @@ app_ui <- function(request) {
     
     # Wrap the main map module UI inside uiOutput to make it reactive
     shiny::fluidPage(
-      #uiOutput("map_ui")  # Placeholder for rendering module UI reactively
-      
-      ## DEBUGGING
-      # leaflet::leafletOutput("simple_map")
-      
       mod_main_map_ui("main_map_1")
     )
   )

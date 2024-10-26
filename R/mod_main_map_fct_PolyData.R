@@ -100,7 +100,7 @@ DominantLC <- function(poly_row = data){
 #'
 #' @param data cumulative sewage discharge table from database
 #'
-#' @return Description of upstream cummulative sewage discharges
+#' @return Description of upstream cumulative sewage discharges
 #'
 #' @importFrom magrittr `%>%`
 #' @importFrom dplyr tbl select filter collect rowwise mutate pull if_else
