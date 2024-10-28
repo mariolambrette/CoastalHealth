@@ -21,7 +21,7 @@ if (!dir.exists(sp)) {
 con <- DBI::dbConnect(RSQLite::SQLite(), paste0(sp, '\\ExeAtlas_db.db'))
 
 # Should spatial tables be updated. If FALSE only the look up table is updated
-update.spatial <- T
+update.spatial <- F
 
 # Load subcatchment layer for future reference
 if (update.spatial) {
@@ -147,7 +147,7 @@ ma_lu <- tibble::tibble( # To be bound into `SHP_lookup` table
                 'County Geological Sites UNAVAILABLE',
                 'Wildlife Reserves UNAVAILABLE'),
   aes = c(
-  "leafletProxy(ns('basemap')) %>%
+  "leafletProxy(ns('map')) %>%
     addPolygons(data = LoadLayer(name = 'SHP_MNG_whs'),
                 stroke = F,
                 color = '#659665',
@@ -155,7 +155,7 @@ ma_lu <- tibble::tibble( # To be bound into `SHP_lookup` table
                 fillColor = '#659665',
                 group = 'MNG',
                 options = pathOptions(pane = 'mng_layers'))",
-  "leafletProxy(ns('basemap')) %>%
+  "leafletProxy(ns('map')) %>%
     addPolygons(data = LoadLayer(name = 'SHP_MNG_lnr'),
                 stroke = F,
                 color = '#659665',
@@ -163,7 +163,7 @@ ma_lu <- tibble::tibble( # To be bound into `SHP_lookup` table
                 fillColor = '#659665',
                 group = 'MNG',
                 options = pathOptions(pane = 'mng_layers'))",
-  "leafletProxy(ns('basemap')) %>%
+  "leafletProxy(ns('map')) %>%
     addPolygons(data = LoadLayer(name = 'SHP_MNG_iba'),
                 stroke = F,
                 color = '#659665',
@@ -171,7 +171,7 @@ ma_lu <- tibble::tibble( # To be bound into `SHP_lookup` table
                 fillColor = '#659665',
                 group = 'MNG',
                 options = pathOptions(pane = 'mng_layers'))",
-  "leafletProxy(ns('basemap')) %>%
+  "leafletProxy(ns('map')) %>%
     addPolygons(data = LoadLayer(name = 'SHP_MNG_br'),
                 stroke = F,
                 color = '#659665',
@@ -179,7 +179,7 @@ ma_lu <- tibble::tibble( # To be bound into `SHP_lookup` table
                 fillColor = '#659665',
                 group = 'MNG',
                 options = pathOptions(pane = 'mng_layers'))",
-  "leafletProxy(ns('basemap')) %>%
+  "leafletProxy(ns('map')) %>%
     addPolygons(data = LoadLayer(name = 'SHP_MNG_hc'),
                 stroke = F,
                 color = '#659665',
@@ -187,7 +187,7 @@ ma_lu <- tibble::tibble( # To be bound into `SHP_lookup` table
                 fillColor = '#659665',
                 group = 'MNG',
                 options = pathOptions(pane = 'mng_layers'))",
-  "leafletProxy(ns('basemap')) %>%
+  "leafletProxy(ns('map')) %>%
     addPolygons(data = LoadLayer(name = 'SHP_MNG_rspbr'),
                 stroke = F,
                 color = '#659665',
@@ -195,7 +195,7 @@ ma_lu <- tibble::tibble( # To be bound into `SHP_lookup` table
                 fillColor = '#659665',
                 group = 'MNG',
                 options = pathOptions(pane = 'mng_layers'))",
-  "leafletProxy(ns('basemap')) %>%
+  "leafletProxy(ns('map')) %>%
     addPolygons(data = LoadLayer(name = 'SHP_MNG_rspbpl'),
                 stroke = F,
                 color = '#659665',
@@ -203,7 +203,7 @@ ma_lu <- tibble::tibble( # To be bound into `SHP_lookup` table
                 fillColor = '#659665',
                 group = 'MNG',
                 options = pathOptions(pane = 'mng_layers'))",
-  "leafletProxy(ns('basemap')) %>%
+  "leafletProxy(ns('map')) %>%
     addPolygons(data = LoadLayer(name = 'SHP_MNG_aonbs'),
                 stroke = F,
                 color = '#659665',
@@ -211,7 +211,7 @@ ma_lu <- tibble::tibble( # To be bound into `SHP_lookup` table
                 fillColor = '#659665',
                 group = 'MNG',
                 options = pathOptions(pane = 'mng_layers'))",
-  "leafletProxy(ns('basemap')) %>%
+  "leafletProxy(ns('map')) %>%
     addPolygons(data = LoadLayer(name = 'SHP_MNG_nps'),
                 stroke = F,
                 color = '#659665',
@@ -219,7 +219,7 @@ ma_lu <- tibble::tibble( # To be bound into `SHP_lookup` table
                 fillColor = '#659665',
                 group = 'MNG',
                 options = pathOptions(pane = 'mng_layers'))",
-  "leafletProxy(ns('basemap')) %>%
+  "leafletProxy(ns('map')) %>%
     addPolygons(data = LoadLayer(name = 'SHP_MNG_sacs'),
                 stroke = F,
                 color = '#659665',
@@ -227,7 +227,7 @@ ma_lu <- tibble::tibble( # To be bound into `SHP_lookup` table
                 fillColor = '#659665',
                 group = 'MNG',
                 options = pathOptions(pane = 'mng_layers'))",
-  "leafletProxy(ns('basemap')) %>%
+  "leafletProxy(ns('map')) %>%
     addPolygons(data = LoadLayer(name = 'SHP_MNG_spas'),
                 stroke = F,
                 color = '#659665',
@@ -235,7 +235,7 @@ ma_lu <- tibble::tibble( # To be bound into `SHP_lookup` table
                 fillColor = '#659665',
                 group = 'MNG',
                 options = pathOptions(pane = 'mng_layers'))",
-  "leafletProxy(ns('basemap')) %>%
+  "leafletProxy(ns('map')) %>%
     addPolygons(data = LoadLayer(name = 'SHP_MNG_sssi'),
                 stroke = F,
                 color = '#659665',
@@ -243,7 +243,7 @@ ma_lu <- tibble::tibble( # To be bound into `SHP_lookup` table
                 fillColor = '#659665',
                 group = 'MNG',
                 options = pathOptions(pane = 'mng_layers'))",
-  "leafletProxy(ns('basemap')) %>%
+  "leafletProxy(ns('map')) %>%
     addPolygons(data = LoadLayer(name = 'SHP_MNG_ramsar'),
                 stroke = F,
                 color = '#659665',
@@ -296,36 +296,36 @@ if (update.spatial) {
 layer_index <- bind_rows(layer_index, ma_lu)
 
 
-## Data files ----
+## LAND COVER FILES ----
 
 # List of data files
-DAT_files <- list(
+LC_files <- list(
   lc = 'terrestrial/CEH_lc_parcels_clipped_BNG.shp',
   ct = 'terrestrial/CROME_21_clipped_BNG.shp'
 )
 
 # Data file look up table
-dat_lu <- tibble::tibble(
-  SHP_name = names(DAT_files) %>%
+dat_lc <- tibble::tibble(
+  SHP_name = names(LC_files) %>%
     tolower() %>%
-    paste0('SHP_DAT_', .), # Data file prefix
-  disp_name = c('Land cover',
-                'Crop type'),
+    paste0('SHP_LC_', .), # Land cover file prefix
+  disp_name = c('CEH land cover',
+                'Crop map of England 2021'),
   aes = c(
     "
      ## Land cover plotting
-     lc <- LoadLayer(name = 'SHP_DAT_lc')
+     lc <- LoadLayer(name = 'SHP_LC_lc')
 
-     leafletProxy(ns('basemap')) %>%
+     leafletProxy(ns('map')) %>%
        addPolygons(data = lc,
                    stroke = F,
                    fillColor = ~colour,
                    fillOpacity = 1,
-                   group = 'DAT',
-                   options = pathOptions(pane = 'dat_layers'))
+                   group = 'LC',
+                   options = pathOptions(pane = 'lc_layers'))
 
     ",
-    "" # crop type plotting
+    NULL # crop type plotting
   ),
   triggers = NA,
 )
@@ -333,15 +333,15 @@ dat_lu <- tibble::tibble(
 # Loop over each of the data files and save them as tables into the database
 if (update.spatial) {
   plyr::llply(
-    seq(1:length(DAT_files)),
+    seq(1:length(LC_files)),
     function(x){
 
-      if (is.null(DAT_files[[x]])) {
+      if (is.null(LC_files[[x]])) {
         return()
       }
 
       # read shapefile
-      p <- sf::read_sf(DAT_files[[x]])
+      p <- sf::read_sf(LC_files[[x]])
 
       # Change the geometry column to WKT
       p <- p  %>%
@@ -349,7 +349,7 @@ if (update.spatial) {
         mutate(geom = sf::st_as_text(geometry)) %>%
         sf::st_drop_geometry()
 
-      tbl_name <- dat_lu$SHP_name[x]
+      tbl_name <- dat_lc$SHP_name[x]
 
       # Write layer table into database
       RSQLite::dbWriteTable(
@@ -366,7 +366,146 @@ if (update.spatial) {
 
 }
 
-layer_index <- bind_rows(layer_index, dat_lu)
+layer_index <- bind_rows(layer_index, dat_lc)
+
+
+## POINT DATA ----
+
+POINT_files <- list(
+  csd = NULL,
+  fwf = "fwf",
+  TraCf = NULL,
+  inv = NULL,
+  macroph = NULL
+)
+
+dat_point <- tibble::tibble(
+  SHP_name = names(POINT_files) %>%
+    tolower() %>%
+    paste0('SHP_POINT_', .), # point file prefix
+  disp_name = c('Continuous sewage discharge sites',
+                'Freshwater fish sampling sites',
+                'Transitional and coastal fish survey sites',
+                'River invertebrate sampling sites',
+                'River macrophyte sampling sitesw'),
+  aes = c(
+    "", # csd plotting
+    "
+    ## Plotting FWF
+    
+    # Load fwf
+    fwf <- LoadLayer(name = 'SHP_POINT_fwf')
+    
+    # filter based on input and for single point per site
+    if (!is.null(atlas_env$PointState$Time)) {
+      fwf <- fwf %>%
+        dplyr::filter(DATE >= atlas_env$PointState$Time[[1]]) %>%
+        dplyr::filter(DATE <= atlas_env$PointState$Time[[2]])
+    }
+
+    if (!is.null(atlas_env$PointState$Cat)) {
+      fwf <- fwf %>%
+        dplyr::filter(CAT %in% atlas_env$PointState$Cat)
+    }
+
+    leaflet::leafletProxy(ns('map')) %>%
+      leaflet::addCircleMarkers(
+        data = fwf %>%
+          dplyr::group_by(SITE_ID) %>%
+          dplyr::filter(DATE == max(DATE, na.rm = T)),
+        radius = 5,
+        group = 'POINT',
+        stroke = F,
+        color = '#E89005',
+        fillOpacity = 1,
+        label = ~htmltools::htmlEscape(SITE_NAME),
+        options = pathOptions(pane = 'dat_points',
+                              interactive = T)
+      )
+    
+    ",
+    "", # tracf plotting
+    "", # inv plotting
+    ""  # macroph plotting
+  ),
+  triggers = NA,
+)
+
+# Loop over each of the data files and save them as tables into the database
+if (update.spatial) {
+  plyr::llply(
+    seq(1:length(POINT_files)),
+    function(x){
+      
+      if (is.null(POINT_files[[x]])) {
+        return()
+      }
+      
+      if (POINT_files[[x]] == "") {
+        return()
+      }
+      
+      if (POINT_files[[x]] == "fwf") {
+        # Create fwf shapefile to be added to database
+        p <- dplyr::full_join(
+          data.table::fread("freshwater species data/EA_FW_Species/FW_Fish/FW_Fish_Sites_2024-10-24.csv") %>%
+            dplyr::select(c("SITE_ID", "SITE_NAME", "LOCATION_NAME", "ABC_SITE",
+                            "N_SURVEYS", "FIRST_SURVEY", "LAST_SURVEY", 
+                            "SITE_RANKED_EASTING", "SITE_RANKED_NORTHING")),
+          data.table::fread("freshwater species data/EA_FW_Species/FW_Fish/FW_Fish_Counts_2024-10-24.csv") %>%
+            dplyr::select(c("SITE_ID", "SURVEY_ID", "EVENT_DATE", "EVENT_DATE_YEAR", 
+                            "SAMPLE_CODE", "SURVEY_LENGTH", "SURVEY_WIDTH",
+                            "SURVEY_AREA", "SURVEY_METHOD", "SURVEY_STRATEGY",
+                            "NO_OF_RUNS", "SURVEY_SPECIES_ID", "SPECIES_ID",
+                            "SPECIES_NAME", "LATIN_NAME", "ALL_RUNS"))
+        ) %>%
+          sf::st_as_sf(., coords = c("SITE_RANKED_EASTING", "SITE_RANKED_NORTHING"), crs = 27700) %>%
+          sf::st_intersection(., sf::st_read("C:/Users/ml673/University of Exeter/Exe Atlas - Documents/data/spatial/Study_site_boundary_BNG.shp")) %>%
+          sf::st_join(., sc %>% dplyr::select(WB_ID), join = sf::st_intersects, left = TRUE) %>%
+          dplyr::select(-c(RBD_ID, MNCAT_NAME, RBD_NAME, MANCAT_ID, sub.type, url,
+                           OPCAT_NAME, id, width, height, angle, area, perimeter,
+                           layer, path)) %>%
+          dplyr::mutate(EVENT_DATE = as.character(EVENT_DATE)) %>%
+          sf::st_transform(crs = 4326) %>%
+          dplyr::mutate(geom = sf::st_as_text(geometry)) %>%
+          sf::st_drop_geometry() %>%
+          dplyr::rename(DATE = EVENT_DATE) %>%
+          dplyr::mutate(CAT = SPECIES_NAME)
+        
+      } else {
+        # read shapefile
+        p <- sf::read_sf(POINT_files[[x]])
+        
+        # Change the geometry column to WKT
+        p <- p  %>%
+          sf::st_transform(crs = 4326) %>%
+          mutate(geom = sf::st_as_text(geometry)) %>%
+          sf::st_drop_geometry()
+      }
+      
+      tbl_name <- dat_point$SHP_name[x]
+      
+      # Write layer table into database
+      RSQLite::dbWriteTable(
+        con,
+        tbl_name,
+        p,
+        overwrite = T
+      )
+      
+      return()
+    },
+    .progress = 'text'
+  )
+}
+
+layer_index <- bind_rows(layer_index, dat_point)
+
+
+
+
+
+
 
 
 ## CONTINUOUS SEWAGE DISCHARGES ----
@@ -405,7 +544,7 @@ if (update.spatial) {
   # Write table into database
   RSQLite::dbWriteTable(
     con,
-    'SHP_DAT_csd',
+    'SHP_POINT_csd',
     csd,
     overwrite = T
   )
@@ -413,9 +552,9 @@ if (update.spatial) {
 
 # Update look up table
 csd_lu <- tibble::tibble(
-  SHP_name = "SHP_DAT_csd",
+  SHP_name = "SHP_POINT_csd",
   disp_name = "Continuous sewage discharge sites",
-  aes = "csd <- LoadLayer(name = 'SHP_DAT_csd')
+  aes = "csd <- LoadLayer(name = 'SHP_POINT_csd')
 
          csd$colour <- ifelse(is.na(csd$DryWeatherFlow), 'darkgrey', '#FFDB00')
 
@@ -435,13 +574,13 @@ csd_lu <- tibble::tibble(
          csd$radius <- sapply(csd$DryWeatherFlow, scale_radius, min_r = 3, max_r = 10)
 
 
-         leafletProxy(ns('basemap')) %>%
+         leafletProxy(ns('map')) %>%
            addCircleMarkers(data = csd,
                             radius = ~radius,
                             opacity = 1,
                             color = ~colour,
                             fillOpacity = 1,
-                            group = 'DAT',
+                            group = 'POINT',
                             options = pathOptions(pane = 'dat_points'))",
   triggers = NA
 )
@@ -462,3 +601,5 @@ RSQLite::dbWriteTable(
 # Disconnect from database
 RSQLite::dbDisconnect(con)
 rm(con)
+rm(list = ls())
+setwd("C:/projects/ExeAtlas")

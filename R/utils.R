@@ -19,9 +19,9 @@ QuitApp <- function(){
     RSQLite::dbDisconnect(atlas_env$con)
   }
   
-  # Close the browser window
-  shinyjs::runjs("window.close();")
-  
   # Quit app
   shiny::stopApp()
+  
+  # Close the browser window
+  shinyjs::runjs("window.close();")
 }

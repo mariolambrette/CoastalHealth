@@ -585,3 +585,5 @@ RSQLite::dbWriteTable(
 # Disconnect from database
 RSQLite::dbDisconnect(con)
 rm(con)
+rm(list = ls())
+setwd("C:/projects/ExeAtlas")
