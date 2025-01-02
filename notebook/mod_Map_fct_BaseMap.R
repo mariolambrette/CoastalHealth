@@ -89,24 +89,24 @@ BaseMap <- function(shps = ImportSPA(db.connection = atlas_env$con)){
                       group = "BaseMap",
                       options = list(minZoom = 7)) %>%
     leaflet::addTiles(group = "OpenStreetMap",
-             options = list(minZoom = 10)) %>%
+                      options = list(minZoom = 10)) %>%
     # Defines the view of the map when the app is launched
     leaflet::setView(lng = -3.3, lat = 50.8, zoom = 10, options = list(maxZoom = 25)) %>%
     # Add a pane for each category of layer that can be displayed
     # These are placeholders for layers to be inserted later
-    leaflet::addMapPane("mng_layers", zIndex = 410) %>%
+    leaflet::addMapPane("mng_layers",      zIndex = 410) %>%
     leaflet::addMapPane("highlight_polys", zIndex = 420) %>%
-    leaflet::addMapPane('dat_layers', zIndex = 430) %>%
+    leaflet::addMapPane('lc_layers',       zIndex = 430) %>%
     leaflet::addMapPane("overlay_spatial", zIndex = 490) %>%
-    leaflet::addMapPane("outline", zIndex = 495) %>%
-    leaflet::addMapPane("dat_points", zIndex = 496) %>%
+    leaflet::addMapPane("outline",         zIndex = 495) %>%
+    leaflet::addMapPane("dat_points",      zIndex = 496) %>%
     leaflet::addPolylines(data = shps$SHP_SPA_ri,
-                 color = '#2674c5',
-                 weight = 2,
-                 opacity = 1,
-                 fill = F,
-                 group = 'ri',
-                 options = pathOptions(pane = "overlay_spatial")) %>%
+                          color = '#2674c5',
+                          weight = 2,
+                          opacity = 1,
+                          fill = F,
+                          group = 'ri',
+                          options = pathOptions(pane = "overlay_spatial")) %>%
     leaflet::addPolygons(data = shps$SHP_SPA_sc,
                          color = 'black',
                          weight = 1,
@@ -115,14 +115,11 @@ BaseMap <- function(shps = ImportSPA(db.connection = atlas_env$con)){
                          fill = T,
                          fillOpacity = 0,
                          layerId = shps$SHP_SPA_sc$ID,
-                         highlightOptions = highlightOptions(color = '#E89005',
-                                                             dashArray = "1,1",
-                                                             weight = 3,
-                                                             bringToFront = T,
-                                                             # fill = T,
-                                                             # fillColor = '#E89005',
-                                                             # fillOpacity = 0.5,
-                                                             sendToBack = T),
+                         highlightOptions = highlightOptions(color = 'darkgrey',
+                                                             dashArray = "1",
+                                                             weight = 1.5,
+                                                             bringToFront = F,
+                                                             sendToBack = F),
                          group = 'sc',
                          options = pathOptions(pane = "overlay_spatial",
                                                clickable = T)) %>%
@@ -145,12 +142,6 @@ BaseMap <- function(shps = ImportSPA(db.connection = atlas_env$con)){
                           lat1 = 50.13,
                           lng2 = -2.39,
                           lat2 = 51.35)
-
+  
   return(map)
 }
-
-
-
-
-
-
