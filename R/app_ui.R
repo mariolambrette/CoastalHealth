@@ -7,56 +7,96 @@
 #' @noRd
 app_ui <- function(request) {
    shiny::tagList(
-  #   # Leave this function for adding external resources
-  #   golem_add_external_resources(),
-  #   
-  #   # Main page set up
-  #   bslib::page_sidebar(
-  #     theme = bslib::bs_theme(bootswatch = "minty"),
-  #     title = "Coastal Health Data Explorer",
-  #     fillable = T,
-  #     
-  #     sidebar =  shiny::tagList(
-  #       shiny::tabsetPanel(
-  #         id = "sidebar",
-  #         shiny::tabPanel("1. Select data", mod_Data_select_ui("DataSelect1")),
-  #         shiny::tabPanel("2. Modify points view", mod_Point_view_ui("Point_view_1")),
-  #         shiny::tabPanel("3. Modify land cover view", "LAND COVER VIEW UI")
-  #         # Add more tabPanels here if needed
-  #       )
-  #     ),
-  #     
-  #     shiny::mainPanel(
-  #       # MAIN MAP UI
-  #       mod_Map_ui("MainMap"),
-  #       width = 12
-  #     )
-  #   ),
-  #   
-  #   # Add the quit button with custom styling
-  #   shiny::tags$style(HTML("
-  #     .quit-btn {
-  #       position: fixed;
-  #       bottom: 20px;
-  #       right: 20px;
-  #       width: 80px;
-  #       z-index: 1000;        
-  #       background-color: #FF0000; 
-  #       color: white;
-  #       border-color: #FF0000;
-  #     }
-  #     .quit-btn:hover {
-  #       background-color: #cc0000;
-  #       border-color: #cc0000;
-  #     }
-  #   ")),
-  #   
-  #   # Quit button itself
-  #   actionButton(
-  #     "quitApp", 
-  #     "Quit", 
-  #     class = "btn btn-danger quit-btn"
-  #   )
+    # Leave this function for adding external resources
+    golem_add_external_resources(),
+
+    # Main page set up
+    bslib::page_sidebar(
+      theme = bslib::bs_theme(bootswatch = "minty"),
+      title = "Coastal Health Data Explorer",
+      fillable = TRUE,
+
+      sidebar = shiny::uiOutput("dynamic_sidebar"),
+
+      shiny::mainPanel(
+        # MAIN MAP UI
+        mod_map_ui("map_1"),
+        width = 12,
+        fillable = TRUE
+      )
+    ),
+    
+    # Custom CSS for a wider sidebar
+    shiny::tags$style(HTML("
+      .bslib-page-sidebar .sidebar {
+        width: 350px !important; /* Set your desired width */
+      }
+    ")),
+
+    # Add the quit button with custom styling
+    shiny::tags$style(HTML("
+      .quit-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 80px;
+        z-index: 1000;
+        background-color: #FF0000;
+        color: white;
+        border-color: #FF0000;
+      }
+      .quit-btn:hover {
+        background-color: #cc0000;
+        border-color: #cc0000;
+      }
+      .area-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 110px;
+        width: 100px;
+        z-index: 1000;
+        background-color: #5f9c5f;
+        color: white;
+        border-color: #5f9c5f;
+      }
+      area-btn:hover {
+        background-color: #84ad84;
+        border-color: #84ad84;
+      }
+      .recentre-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 220px;
+        width: 100px;
+        z-index: 1000;
+        background-color: #459da1;
+        color: white;
+        border-color: #459da1;
+      }
+      recentre-btn:hover {
+        background-colour: #708b8c;
+        border-color: #708b8c;
+      }
+    ")),
+
+    # Quit button itself
+    shiny::actionButton(
+      "quitApp",
+      "Quit",
+      class = "btn btn-danger quit-btn"
+    ),
+    
+    shiny::actionButton(
+      "AreaSelect",
+      "Select Area",
+      class = "btn btn-success area-btn"
+    ),
+    
+    shiny::actionButton(
+      "Recentre",
+      "Recentre Map",
+      class = "btn btn-success recentre-btn"
+    )
    )
 }
 

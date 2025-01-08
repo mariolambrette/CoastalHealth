@@ -14,9 +14,7 @@ mod_map_ui <- function(id) {
   ns <- NS(id)
   tagList(
     # Render map
-    shiny::fluidPage(
-      leaflet::leafletOutput(ns("map"), width = "100%", height = "100hv")
-    )
+    leaflet::leafletOutput(ns("map"),  width = "100%", height = "100vh")
   )
 }
     
@@ -32,8 +30,45 @@ mod_map_server <- function(id){
       BaseMap()
     })
     
+    # Recentre map when triggered (trigger changed in main app server)
+    shiny::observeEvent(atlas_env$recentre_trigger(), {
+      
+      # Reset to default view if no bounds specified
+      if (is.null(atlas_env$bounds)) {
+        leaflet::leafletProxy("map", session) %>%
+          leaflet::setView(lng = -1.4657, lat = 52.5648, 
+                           zoom = 7)
+      } else {
+        # Use calculated opcat bounds if available
+        recentre_map(leaflet::leafletProxy("map", session))
+      }
+      
+    })
+    
     ## ADD LOGIC FOR DISPLAYING ADDITIONAL LAYERS AS REQUIRED ##
     
+    # Display selected opcats
+    shiny::observe({
+      req(atlas_env$opcats_spatial())
+      
+      Plot_opcats(leaflet::leafletProxy("map", session))
+    })
+    
+    # Display waterbody spatial data (rivers, lakes and boundaries) as needed
+    shiny::observeEvent(atlas_env$wb_triggers$rivers, {
+      Plot_wbs_rivers(leaflet::leafletProxy("map", session))
+    })
+    shiny::observeEvent(atlas_env$wb_triggers$lakes, {
+      Plot_wbs_lakes(leaflet::leafletProxy("map", session))
+    })
+    shiny::observeEvent(atlas_env$wb_triggers$outlines, {
+      Plot_wbs_outlines(leaflet::leafletProxy("map", session))
+    })
+    
+    # Display marine area as needed
+    shiny::observeEvent(atlas_env$wb_triggers$marine, {
+      Plot_marinearea(leaflet::leafletProxy("map", session))
+    })
   })
 }   
     
