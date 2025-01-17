@@ -21,7 +21,8 @@
 #' }
 #' 
 #' @importFrom leaflet clearGroup addPolygons fitBounds
-#' @importFrom sf st_bbox
+#' @importFrom sf st_bbox st_centroid st_distance st_transform
+#' @importFrom lwgeom st_minimum_bounding_circle
 
 Plot_opcats <- function(map_proxy){
   
@@ -29,8 +30,9 @@ Plot_opcats <- function(map_proxy){
   req(nrow(atlas_env$opcats_spatial()) > 0)
   
   # Get the bounds of the opcat layer
-  atlas_env$bounds <- sf::st_bbox(atlas_env$opcats_spatial()) # Get bounding box of the spatial data
-  
+  atlas_env$bounds <- rbind(atlas_env$opcats_spatial(), atlas_env$marinearea) %>%
+      sf::st_bbox(.) # Get bounding box of the spatial data 
+    
   map_proxy %>%
     leaflet::clearGroup("opcats") %>%
     leaflet::addPolygons(
@@ -43,10 +45,10 @@ Plot_opcats <- function(map_proxy){
       options = pathOptions(pane = "overlay")
     ) %>%
     leaflet::fitBounds(
-      lng1 = atlas_env$bounds[1] %>% as.numeric(),
-      lat1 = atlas_env$bounds[2] %>% as.numeric(),
-      lng2 = atlas_env$bounds[3] %>% as.numeric(),
-      lat2 = atlas_env$bounds[4] %>% as.numeric()
+      lng1 = atlas_env$bounds[1] %>% as.numeric() - 0.3,
+      lat1 = atlas_env$bounds[2] %>% as.numeric() - 0.3,
+      lng2 = atlas_env$bounds[3] %>% as.numeric() + 0.3,
+      lat2 = atlas_env$bounds[4] %>% as.numeric() + 0.3
     )
   
   return(NULL)
@@ -138,7 +140,7 @@ Plot_wbs_lakes <- function(map_proxy){
 #' This function plots the marine area onto the existing leaflet basemap. It is 
 #' seperate to the waterbody family functions as the data displayed is calculated 
 #' rather than sourced from the EA but in is executed in the same way from the 
-#' wbview module following the user ticking the marinearea box.
+#' wbview module following the user ticking the marine area box.
 #' 
 #'
 #' @return NULL - plots marine area directly onto leaflet map given by map_proxy

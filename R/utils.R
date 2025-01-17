@@ -43,16 +43,15 @@ QuitApp <- function(){
 recentre_map <- function(map_proxy){
   
   map_proxy %>%
-    leaflet::fitBounds(
-      lng1 = atlas_env$bounds[1] %>% as.numeric(),
-      lat1 = atlas_env$bounds[2] %>% as.numeric(),
-      lng2 = atlas_env$bounds[3] %>% as.numeric(),
-      lat2 = atlas_env$bounds[4] %>% as.numeric()
+    leaflet::flyToBounds(
+      lng1 = atlas_env$bounds[1] %>% as.numeric() - 0.2,
+      lat1 = atlas_env$bounds[2] %>% as.numeric() - 0.2,
+      lng2 = atlas_env$bounds[3] %>% as.numeric() + 0.2,
+      lat2 = atlas_env$bounds[4] %>% as.numeric() + 0.2,
     )
   
   return(NULL)
 }
-
 
 
 #' Erase overlapping feature geometries
@@ -70,4 +69,7 @@ recentre_map <- function(map_proxy){
 
 st_erase <- function(x, y){
   sf::st_difference(x, sf::st_union(sf::st_combine(y)))
-} 
+}
+
+
+

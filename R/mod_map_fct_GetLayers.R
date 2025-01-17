@@ -4,7 +4,9 @@
 ## be and are left as full layer extents. Where appropriate, layers are retrieved
 ## and stored as sf-compatible objects. In cases where WMS products are available
 ## these are used (these are added directly, the retrieval function simply returns
-## the correct URL)
+## the correct URL). For larger layers the Get_*() function creates and stores
+## the URL where the data is stored but no data is downloaded until the user
+## activates the plotting functions.
 
 
 
@@ -18,7 +20,7 @@
 #' }
 #' 
 #' @importFrom sf st_read
-#' @importFrom dplyr filter
+#' @importFrom dplyr filter bind_rows
  
 Get_opcats <- function(){
   
@@ -28,6 +30,16 @@ Get_opcats <- function(){
     quiet = TRUE
   ) %>%
     dplyr::filter(opcat_id %in% atlas_env$opcats()$opcat_id)
+  
+  # Generate the download URLS for selected catchments
+  atlas_env$layer_urls <- dplyr::bind_rows(
+    atlas_env$layer_urls,
+    data.frame(
+      layer_name    = paste0("Operational catchment ", atlas_env$opcats()$opcat_id, " (includes water body data)"),
+      shapefile_url = paste0("https://environment.data.gov.uk/catchment-planning/OperationalCatchment/", atlas_env$opcats()$opcat_id, "/shapefile.zip"),
+      geojson_url   = paste0("https://environment.data.gov.uk/catchment-planning/OperationalCatchment/", atlas_env$opcats()$opcat_id, ".geojson")
+    )
+  )
   
   return(opcats.spatial)
 }
@@ -64,6 +76,8 @@ Get_wbs <- function(){
   atlas_env$wb_spatial$outlines <- wbs %>%
     dplyr::filter(type == "POLYGON", grepl("River", water.body.type))
  
+  ## These layers are found within the opcat layer download
+  
 }
 
 
@@ -78,9 +92,9 @@ Get_marinearea <- function(){
   
   atlas_env$marinearea <- isolate(atlas_env$opcats_spatial()) %>%
     sf::st_as_sf() %>%
+    sf::st_transform(., crs = 27700) %>%
     sf::st_simplify(preserveTopology = TRUE, dTolerance = 10) %>%
     sf::st_set_precision(1e5) %>%
-    sf::st_transform(., crs = 27700) %>%
     sf::st_union(., by_feature = FALSE) %>%
     sf::st_cast(., "MULTILINESTRING") %>%
     sf::st_buffer(., dist = 100) %>%
@@ -99,4 +113,7 @@ Get_marinearea <- function(){
 
 Get_seasubstrate <- function(){
   
+  ## Requires emodnet package fix
 }
+
+

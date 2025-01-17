@@ -14,7 +14,8 @@ app_server <- function(input, output, session) {
       shiny::tagList(
         shiny::tabsetPanel(
           id = "sidebar",
-          shiny::tabPanel("Toggle waterbody view", mod_wbview_ui("wbview_1"))
+          shiny::tabPanel("Toggle waterbody view", mod_wbview_ui("wbview_1")),
+          shiny::tabPanel("Select Data Layers", mod_layerselect_ui("layerselect_1"))
           # Add more tabPanels here if needed
         )
       )
@@ -27,13 +28,14 @@ app_server <- function(input, output, session) {
   mod_map_server("map_1")
   mod_area_server("area_1")
   mod_wbview_server("wbview_1")
+  mod_layerselect_server("layerselect_1")
   
   # Call the area selection module when the area-btn is pressed
   shiny::observeEvent(input$AreaSelect, {
     shiny::showModal(
       shiny::modalDialog(
         title = "Select management catchments of interest",
-        sime = "xl",
+        size = "xl",
         easyClose = TRUE,
         footer = NULL,
         mod_area_ui("area_1")
