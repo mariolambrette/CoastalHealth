@@ -29,6 +29,7 @@ app_server <- function(input, output, session) {
   mod_area_server("area_1")
   mod_wbview_server("wbview_1")
   mod_layerselect_server("layerselect_1")
+  mod_layerpopup_server("layerpopup_1")
   
   # Call the area selection module when the area-btn is pressed
   shiny::observeEvent(input$AreaSelect, {

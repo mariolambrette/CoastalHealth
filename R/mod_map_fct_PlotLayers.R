@@ -30,9 +30,11 @@ Plot_opcats <- function(map_proxy){
   req(nrow(atlas_env$opcats_spatial()) > 0)
   
   # Get the bounds of the opcat layer
-  atlas_env$bounds <- rbind(atlas_env$opcats_spatial(), atlas_env$marinearea) %>%
-      sf::st_bbox(.) # Get bounding box of the spatial data 
-    
+  atlas_env$bounds <- sf::st_union(isolate(atlas_env$opcats_spatial()), atlas_env$marinearea) %>%
+    sf::st_bbox(.) # Get bounding box of the spatial data 
+  
+  print(atlas_env$bounds)
+  
   map_proxy %>%
     leaflet::clearGroup("opcats") %>%
     leaflet::addPolygons(

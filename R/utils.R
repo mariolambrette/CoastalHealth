@@ -14,6 +14,7 @@
 #' 
 
 QuitApp <- function(){
+ 
   # Quit app
   shiny::stopApp()
   
@@ -28,7 +29,6 @@ QuitApp <- function(){
 #' Function to recentre map view to the correct extent. Correct extent should be
 #' stored as an st_bbox object at atlas_env$bounds
 #' 
-#' 
 #' @return NULL - updates the view of an existing map
 #' 
 #'
@@ -39,7 +39,7 @@ QuitApp <- function(){
 #'  recentre_map(leaflet::leafletProxy("map", session), atlas_env$map_bounds)
 #' }
 #' 
-#' @importFrom leaflet fitBounds
+#' @importFrom leaflet flyToBounds
 recentre_map <- function(map_proxy){
   
   map_proxy %>%
@@ -70,6 +70,3 @@ recentre_map <- function(map_proxy){
 st_erase <- function(x, y){
   sf::st_difference(x, sf::st_union(sf::st_combine(y)))
 }
-
-
-

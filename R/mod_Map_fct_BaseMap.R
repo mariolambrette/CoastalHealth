@@ -47,7 +47,7 @@ BaseMap <- function(){
     leaflet::addLayersControl(baseGroups = c("OpenStreetMap", "GreyCanvas", "BaseMap")) %>%
     # Set maximum map extent (~25km buffer around England)
     leaflet::setMaxBounds(
-      lng1 = -6.7,
+      lng1 = -7.2,
       lat1 = 49.68,
       lng2 = 2.12, 
       lat2 = 56.04

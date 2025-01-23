@@ -13,7 +13,7 @@ mod_area_ui <- function(id) {
     
     # Scrollable checkbox group for mncat selection
     tags$div(
-      style = "height: 200px; overflow-y: scroll; border: 1px solid #ccc; padding: 10px;",
+      style = "height: 400px; width: 300; overflow-y: scroll; border: 1px solid #ccc; padding: 10px;",
       shiny::checkboxGroupInput(
         ns("mncat_select"),
         label = "Select Management Catchments of interest",

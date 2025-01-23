@@ -5,10 +5,12 @@
 #' @import shiny bslib shinyWidgets
 #' @export
 #' @noRd
-app_ui <- function(request) {
+app_ui2 <- function(request) {
    shiny::tagList(
     # Leave this function for adding external resources
     golem_add_external_resources(),
+    
+    shiny::includeCSS(system.file("app/www/download_buttons.css", package = "ExeAtlas")),
 
     # Main page set up
     bslib::page_sidebar(
@@ -33,72 +35,98 @@ app_ui <- function(request) {
       }
     ")),
 
-    # Add the quit button with custom styling
-    shiny::tags$style(HTML("
-      .quit-btn {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        width: 80px;
-        z-index: 1000;
-        background-color: #FF0000;
-        color: white;
-        border-color: #FF0000;
-      }
-      .quit-btn:hover {
-        background-color: #cc0000;
-        border-color: #cc0000;
-      }
-      .area-btn {
-        position: fixed;
-        bottom: 20px;
-        right: 110px;
-        width: 100px;
-        z-index: 1000;
-        background-color: #5f9c5f;
-        color: white;
-        border-color: #5f9c5f;
-      }
-      area-btn:hover {
-        background-color: #84ad84;
-        border-color: #84ad84;
-      }
-      .recentre-btn {
-        position: fixed;
-        bottom: 20px;
-        right: 220px;
-        width: 100px;
-        z-index: 1000;
-        background-color: #459da1;
-        color: white;
-        border-color: #459da1;
-      }
-      recentre-btn:hover {
-        background-colour: #708b8c;
-        border-color: #708b8c;
-      }
-    ")),
-
-    # Quit button itself
+    # Quit button
     shiny::actionButton(
       "quitApp",
       "Quit",
-      class = "btn btn-danger quit-btn"
+      class = "btn btn-danger quit-btn app-quit-btn"
     ),
     
+    # Area selection button
     shiny::actionButton(
       "AreaSelect",
       "Select Area",
-      class = "btn btn-success area-btn"
+      class = "btn btn-success green-btn area-btn"
     ),
     
+    # Map recentre button
     shiny::actionButton(
       "Recentre",
       "Recentre Map",
-      class = "btn btn-success recentre-btn"
+      class = "btn btn-success neut-btn recentre-btn"
     )
    )
 }
+
+
+
+#' The application User-Interface
+#'
+#' @param request Internal parameter for `{shiny}`.
+#'     DO NOT REMOVE.
+#' @import shiny bslib shinyWidgets shinydashboard
+#' @export
+#' @noRd
+app_ui <- function(request) {
+  shiny::tagList(
+    # Leave this function for adding external resources
+    golem_add_external_resources(),
+    
+    shiny::includeCSS(system.file("app/www/download_buttons.css", package = "ExeAtlas")),
+    
+    shinydashboard::dashboardPage(
+      shinydashboard::dashboardHeader(
+         title = "Coastal Health Data Explorer",
+         titleWidth = 350
+      ),
+      shinydashboard::dashboardSidebar(
+        shiny::uiOutput("dynamic_sidebar"),
+        width = 350
+      ),
+      shinydashboard::dashboardBody(
+        # shinydashboard::tabItems(
+          # shinydashboard::tabItem(
+            # shiny::fluidRow(
+             # shinydashboard::box(
+                div(
+                  class = "map-container",
+                  mod_map_ui("map_1")
+                ),
+             #   width = 12,
+             #   style = "padding: 0; margin: 0; border: none;" # Remove extra padding/margin from box
+             # )
+            # )
+          # )
+        # )
+      )
+    ),
+    
+    # Quit button
+    shiny::actionButton(
+      "quitApp",
+      "Quit",
+      class = "btn btn-danger quit-btn app-quit-btn"
+    ),
+    
+    # Area selection button
+    shiny::actionButton(
+      "AreaSelect",
+      "Select Area",
+      class = "btn btn-success green-btn area-btn"
+    ),
+    
+    # Map recentre button
+    shiny::actionButton(
+      "Recentre",
+      "Recentre Map",
+      class = "btn btn-success neut-btn recentre-btn"
+    )
+  )
+}
+
+
+
+
 
 #' Add external Resources to the Application
 #'
@@ -119,8 +147,9 @@ golem_add_external_resources <- function() {
     bundle_resources(
       path = app_sys("app/www"),
       app_title = "ExeAtlas"
-    )
+    ),
+    tags$link(rel = "stylesheet", href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"),
+    shiny::includeScript(system.file("app/www/sidebar_resize.js", package = "ExeAtlas"))
     # Add here other external resources
-    # for example, you can add shinyalert::useShinyalert()
   )
 }

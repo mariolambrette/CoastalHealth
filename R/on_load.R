@@ -9,7 +9,7 @@
   ) 
   
   if (file.exists(opcats_path)) {
-    atlas_env$opcats_all <- data.table::fread(opcats_path)
+    atlas_env$opcats_all <- read.csv(opcats_path)
   }
   
 }
@@ -55,26 +55,22 @@ atlas_env$wb_triggers <- shiny::reactiveValues(
 # opcats are selected by the user
 atlas_env$marinearea <- NULL
 
-# Empty dataframe for storing selected layer names and associated clickable URLS
-  ##                                     ##
-  ## Change this to the urls.csv dataset ##
-  ##                                     ##
-atlas_env$layer_urls <- data.frame(
-  layer_name    = character(0),
-  shapefile_url = character(0),
-  geojson_url   = character(0),
-  stringsAsFactors = FALSE
-)
-
 # Placehodler for user selected date range
 atlas_env$date_range <- NULL
 
 # Placeholder for selected layers
-atlas_env$selected_layers <- reactiveVal(NULL)
+atlas_env$selected_layers <- NULL
 
 # List structure for layer selection element
-atlas_env$layer_options <- yaml::read_yaml(system.file("extdata", "data_structure.yaml", package = "ExeAtlas"))
-
-
+atlas_env$layer_options <- yaml::read_yaml(system.file("extdata", "data_structure.yaml", package = "ExeAtlas")) %>%
+  rapply(
+    .,
+    function(x) as.list(x),
+    classes = "ANY",
+    how = "replace"
+  )
 
 atlas_env$map_sidebar <- NULL
+
+# Reactive trigger to display the layer selection popup
+atlas_env$popuptrigger <- shiny::reactiveVal(NULL)

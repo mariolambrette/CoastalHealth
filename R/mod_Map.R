@@ -11,16 +11,19 @@
 #' @importFrom shiny NS tagList fluidPage
 #' @importFrom leaflet leafletOutput
 mod_map_ui <- function(id) {
-  ns <- NS(id)
-  tagList(
+  ns <- shiny::NS(id)
+  shiny::tagList(
     # Render map
-    leaflet::leafletOutput(ns("map"),  width = "100%", height = "100vh")
+    leaflet::leafletOutput(ns("map"),  width = "100%", height = "100%")
   )
 }
     
 #' map Server Functions
 #'
-#' @noRd 
+#' @noRd
+#' 
+#' @import leaflet
+#' @importFrom shiny observeEvent observe
 mod_map_server <- function(id){
   moduleServer(id, function(input, output, session){
     ns <- session$ns
@@ -77,3 +80,6 @@ mod_map_server <- function(id){
     
 ## To be copied in the server
 # mod_map_server("map_1")
+
+
+
