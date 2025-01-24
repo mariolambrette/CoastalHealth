@@ -1,0 +1,104 @@
+Spatial:
+  Operational catchment outlines:
+    ""
+  Waterbody catchment outlines:
+    ""
+  Rivers:
+    ""
+  Lakes:
+    ""
+  Marine area outline:
+    ""
+
+Marine:
+  Physical properties:
+    Benthic:
+      None available:
+        ""
+    Pelagic:
+      None available:
+        ""
+  Human influences:
+    Aquaculture sites:
+      ""
+  Biota:
+    Benthic:
+      Seagrass:
+        Intertidal seagrass - Mixed/Unspecified Sp.:
+          ""
+        Intertidal seagrass - Ruppia Sp.:
+          ""
+        Intertidal seagrass - Zostera Sp.:
+          ""
+        Subtidal seagrass - Zostera Sp.:
+          ""
+      Saltmarsh and saline reed beds:
+        ""
+    Pelagic:
+      None available:
+        ""
+
+Land:
+  Pysical properties:
+    AIMS land:
+      ""
+  Human influences:
+    Agriculture:
+      None available:
+        ""
+    Other:
+      None available:
+        ""
+  Biota:
+    Priority habitats:
+      Ancient woodland:
+        ""
+      Chalk rivers:
+        ""
+      Natural England Priority Habitats inventory:
+        ""
+      Priority lake habitats:
+        ""
+      Priority river habitat (headwater areas):
+        ""
+      Priority river habitat (rivers):
+        ""
+
+River:
+  Physical properties:
+    Chemistry:
+      None available:
+        ""
+    Physics/hydrology:
+      None available:
+        ""
+  Human influences:
+    None available:
+      ""
+  Biota:
+    None available:
+      ""
+
+Management areas:
+  Biosphere reserves:
+    ""
+  Heritage coast:
+    ""
+  Local nature reserves:
+    ""
+  Marine conservation zones (MCZs):
+    ""
+  National landscapes (previously AONBs):
+    ""
+  National parks (NPs):
+    ""
+  Protected wrecks:
+    ""
+  Ramsar sites:
+    ""
+  Sites of special scientific interest (SSSIs):
+    ""
+  Special areas of conservation (SACs):
+    ""
+  Special protection areas (SPAs):
+    ""
