@@ -14,16 +14,19 @@
 #' 
 
 QuitApp <- function(){
- 
-  # Quit app
-  shiny::stopApp()
+  
+  # Reset environment
+  env_setup(reset = TRUE)
   
   # Close the browser window
   shinyjs::runjs("window.close();")
+  
+  # Quit app
+  shiny::stopApp()
 }
 
 
-#' Recetnre map view
+#' Recentre map view
 #' 
 #' @description
 #' Function to recentre map view to the correct extent. Correct extent should be
@@ -40,6 +43,7 @@ QuitApp <- function(){
 #' }
 #' 
 #' @importFrom leaflet flyToBounds
+
 recentre_map <- function(map_proxy){
   
   map_proxy %>%
@@ -69,4 +73,34 @@ recentre_map <- function(map_proxy){
 
 st_erase <- function(x, y){
   sf::st_difference(x, sf::st_union(sf::st_combine(y)))
+}
+
+
+
+
+
+
+
+
+
+
+assign_node_attrs <- function(tree) {
+  for (name in names(tree)) {
+    # If the node has children, treat it as a folder
+    if (is.list(tree[[name]]) && length(tree[[name]]) > 0) {
+      attr(tree[[name]], "sttype") <- "folder"
+      # Recursively assign attributes to children
+      tree[[name]] <- assign_node_attrs(tree[[name]])
+    
+    } else {
+      # If the node has no children, treat it as a file
+      attr(tree[[name]], "sttype") <- "file"
+      
+      # If no data is available assign the correct attribute to the node
+      if (name == "None available") {
+        attr(tree[[name]], "sttype") <- "none"
+      }
+    }
+  }
+  return(tree)
 }

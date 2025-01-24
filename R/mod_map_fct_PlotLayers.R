@@ -33,8 +33,6 @@ Plot_opcats <- function(map_proxy){
   atlas_env$bounds <- sf::st_union(isolate(atlas_env$opcats_spatial()), atlas_env$marinearea) %>%
     sf::st_bbox(.) # Get bounding box of the spatial data 
   
-  print(atlas_env$bounds)
-  
   map_proxy %>%
     leaflet::clearGroup("opcats") %>%
     leaflet::addPolygons(
@@ -47,7 +45,7 @@ Plot_opcats <- function(map_proxy){
       options = pathOptions(pane = "overlay")
     ) %>%
     leaflet::fitBounds(
-      lng1 = atlas_env$bounds[1] %>% as.numeric() - 0.3,
+      lng1 = atlas_env$bounds[1] %>% as.numeric() - 0.3, # Change these to proportions (e.g. 10% on either side)
       lat1 = atlas_env$bounds[2] %>% as.numeric() - 0.3,
       lng2 = atlas_env$bounds[3] %>% as.numeric() + 0.3,
       lat2 = atlas_env$bounds[4] %>% as.numeric() + 0.3
