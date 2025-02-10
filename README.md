@@ -3,7 +3,7 @@
 
 <div style="display: flex; align-items: center;">
 
-<img src="inst/app/www/logo.svg" width="80" style="margin-right: 10px;"/>
+<img src="inst/app/www/logo.png" width="80" style="margin-right: 10px;"/>
 <h1>
 Coastal Health Data Explorer
 </h1>
@@ -40,7 +40,7 @@ This README has been compiled on the
 
 ``` r
 Sys.time()
-#> [1] "2025-02-10 12:01:17 GMT"
+#> [1] "2025-02-10 12:09:47 GMT"
 ```
 
 Here are the tests results and package coverage:
@@ -49,7 +49,7 @@ Here are the tests results and package coverage:
 devtools::check(quiet = TRUE)
 #> ℹ Loading ExeAtlas
 #> ── R CMD check results ──────────────────────────────── ExeAtlas 0.0.0.9000 ────
-#> Duration: 1m 48.7s
+#> Duration: 1m 34.8s
 #> 
 #> ❯ checking for missing documentation entries ... WARNING
 #>   Undocumented code objects:
@@ -75,8 +75,9 @@ devtools::check(quiet = TRUE)
 #>   use conditionally.
 #> 
 #> ❯ checking installed package size ... NOTE
-#>     installed size is 89.8Mb
+#>     installed size is 90.0Mb
 #>     sub-directories of 1Mb or more:
+#>       app       1.0Mb
 #>       extdata  88.8Mb
 #> 
 #> ❯ checking for future file timestamps ... NOTE
@@ -95,7 +96,7 @@ devtools::check(quiet = TRUE)
 #>     'htmlwidgets' 'plotly' 'reactablefmtr' 'tibble' 'tidyr'
 #>     All declared Imports should be used.
 #> 
-#> ❯ checking R code for possible problems ... [14s] NOTE
+#> ❯ checking R code for possible problems ... [13s] NOTE
 #>   Get_marinearea: no visible binding for global variable '.'
 #>   Get_opcats: no visible binding for global variable 'opcat_id'
 #>   Get_wbs: no visible binding for global variable 'opcat_id'
