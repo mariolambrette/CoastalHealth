@@ -68,7 +68,12 @@ golem_add_external_resources <- function() {
   )
   
   tags$head(
-    favicon(),
+    favicon(
+      ico = "logo",
+      rel = "shortcut icon",
+      resources_path = "www",
+      ext = "svg"
+    ),
     bundle_resources(
       path = app_sys("app/www"),
       app_title = "ExeAtlas"

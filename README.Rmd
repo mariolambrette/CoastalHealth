@@ -13,7 +13,7 @@ output: github_document
 )
 ```
 
-# `{ExeAtlas}`
+<div style="display: flex; align-items: center;"> <img src="app/www/logo.svg" width="80" style="margin-right: 10px;"/> <h1>Coastal Health Data Explorer</h1> </div>
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
