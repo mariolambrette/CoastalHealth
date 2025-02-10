@@ -13,12 +13,12 @@ output: github_document
 )
 ```
 
-<table style="border-collapse: collapse; border: none;">
-  <tr style="border: none;">
+<table style="border-collapse: collapse; border: none; border-color: #FFFFFF;">
+  <tr style="border: none; border-color: #FFFFFF;">
     <td style="border: none; padding-right: 10px; vertical-align: middle;">
-      <img src="inst/app/www/logo.png" width="80"/>
+      <img src="inst/app/www/logo.png" width="90"/>
     </td>
-    <td style="border: none; vertical-align: middle;">
+    <td style="border: none; vertical-align: middle; border-color: #FFFFFF;">
       <h1 style="margin: 0;">Coastal Health Data Explorer</h1>
     </td>
   </tr>
