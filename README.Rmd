@@ -13,8 +13,16 @@ output: github_document
 )
 ```
 
-| <img src="inst/app/www/logo.png" width="80"/> | # Coastal Health Data Explorer |
-|---------------------------------|----------------------------------|
+<table style="border-collapse: collapse; border: none;">
+  <tr style="border: none;">
+    <td style="border: none; padding-right: 10px; vertical-align: middle;">
+      <img src="inst/app/www/logo.png" width="80"/>
+    </td>
+    <td style="border: none; vertical-align: middle;">
+      <h1 style="margin: 0;">Coastal Health Data Explorer</h1>
+    </td>
+  </tr>
+</table>
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)

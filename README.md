@@ -1,9 +1,17 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-
-| <img src="inst/app/www/logo.png" width="80"/> | \# Coastal Health Data Explorer |
-|-----------------------------------------------|---------------------------------|
-
+<table style="border-collapse: collapse; border: none;">
+<tr style="border: none;">
+<td style="border: none; padding-right: 10px; vertical-align: middle;">
+<img src="inst/app/www/logo.png" width="80"/>
+</td>
+<td style="border: none; vertical-align: middle;">
+<h1 style="margin: 0;">
+Coastal Health Data Explorer
+</h1>
+</td>
+</tr>
+</table>
 <!-- badges: start -->
 
 [![Lifecycle:
@@ -34,7 +42,7 @@ This README has been compiled on the
 
 ``` r
 Sys.time()
-#> [1] "2025-02-10 13:23:55 GMT"
+#> [1] "2025-02-10 13:28:46 GMT"
 ```
 
 Here are the tests results and package coverage:
@@ -43,7 +51,7 @@ Here are the tests results and package coverage:
 devtools::check(quiet = TRUE)
 #> ℹ Loading ExeAtlas
 #> ── R CMD check results ──────────────────────────────── ExeAtlas 0.0.0.9000 ────
-#> Duration: 1m 39.9s
+#> Duration: 1m 33s
 #> 
 #> ❯ checking for missing documentation entries ... WARNING
 #>   Undocumented code objects:
