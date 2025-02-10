@@ -3,7 +3,7 @@
 
 <div style="display: flex; align-items: center;">
 
-<img src="app/www/logo.svg" width="80" style="margin-right: 10px;"/>
+<img src="inst/app/www/logo.svg" width="80" style="margin-right: 10px;"/>
 <h1>
 Coastal Health Data Explorer
 </h1>
@@ -40,7 +40,7 @@ This README has been compiled on the
 
 ``` r
 Sys.time()
-#> [1] "2025-02-10 11:52:20 GMT"
+#> [1] "2025-02-10 12:01:17 GMT"
 ```
 
 Here are the tests results and package coverage:
@@ -49,7 +49,7 @@ Here are the tests results and package coverage:
 devtools::check(quiet = TRUE)
 #> ℹ Loading ExeAtlas
 #> ── R CMD check results ──────────────────────────────── ExeAtlas 0.0.0.9000 ────
-#> Duration: 1m 38.1s
+#> Duration: 1m 48.7s
 #> 
 #> ❯ checking for missing documentation entries ... WARNING
 #>   Undocumented code objects:
@@ -95,7 +95,7 @@ devtools::check(quiet = TRUE)
 #>     'htmlwidgets' 'plotly' 'reactablefmtr' 'tibble' 'tidyr'
 #>     All declared Imports should be used.
 #> 
-#> ❯ checking R code for possible problems ... [13s] NOTE
+#> ❯ checking R code for possible problems ... [14s] NOTE
 #>   Get_marinearea: no visible binding for global variable '.'
 #>   Get_opcats: no visible binding for global variable 'opcat_id'
 #>   Get_wbs: no visible binding for global variable 'opcat_id'
