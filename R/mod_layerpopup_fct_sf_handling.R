@@ -11,7 +11,9 @@
 #'
 #' @examples
 #' \dontrun{
-#'  load_sf("example_layer", "https://ows.emodnet-humanactivities.eu/wfs?request=GetFeature&service=WFS&version=1.1.0&outputFormat=application%2Fjson&typeName=emodnet:shellfish")
+#'  load_sf("example_layer", "https://ows.emodnet-humanactivities.eu/wfs?request
+#'    =GetFeature&service=WFS&version=1.1.0&outputFormat=application%2Fjson&type
+#'    Name=emodnet:shellfish")
 #' }
 #' 
 #' @importFrom sf st_read

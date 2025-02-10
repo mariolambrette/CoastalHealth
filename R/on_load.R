@@ -11,7 +11,7 @@
   env_setup()
   
   if (file.exists(opcats_path)) {
-    atlas_env$opcats_all <- read.csv(opcats_path)
+    atlas_env$opcats_all <- utils::read.csv(opcats_path)
   }
   
 }
