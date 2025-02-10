@@ -12,6 +12,9 @@
 
 #' Plot selected operational catchments
 #'
+#' @param map_proxy leaflet proxy object relating to the main map on which the
+#'  layer will be plotted
+#' 
 #' @return NULL - updates the existing leaflet map
 #' 
 #'
@@ -62,7 +65,8 @@ Plot_opcats <- function(map_proxy){
 #' lakes and the actual water body boundaries). These functions are triggered
 #' by user inputs to checkboxes in the main app sidepanel
 #'
-#' @param map_proxy 
+#' @param map_proxy leaflet proxy object relating to the main map on which the
+#'  layer will be plotted
 #'
 #' @return NULL - updates the existing map
 #'
@@ -142,6 +146,8 @@ Plot_wbs_lakes <- function(map_proxy){
 #' rather than sourced from the EA but in is executed in the same way from the 
 #' wbview module following the user ticking the marine area box.
 #' 
+#' @param map_proxy leaflet proxy object relating to the main map on which the
+#'  layer will be plotted
 #'
 #' @return NULL - plots marine area directly onto leaflet map given by map_proxy
 #'

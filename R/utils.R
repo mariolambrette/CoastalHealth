@@ -64,8 +64,8 @@ recentre_map <- function(map_proxy){
 #' An extension of sf::st_difference that erases all parts of x that overlap with y
 #' 
 #'
-#' @param x 
-#' @param y 
+#' @param x an sf object
+#' @param y an sf object
 #'
 #' @return sf object containing all geometries in x that do not overlap with y
 #' 
@@ -83,6 +83,18 @@ st_erase <- function(x, y){
 
 
 
+
+#' Assign node attributes
+#' 
+#' @description
+#' Assigns nodes in atlas_env$layer_options tree such that icons can be rendered 
+#' correctly when layer selection tree is renderes in app sidebar
+#' 
+#' 
+#' @param tree Layer tree loaded from data_structure.yaml
+#'
+#' @return Nested list with assigned attributes for leafs and nodes
+#' 
 
 assign_node_attrs <- function(tree) {
   for (name in names(tree)) {

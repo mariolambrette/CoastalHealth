@@ -6,7 +6,8 @@
 
 #' Create reactable widget for rendering
 #'
-#' @param layers Filteredverion of the layer_urls table containing user selected layers.
+#' @param layers Filtered verion of the layer_urls table containing user selected layers.
+#' @param ns Module namepace for correct internal varibale namespacing
 #'
 #' @return a `reactable` widget that can be rendered by `reactable::renderReactable()`
 #' 
@@ -14,8 +15,11 @@
 #' @importFrom dplyr rowwise mutate
 #'
 #' @examples
+#' \dontrun{
 #' layers <- read.csv(system.file("extdata", "layer_urls.csv", package = "ExeAtlas"))
 #' createtable(layers[1:5,])
+#' }
+#' 
 
 createtable <- function(layers, ns) {
   
@@ -203,7 +207,9 @@ createtable <- function(layers, ns) {
 #'
 #' @examples
 #' \dontrun{
-#'  process_url("https://environment.data.gov.uk/geoservices/datasets/6da82900-d465-11e4-8cc3-f0def148f590/ogc/features/v1/collections/Saltmarsh_Extents_and_Zonation/items?limit=300000&bbox={xmin},{ymin},{xmax),{xmin}")
+#'  process_url("https://environment.data.gov.uk/geoservices/datasets/6da82900
+#'  -d465-11e4-8cc3-f0def148f590/ogc/features/v1/collections/Saltmarsh_Extents_
+#'  and_Zonation/items?limit=300000&bbox={xmin},{ymin},{xmax},{xmin}")
 #' }
 
 process_url <- function(url) {
