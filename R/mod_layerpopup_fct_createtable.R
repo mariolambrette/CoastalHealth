@@ -36,7 +36,9 @@ createtable <- function(layers, ns) {
     dplyr::mutate(
       url_list = strsplit(url, ","),
       source_list = strsplit(source, ",")
-    )
+    ) %>%
+    dplyr::select(name, source_list, url_list, sf_compatible, id, url, source, 
+                  browser_compatible, spatial_filtering, temporal_filtering)
   
   reactable::reactable(
     data = layers,
@@ -70,13 +72,21 @@ createtable <- function(layers, ns) {
         searchable = FALSE,
         align = "left",
         vAlign = "top",
-        cell = function(value) {
-          # Generate clickable hyperlinks for each URL
-          links <- sapply(value, function(link) {
-            sprintf('<a href="%s" target="_blank" style="color: blue;">link</a>', link)
-          })
-          # Combine links into a single cell with line breaks
-          paste(links, collapse = "<br>")
+        cell = function(value, index) {
+          
+          url <- layers$url[index]
+          
+          if (url != "NA (internal data)") {
+            # Generate clickable hyperlinks for each URL
+            links <- sapply(value, function(link) {
+              sprintf('<a href="%s" target="_blank" style="color: blue;">link</a>', link)
+            })
+            # Combine links into a single cell with line breaks
+            paste(links, collapse = "<br>")
+          } else {
+            return("NA")
+          }
+
         },
         html = TRUE
       ),
@@ -140,7 +150,7 @@ createtable <- function(layers, ns) {
             shiny::tags$button(
               type = "button",
               class = "btn neut-btn",
-              "Load as sf",
+              "Load with sf",
               onclick = paste0("Shiny.setInputValue('", ns("load_layer_sf"), "', {ts: Date.now(), row: ", index, "}, { priority: 'event' })")
             )
           }
@@ -150,23 +160,23 @@ createtable <- function(layers, ns) {
       id = reactable::colDef(
         show = FALSE
       ),
-      
+
       browser_compatible = reactable::colDef(
         show = FALSE
       ),
-      
+
       spatial_filtering = reactable::colDef(
         show = FALSE
       ),
-      
+
       temporal_filtering = reactable::colDef(
         show = FALSE
       ),
-      
+
       url = reactable::colDef(
         show = FALSE
       ),
-      
+
       source = reactable::colDef(
         show = FALSE
       )

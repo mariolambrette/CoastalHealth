@@ -62,16 +62,9 @@ mod_layerpopup_server <- function(id){
             
             shiny::tags$button(
               type = "button",
-              class = "btn quit-btn",
-              "Close",
-              onclick = "$('.modal').modal('hide')" # Hides the modal
-            ),
-            
-            shiny::tags$button(
-              type = "button",
               class = "btn neut-btn",
-              "Load all as sf",
-              onclick = paste0("Shiny.setInputValue('", ns("all_sf_load"), "', Date.now(), {priority: 'event'})")
+              "Download layer table",
+              onclick = paste0("Shiny.setInputValue('", ns("download_table"), "', Date.now(), {priority: 'event'})")
             ),
             
             shiny::tags$button(
@@ -84,9 +77,17 @@ mod_layerpopup_server <- function(id){
             shiny::tags$button(
               type = "button",
               class = "btn neut-btn",
-              "Download layer table",
-              onclick = paste0("Shiny.setInputValue('", ns("download_table"), "', Date.now(), {priority: 'event'})")
+              "Load all with sf",
+              onclick = paste0("Shiny.setInputValue('", ns("all_sf_load"), "', Date.now(), {priority: 'event'})")
+            ),
+            
+            shiny::tags$button(
+              type = "button",
+              class = "btn quit-btn",
+              "Close",
+              onclick = "$('.modal').modal('hide')" # Hides the modal
             )
+            
           ),
           
           # Modal content

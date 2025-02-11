@@ -56,4 +56,7 @@ env_setup <- function(reset = FALSE) {
   # Reactive trigger to display the layer selection popup
   atlas_env$popuptrigger <- shiny::reactiveVal(NULL)
   
+  
+  # Reactive trigger for area selection
+  atlas_env$areatrigger <- shiny::reactiveVal(NULL)
 }

@@ -23,10 +23,10 @@ BaseMap <- function(){
     minZoom = NULL,
     maxZoom = NULL)
   ) %>%
-    # leaflet::addTiles(urlTemplate = bm,
-    #                   group = "BaseMap",
-    #                   options = list(minZoom = 7)) %>%
     leaflet::addTiles(group = "OpenStreetMap",
+                      options = list(minZoom = 4.5)) %>%
+    leaflet::addTiles(urlTemplate = "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+                      group = "Satellite",
                       options = list(minZoom = 4.5)) %>%
     leaflet::addTiles(group = "GreyCanvas",
                       urlTemplate = "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}",
@@ -44,7 +44,7 @@ BaseMap <- function(){
     leaflet::addMapPane("points",   zIndex = 440) %>%
     leaflet::addMapPane("overlay",  zIndex = 490) %>%
     # Switch between basemap options
-    leaflet::addLayersControl(baseGroups = c("OpenStreetMap", "GreyCanvas", "BaseMap")) %>%
+    leaflet::addLayersControl(baseGroups = c("OpenStreetMap", "GreyCanvas", "Satellite")) %>%
     # Set maximum map extent (~25km buffer around England)
     leaflet::setMaxBounds(
       lng1 = -7.2,

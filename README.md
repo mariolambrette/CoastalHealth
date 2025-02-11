@@ -20,10 +20,12 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 
 ## Installation
 
-You can install the development version of `{ExeAtlas}` like so:
+You can install the development version of the Coastal Health Data
+Explorer like so:
 
 ``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+
+devtools::install_github("mariolambrette/ExeAtlas")
 ```
 
 ## Run
@@ -31,8 +33,36 @@ You can install the development version of `{ExeAtlas}` like so:
 You can launch the application by running:
 
 ``` r
+library(ExeAtlas)
 ExeAtlas::run_app()
 ```
+
+## Instructions
+
+1.  After running `ExeAtlas::run_app()` the app will launch in a new tab
+    in your browser
+2.  You will be presented with a map of England and Wales.
+3.  You can use the button in the bottom right corner of the screen to
+    select one or more EA management catchment areas of inteest.
+4.  The outline of the selected management catchments will be shown ot
+    you and you can optionally use the sidebar to also render the
+    rivers, lakes, waterbody outlines and the relevant marine area on
+    the map.
+5.  You can use the ‘Select Data Layers’ tab in the sidebar to select
+    data layers that you are interested in by navigating the menu and
+    highlighting layers of interest.
+6.  Once you are happy with your selection you can click the confirm
+    button and you will be shown a table containing all the selected
+    layers.
+7.  You can use the available buttons/hyperlinks to (i) navigate to the
+    data layer’s home webpage, (2) Load the layer into your active R
+    session, (3) Download the layer directly to your computer, (4)
+    perform the above actions in bulk for all selected layers and/or (5)
+    download the table of layer names and urls.
+
+Where possible (i.e. where the data provider allows) data will be
+spatially cropped to the management catchment area(s) and time period
+selected.
 
 ## About
 
@@ -42,7 +72,7 @@ This README has been compiled on the
 
 ``` r
 Sys.time()
-#> [1] "2025-02-10 13:34:36 GMT"
+#> [1] "2025-02-10 13:45:01 GMT"
 ```
 
 Here are the tests results and package coverage:
@@ -51,7 +81,7 @@ Here are the tests results and package coverage:
 devtools::check(quiet = TRUE)
 #> ℹ Loading ExeAtlas
 #> ── R CMD check results ──────────────────────────────── ExeAtlas 0.0.0.9000 ────
-#> Duration: 1m 39.4s
+#> Duration: 1m 35s
 #> 
 #> ❯ checking for missing documentation entries ... WARNING
 #>   Undocumented code objects:

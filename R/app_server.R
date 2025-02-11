@@ -8,21 +8,34 @@
 
 app_server <- function(input, output, session) {
   
-  # Render the sidebar dynamically
+  # UI for Sidebar with Fixed Bottom Container
   output$dynamic_sidebar <- shiny::renderUI({
     if (!is.null(atlas_env$opcats_spatial())) {
       shiny::tagList(
-        shiny::tabsetPanel(
-          id = "sidebar",
-          shiny::tabPanel("Toggle waterbody view", mod_wbview_ui("wbview_1")),
-          shiny::tabPanel("Select Data Layers", mod_layerselect_ui("layerselect_1"))
-          # Add more tabPanels here if needed
+        div(
+          style = "display: flex; flex-direction: column; height: 100%;", 
+          
+          # Scrollable Content Section (Takes remaining space)
+          div(
+            style = "flex-grow: 1; overflow-y: auto; padding: 10px;",
+            shiny::tabsetPanel(
+              id = "sidebar",
+              shiny::tabPanel("Toggle Waterbody View", mod_wbview_ui("wbview_1")),
+              shiny::tabPanel("Select Data Layers", mod_layerselect_ui("layerselect_1"))
+            )
+          ),
+          
+          # Fixed Bottom Container (100px height)
+          div(
+            style = "height: 1px; background: transparent;"
+          )
         )
       )
     } else {
       NULL
     }
   })
+  
   
   # Module servers
   mod_map_server("map_1")
@@ -33,6 +46,9 @@ app_server <- function(input, output, session) {
   
   # Call the area selection module when the area-btn is pressed
   shiny::observeEvent(input$AreaSelect, {
+   
+    atlas_env$areatrigger(Sys.time())
+    
     shiny::showModal(
       shiny::modalDialog(
         title = "Select management catchments of interest",

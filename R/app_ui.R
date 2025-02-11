@@ -10,6 +10,9 @@ app_ui <- function(request) {
     # Leave this function for adding external resources
     golem_add_external_resources(),
     
+    ############################################################################
+    ###################################
+    ######
     
     shinydashboard::dashboardPage(
       shinydashboard::dashboardHeader(
@@ -17,7 +20,10 @@ app_ui <- function(request) {
          titleWidth = 350
       ),
       shinydashboard::dashboardSidebar(
-        shiny::uiOutput("dynamic_sidebar"),
+        div(
+          shiny::uiOutput("dynamic_sidebar"),
+          class = "sidebar-container"
+        ),
         width = 350
       ),
       shinydashboard::dashboardBody(
