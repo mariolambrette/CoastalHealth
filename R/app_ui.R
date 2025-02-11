@@ -82,14 +82,14 @@ golem_add_external_resources <- function() {
     ),
     bundle_resources(
       path = app_sys("app/www"),
-      app_title = "ExeAtlas"
+      app_title = "CoastalHealth"
     ),
     tags$script(
       src = "https://kit.fontawesome.com/b40f9f7bab.js",
       crossorigin = "anonymous"
     ),
-    shiny::includeScript(system.file("app/www/sidebar_resize.js", package = "ExeAtlas")),
-    shiny::includeCSS(system.file("app/www/download_buttons.css", package = "ExeAtlas"))
+    shiny::includeScript(system.file("app/www/sidebar_resize.js", package = "CoastalHealth")),
+    shiny::includeCSS(system.file("app/www/download_buttons.css", package = "CoastalHealth"))
     # Add here other external resources
   )
 }

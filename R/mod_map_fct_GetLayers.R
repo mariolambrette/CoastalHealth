@@ -26,7 +26,7 @@ Get_opcats <- function(){
   
   # Read the geoJSON file containing all opcats and filter for user selection
   opcats.spatial <- sf::st_read(
-    system.file("extdata", "OperationalCatchmentsSpatial.gpkg", package = "ExeAtlas"),
+    system.file("extdata", "OperationalCatchmentsSpatial.gpkg", package = "CoastalHealth"),
     quiet = TRUE
   ) %>%
     dplyr::filter(opcat_id %in% atlas_env$opcats()$opcat_id)

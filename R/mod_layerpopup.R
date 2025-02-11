@@ -44,7 +44,7 @@ mod_layerpopup_server <- function(id){
     shiny::observeEvent(atlas_env$popuptrigger(), {
       
       # Filter layers to those selected and create output table
-      layers <- data.table::fread(system.file("extdata", "layer_urls.csv", package = "ExeAtlas")) %>%
+      layers <- data.table::fread(system.file("extdata", "layer_urls.csv", package = "CoastalHealth")) %>%
         dplyr::filter(name %in% atlas_env$selected_layers)
       
       output$table <- reactable::renderReactable({

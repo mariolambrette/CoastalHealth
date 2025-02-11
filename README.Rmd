@@ -13,12 +13,12 @@ output: github_document
 )
 ```
 
-<table style="border-collapse: collapse; border: none; border-color: #FFFFFF;">
-  <tr style="border: none; border-color: #FFFFFF;">
+<table style="border-collapse: collapse; border: none; border-color: transparent;">
+  <tr style="border: none; border-color: transparent;">
     <td style="border: none; padding-right: 10px; vertical-align: middle;">
       <img src="inst/app/www/logo.png" width="90"/>
     </td>
-    <td style="border: none; vertical-align: middle; border-color: #FFFFFF;">
+    <td style="border: none; vertical-align: middle; border-color: transparent;">
       <h1 style="margin: 0;">Coastal Health Data Explorer</h1>
     </td>
   </tr>
@@ -49,7 +49,7 @@ run_app()
 
 ## Instructions
 
-1. After running `run_app()` the app will launch in a new tab in your browser
+1. After running `run_app()` the Data Explorer will launch in a new tab in your browser
 2. You will be presented with a map of England and Wales.
 3. You can use the button in the bottom right corner of the screen to select one or more EA management catchment areas of inteest.
 4. The outline of the selected management catchments will be shown ot you and you can optionally use the sidebar to also render the rivers, lakes, waterbody outlines and the relevant marine area on the map.

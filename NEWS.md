@@ -1,3 +1,3 @@
-# ExeAtlas (development version)
+# CoastalHealth (development version)
 
 * Initial CRAN submission.

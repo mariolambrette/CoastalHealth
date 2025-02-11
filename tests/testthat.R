@@ -7,6 +7,6 @@
 # * https://testthat.r-lib.org/articles/special-files.html
 
 library(testthat)
-library(ExeAtlas)
+library(CoastalHealth)
 
-test_check("ExeAtlas")
+test_check("CoastalHealth")

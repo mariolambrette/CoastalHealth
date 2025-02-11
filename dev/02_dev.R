@@ -46,7 +46,7 @@ usethis::use_test("app")
 # Documentation
 
 ## Vignette ----
-usethis::use_vignette("ExeAtlas")
+usethis::use_vignette("CoastalHealth")
 devtools::build_vignettes()
 
 ## Code Coverage----

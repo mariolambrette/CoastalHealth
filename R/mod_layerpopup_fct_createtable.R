@@ -16,7 +16,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' layers <- read.csv(system.file("extdata", "layer_urls.csv", package = "ExeAtlas"))
+#' layers <- read.csv(system.file("extdata", "layer_urls.csv", package = "CoastalHealth"))
 #' createtable(layers[1:5,])
 #' }
 #' 

@@ -19,9 +19,9 @@
 ## to change the name in the app_sys() function in app_config.R /!\
 ##
 golem::fill_desc(
-  pkg_name = "ExeAtlas", # The name of the golem package containing the app (typically lower-case, no underscore or periods)
-  pkg_title = "Interactive map for the ExeAtlas project", # What the Package Does (One Line, Title Case, No Period)
-  pkg_description = "A shiny-based interactive map covering the Exe and surrounding catchments. Provides access to a database of ecological, geological and polutant data for the catchments.", # What the package does (one paragraph).
+  pkg_name = "CoastalHealth", # The name of the golem package containing the app (typically lower-case, no underscore or periods)
+  pkg_title = "Coastal Health Data Explorer", # What the Package Does (One Line, Title Case, No Period)
+  pkg_description = "A shiny-based intercative data discovery tool for marine and terrestrial data relating to coastal health in England. River catchment areas are based on EA operational catchment boundaries.", # What the package does (one paragraph).
   authors = person(
     given = "Mario", # Your First Name
     family = "Lambrette", # Your Last Name
@@ -64,8 +64,8 @@ golem::use_utils_server(with_test = TRUE)
 usethis::use_git()
 ## Sets the remote associated with 'name' to 'url'
 usethis::use_git_remote(
-  name = "ExeAtlas",
-  url = "https://github.com/mariolambrette/ExeAtlas"
+  name = "CoastalHealth",
+  url = "https://github.com/mariolambrette/CoastalHealth"
 )
 
 # You're now set! ----

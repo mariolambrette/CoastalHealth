@@ -7,7 +7,7 @@ env_setup <- function(reset = FALSE) {
   if (!reset) {
     # Polygon of UK land
     atlas_env$land <- sf::st_read(
-      system.file("extdata", "land_polygons.gpkg", package = "ExeAtlas"),
+      system.file("extdata", "land_polygons.gpkg", package = "CoastalHealth"),
       quiet = TRUE
     )
     
@@ -15,7 +15,7 @@ env_setup <- function(reset = FALSE) {
     atlas_env$opcats_all <- NULL
     
     # List structure for layer selection element
-    atlas_env$layer_options <- yaml::read_yaml(system.file("extdata", "data_structure.yaml", package = "ExeAtlas"))
+    atlas_env$layer_options <- yaml::read_yaml(system.file("extdata", "data_structure.yaml", package = "CoastalHealth"))
   }
   
   # Selected operational catchments

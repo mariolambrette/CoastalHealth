@@ -40,5 +40,5 @@ Suggests:
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Language: en-US
-URL: https://github.com/mariolambrette/ExeAtlas
-BugReports: https://github.com/mariolambrette/ExeAtlas/issues
+URL: https://github.com/mariolambrette/CoastalHealth
+BugReports: https://github.com/mariolambrette/CoastalHealth/issues
