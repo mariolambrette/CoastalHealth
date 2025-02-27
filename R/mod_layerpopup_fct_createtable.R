@@ -43,10 +43,6 @@ createtable <- function(layers, ns) {
   reactable::reactable(
     data = layers,
     
-    # defaultColDef = reactable::colDef(
-    #   show = FALSE
-    # ),
-    
     columns = list( 
       
       # Layer names
@@ -124,34 +120,16 @@ createtable <- function(layers, ns) {
         searchable = FALSE,
         align = "left",
         vAlign = "top",
-        # cell = htmlwidgets::JS("
-        #   function(rowInfo, column) {
-        # 
-        #     // Check if sf_compatible is true
-        #     if (!rowInfo.values['sf_compatible']) {
-        #       return '-';
-        #     }
-        # 
-        #     console.log(rowInfo); // Log to check if the row data is correct
-        # 
-        #     // Return a button element
-        #     return `<button 
-        #               class='btn neut-btn' 
-        #               onclick=\"Shiny.setInputValue(
-        #                 'layer_info', 
-        #                 { id: '${rowInfo.values['id']}', url: '${rowInfo.values['url']}' }, 
-        #                 { priority: 'event' }
-        #               )\">Load</button>`;
-        #   }
-        # ")
         
-        cell = function(value, index) {
+        cell = function(value, index, row) {
           if (value) {
             shiny::tags$button(
               type = "button",
               class = "btn neut-btn",
               "Load with sf",
-              onclick = paste0("Shiny.setInputValue('", ns("load_layer_sf"), "', {ts: Date.now(), row: ", index, "}, { priority: 'event' })")
+              onclick = paste0("Shiny.setInputValue('", ns("load_layer_sf"), "',
+                               {ts: Date.now(), row: ", index, "}, 
+                               { priority: 'event' })")
             )
           }
         }
@@ -227,11 +205,22 @@ process_url <- function(url) {
   if (grepl("\\{opcat_id\\}", url)) { # Check if opcat_ids need to be added
     
     # Replace {opcat_id} with all the opcat ids
-    paste0(
-      sapply(isolate(atlas_env$opcats())$opcat_id, function(id) gsub("\\{opcat_id\\}", id, url)),
+    url <- paste0(
+      sapply(unique(atlas_env$trac$opcat_id), function(id) gsub("\\{opcat_id\\}", id, url)),
       collapse = ","
     )
-  } else if ((grepl("\\{xmax\\}", url))) { # Check for spatial filtering
+  }
+  
+  if (grepl("\\{mncat_id\\}", url)) { # Check if mncat_ids need to be added
+    
+    # Replace {mncat_id} with all the mncat ids
+    url <- paste0(
+      sapply(unique(isolate(atlas_env$opcats_spatial())$mncat_id), function(id) gsub("\\{mncat_id\\}", id, url)),
+      collapse = ","
+    )
+  }
+  
+  if ((grepl("\\{xmax\\}", url))) { # Check for spatial filtering
     
     # Replace with values from atlas_env$bounds
     url <- gsub("\\{xmin\\}", atlas_env$bounds[[1]], url)
@@ -239,7 +228,7 @@ process_url <- function(url) {
     url <- gsub("\\{xmax\\}", atlas_env$bounds[[3]], url)
     url <- gsub("\\{ymax\\}", atlas_env$bounds[[4]], url)
   
-  } else { # Leave url unprocessed if no place holders exist
-    url
   }
+  return(url)
+  
 }

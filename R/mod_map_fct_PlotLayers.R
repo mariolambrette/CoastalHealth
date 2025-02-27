@@ -1,6 +1,6 @@
 ## Function for plotting additional layers. Each additional data layer has its
 ## own plotting function (though these may be grouped where appropiate).
-## Selectoing the additional layer first triggers the retrieval function and then
+## Selecting the additional layer first triggers the retrieval function and then
 ## the plotting function which displays the layer on the main leaflet map. Layer
 ## symbology is left as simple as possible to enable multiple layers to be
 ## plotted. These plots are not designed for data analysis - they simply show 
@@ -33,8 +33,8 @@ Plot_opcats <- function(map_proxy){
   req(nrow(atlas_env$opcats_spatial()) > 0)
   
   # Get the bounds of the opcat layer
-  atlas_env$bounds <- sf::st_union(isolate(atlas_env$opcats_spatial()), atlas_env$marinearea) %>%
-    sf::st_bbox(.) # Get bounding box of the spatial data 
+  atlas_env$bounds <- sf::st_union(isolate(atlas_env$opcats_spatial()), atlas_env$ices) %>%
+    sf::st_bbox(.)
   
   map_proxy %>%
     leaflet::clearGroup("opcats") %>%
@@ -48,10 +48,10 @@ Plot_opcats <- function(map_proxy){
       options = pathOptions(pane = "overlay")
     ) %>%
     leaflet::fitBounds(
-      lng1 = atlas_env$bounds[1] %>% as.numeric() - 0.3, # Change these to proportions (e.g. 10% on either side)
-      lat1 = atlas_env$bounds[2] %>% as.numeric() - 0.3,
-      lng2 = atlas_env$bounds[3] %>% as.numeric() + 0.3,
-      lat2 = atlas_env$bounds[4] %>% as.numeric() + 0.3
+      lng1 = atlas_env$bounds[1] %>% as.numeric() - 0.4, # Change these to proportions (e.g. 10% on either side)
+      lat1 = atlas_env$bounds[2] %>% as.numeric() - 0.4,
+      lng2 = atlas_env$bounds[3] %>% as.numeric() + 0.4,
+      lat2 = atlas_env$bounds[4] %>% as.numeric() + 0.4
     )
   
   return(NULL)
@@ -138,13 +138,15 @@ Plot_wbs_lakes <- function(map_proxy){
 }
 
 
-#' Plot marine area
+#' Plot marine areas
 #' 
 #' @description
-#' This function plots the marine area onto the existing leaflet basemap. It is 
-#' seperate to the waterbody family functions as the data displayed is calculated 
-#' rather than sourced from the EA but in is executed in the same way from the 
-#' wbview module following the user ticking the marine area box.
+#' This function plots the ICES rectangles and TraC operational catchments that
+#' relate to the selected terrestrial operational catchment onto the existing
+#' leaflet map. It is seperate to the waterbody family functions as the data 
+#' displayed is calculated rather than sourced from the EA but in is executed in
+#' the same way from the  wbview module following the user ticking the marine 
+#' area box.
 #' 
 #' @param map_proxy leaflet proxy object relating to the main map on which the
 #'  layer will be plotted
@@ -152,23 +154,56 @@ Plot_wbs_lakes <- function(map_proxy){
 #' @return NULL - plots marine area directly onto leaflet map given by map_proxy
 #'
 
-Plot_marinearea <- function(map_proxy){
-  if (atlas_env$wb_triggers$marine) {
+Plot_ices <- function(map_proxy) {
+  if (atlas_env$wb_triggers$ices) {
     map_proxy %>%
       leaflet::addPolygons(
-        data = atlas_env$marinearea,
+        data = atlas_env$ices,
         color = "#2674c5",
-        weight = 2,
+        weight = 1,
         opacity = 1,
         fill = TRUE,
         fillOpacity = 0.03,
-        group = "marinearea",
+        group = "ices",
         options = pathOptions(pane = "overlay")
       )
   } else {
     map_proxy %>%
-      leaflet::clearGroup("marinearea")
+      leaflet::clearGroup("ices")
   }
 }
+
+Plot_trac <- function(map_proxy) {
+  if (atlas_env$wb_triggers$trac) {
+    map_proxy %>%
+      leaflet::addPolygons(
+        data = atlas_env$trac,
+        color = "#2674c5",
+        weight = 1,
+        opacity = 1,
+        fill = TRUE,
+        fillOpacity = 0.03,
+        group = "trac",
+        options = pathOptions(pane = "overlay")
+      )
+  } else {
+    map_proxy %>%
+      leaflet::clearGroup("trac")
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

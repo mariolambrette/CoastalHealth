@@ -1,9 +1,10 @@
 name,id,url,source,sf_compatible,browser_compatible,spatial_filtering,temporal_filtering
-Operational catchment outlines,sp_op,NA (internal data),https://environment.data.gov.uk/catchment-planning/OperationalCatchment/{opcat_id},T,F,T,F
-Waterbody catchment outlines,sp_wb,https://environment.data.gov.uk/catchment-planning/OperationalCatchment/{opcat_id}.geojson,https://environment.data.gov.uk/catchment-planning/OperationalCatchment/{opcat_id},T,T,T,F
-Rivers,sp_ri,https://environment.data.gov.uk/catchment-planning/OperationalCatchment/{opcat_id}.geojson,https://environment.data.gov.uk/catchment-planning/OperationalCatchment/{opcat_id},T,T,T,F
-Lakes,sp_la,https://environment.data.gov.uk/catchment-planning/OperationalCatchment/{opcat_id}.geojson,https://environment.data.gov.uk/catchment-planning/OperationalCatchment/{opcat_id},T,T,T,F
-Marine area outline,sp_ma,NA (internal data),NA (internal data),T,F,T,F
+Operational catchment outlines,sp_op,https://environment.data.gov.uk/catchment-planning/ManagementCatchment/{mncat_id}.geojson,https://environment.data.gov.uk/catchment-planning/ManagementCatchment/{mncat_id},T,T,T,F
+Waterbody catchment outlines,sp_wb,https://environment.data.gov.uk/catchment-planning/ManagementCatchment/{mncat_id}.geojson,https://environment.data.gov.uk/catchment-planning/ManagementCatchment/{mncat_id},T,T,T,F
+Rivers,sp_ri,https://environment.data.gov.uk/catchment-planning/ManagementCatchment/{mncat_id}.geojson,https://environment.data.gov.uk/catchment-planning/ManagementCatchment/{mncat_id},T,T,T,F
+Lakes,sp_la,https://environment.data.gov.uk/catchment-planning/ManagementCatchment/{mncat_id}.geojson,https://environment.data.gov.uk/catchment-planning/ManagementCatchment/{mncat_id},T,T,T,F
+Transitional and coastal operational catchments,sp_trac,https://environment.data.gov.uk/catchment-planning/OperationalCatchment/{opcat_id}.geojson,https://environment.data.gov.uk/catchment-planning/OperationalCatchment/{opcat_id},T,T,T,F
+ICES rectangles,sp_ices,NA (internal data),https://gis.ices.dk/sf/index.html,T,F,T,F
 Aquaculture sites,ma_hi_as,https://ows.emodnet-humanactivities.eu/wfs?request=GetFeature&service=WFS&version=1.1.0&outputFormat=application%2Fjson&typeName=emodnet:shellfish,https://ows.emodnet-humanactivities.eu/geonetwork/srv/eng/catalog.search#/metadata/aa0d2b45-49c4-4b42-86bb-8971a3c2d2cc,T,T,F,F
 Intertidal seagrass - Zostera Sp.,ma_bi_sg_iz,https://services.arcgis.com/JJzESW51TqeY9uat/arcgis/rest/services/National_Seagrass_Layer_England_Current_Extent/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json,https://naturalengland-defra.opendata.arcgis.com/datasets/Defra::national-seagrass-layer-england-current-extent/about?layer=0,T,T,F,F
 Intertidal seagrass - Ruppia Sp.,ma_bi_sg_ir,https://services.arcgis.com/JJzESW51TqeY9uat/arcgis/rest/services/National_Seagrass_Layer_England_Current_Extent/FeatureServer/1/query?where=1%3D1&outFields=*&outSR=4326&f=json,https://naturalengland-defra.opendata.arcgis.com/datasets/Defra::national-seagrass-layer-england-current-extent/about?layer=0,T,T,F,F

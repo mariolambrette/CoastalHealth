@@ -22,7 +22,7 @@ load_sf <- function(id, url) {
   
   assign(
     x     = id, 
-    value = sf::st_read(url), 
+    value = sf::read_sf(url), 
     envir = .GlobalEnv
   )
   

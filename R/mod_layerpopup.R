@@ -125,7 +125,8 @@ mod_layerpopup_server <- function(id){
       
       # Code to download individual sf
       shiny::observeEvent(input$load_layer_sf, {
-        print("clicked load sf")
+        print(input$load_layer_sf)
+        ## NEED TO ACCESS PROCESSED URL FROM REACTABLE
       })
     })
  

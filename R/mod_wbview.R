@@ -13,7 +13,8 @@ mod_wbview_ui <- function(id) {
     shiny::checkboxInput(ns("rivers"), "Rivers", value = FALSE),
     shiny::checkboxInput(ns("lakes"), "Lakes", value = FALSE),
     shiny::checkboxInput(ns("outlines"), "Waterbody boundaries", value = FALSE),
-    shiny::checkboxInput(ns("marine"), "Marine area", value = FALSE)
+    shiny::checkboxInput(ns("trac"), "Transitional and coastal operational catchments (EA)", value = FALSE),
+    shiny::checkboxInput(ns("ices"), "ICES rectangles", value = FALSE)
   )
 }
     
@@ -29,7 +30,8 @@ mod_wbview_server <- function(id){
       shiny::updateCheckboxInput(session, "rivers", value = atlas_env$wb_triggers$rivers)
       shiny::updateCheckboxInput(session, "lakes", value = atlas_env$wb_triggers$lakes)
       shiny::updateCheckboxInput(session, "outlines", value = atlas_env$wb_triggers$outlines)
-      shiny::updateCheckboxInput(session, "marine", value = atlas_env$wb_triggers$marine)
+      shiny::updateCheckboxInput(session, "trac", value = atlas_env$wb_triggers$trac)
+      shiny::updateCheckboxInput(session, "ices", value = atlas_env$wb_triggers$ices)
     })
     
     # Update the values of the waterbody view triggers based on the user input
@@ -43,9 +45,11 @@ mod_wbview_server <- function(id){
       atlas_env$wb_triggers$outlines <- input$outlines
     })
     shiny::observe({
-      atlas_env$wb_triggers$marine <- input$marine
+      atlas_env$wb_triggers$trac <- input$trac
     })
-    
+    shiny::observe({
+      atlas_env$wb_triggers$ices <- input$ices
+    })
     
   })
 }

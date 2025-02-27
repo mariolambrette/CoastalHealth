@@ -86,26 +86,17 @@ Get_wbs <- function(){
 #' @return NULL - stores an sf object describing the marine area to 
 #'  atlas_env$marinearea
 #'
-#' @importFrom sf st_as_sf st_transform st_union st_buffer st_difference
+#' @importFrom sf st_as_sf
+#' @importFrom dplyr filter
 
-Get_marinearea <- function(){
+Get_marinearea <- function() {
+  atlas_env$ices <- ices_selection %>%
+    dplyr::filter(mncat_id %in% unique(isolate(atlas_env$opcats_spatial())$mncat_id)) %>%
+      sf::st_as_sf(crs = 4326)
   
-  atlas_env$marinearea <- isolate(atlas_env$opcats_spatial()) %>%
-    sf::st_as_sf() %>%
-    sf::st_transform(., crs = 27700) %>%
-    sf::st_simplify(preserveTopology = TRUE, dTolerance = 10) %>%
-    sf::st_set_precision(1e5) %>%
-    sf::st_union(., by_feature = FALSE) %>%
-    sf::st_cast(., "MULTILINESTRING") %>%
-    sf::st_buffer(., dist = 100) %>%
-    sf::st_intersection(., atlas_env$land %>%
-                          sf::st_set_precision(1e5) %>%
-                          sf::st_cast(., "MULTILINESTRING")) %>%
-    sf::st_buffer(., dist = 22224) %>%
-    sf::st_union() %>%
-    st_erase(., atlas_env$land) %>%
-    sf::st_transform(crs = 4326)
-  
+  atlas_env$trac <- trac_selection %>%
+    dplyr::filter(parent_mncat_id %in% unique(isolate(atlas_env$opcats_spatial())$mncat_id)) %>%
+    sf::st_as_sf(crs = 4326)
 }
 
 

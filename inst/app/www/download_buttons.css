@@ -64,7 +64,6 @@
   z-index: 1000;
 }
 
-
 /* Green positive action buttons GENERAL */
 .green-btn {
   background-color: #5f9c5f;
@@ -106,6 +105,15 @@
   width: 110px;
   z-index: 1000;
 }
+
+/* Styling for sidebar buttons */
+.sidebar-btn {
+  flex: 1;
+  border-radius: 5;
+  margin: 0;
+  width: 33.3333%;
+}
+
 
 /* Remove all padding/margin from the main content areas */
 .content-wrapper,

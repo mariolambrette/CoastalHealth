@@ -8,7 +8,6 @@
 #' 
 #' @return None
 #' 
-#' @importFrom RSQLite dbDisconnect
 #' @importFrom shiny stopApp
 #' @importFrom shinyjs runjs
 #' 
@@ -32,6 +31,8 @@ QuitApp <- function(){
 #' Function to recentre map view to the correct extent. Correct extent should be
 #' stored as an st_bbox object at atlas_env$bounds
 #' 
+#' @param map_proxy leaflet map proxy to be recentred
+#' 
 #' @return NULL - updates the view of an existing map
 #' 
 #'
@@ -48,10 +49,10 @@ recentre_map <- function(map_proxy){
   
   map_proxy %>%
     leaflet::flyToBounds(
-      lng1 = atlas_env$bounds[1] %>% as.numeric() - 0.2,
-      lat1 = atlas_env$bounds[2] %>% as.numeric() - 0.2,
-      lng2 = atlas_env$bounds[3] %>% as.numeric() + 0.2,
-      lat2 = atlas_env$bounds[4] %>% as.numeric() + 0.2,
+      lng1 = atlas_env$bounds[1] %>% as.numeric() - 0.4,
+      lat1 = atlas_env$bounds[2] %>% as.numeric() - 0.4,
+      lng2 = atlas_env$bounds[3] %>% as.numeric() + 0.4,
+      lat2 = atlas_env$bounds[4] %>% as.numeric() + 0.4,
     )
   
   return(NULL)

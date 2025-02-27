@@ -25,7 +25,7 @@ env_setup <- function(reset = FALSE) {
   atlas_env$opcats_spatial <- shiny::reactiveVal(NULL)
   
   # Placeholder for map bounds, and area centre and radius
-  atlas_env$bounds <- NULL
+  atlas_env$bounds        <- NULL
   atlas_env$opcats_centre <- NULL
   atlas_env$opcats_radius <- NULL
   
@@ -37,15 +37,18 @@ env_setup <- function(reset = FALSE) {
   
   # State of water body layers - i.e. to display them or not. Also includes marine area
   atlas_env$wb_triggers <- shiny::reactiveValues(
-    rivers = FALSE,
-    lakes = FALSE,
+    rivers   = FALSE,
+    lakes    = FALSE,
     outlines = FALSE,
-    marine = FALSE
+    ices     = FALSE,
+    trac     = FALSE
   )
   
   # Placeholder for marine area sf object calculated by Get_marinearea() when
   # opcats are selected by the user
   atlas_env$marinearea <- NULL
+  atlas_env$ices       <- NULL
+  atlas_env$trac       <- NULL
   
   # Placehodler for user selected date range
   atlas_env$date_range <- NULL

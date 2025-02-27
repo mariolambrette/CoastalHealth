@@ -2,17 +2,21 @@
 #'
 #' @param request Internal parameter for `{shiny}`.
 #'     DO NOT REMOVE.
-#' @import shiny bslib shinyWidgets shinydashboard
-#' @export
+#' @import shiny shinyWidgets shinydashboard
 #' @noRd
 app_ui <- function(request) {
   shiny::tagList(
     # Leave this function for adding external resources
     golem_add_external_resources(),
     
-    ############################################################################
-    ###################################
-    ######
+    # Add window close handler
+    tags$script(HTML("
+      window.onbeforeunload = function() {
+        Shiny.onbeforeUnload(function() {
+          return null;
+        });
+      };           
+    ")),
     
     shinydashboard::dashboardPage(
       shinydashboard::dashboardHeader(
@@ -33,27 +37,6 @@ app_ui <- function(request) {
           mod_map_ui("map_1")
         )
       )
-    ),
-    
-    # Quit button
-    shiny::actionButton(
-      "quitApp",
-      "Quit",
-      class = "btn btn-danger quit-btn app-quit-btn"
-    ),
-    
-    # Area selection button
-    shiny::actionButton(
-      "AreaSelect",
-      "Select Area",
-      class = "btn btn-success green-btn area-btn"
-    ),
-    
-    # Map recentre button
-    shiny::actionButton(
-      "Recentre",
-      "Recentre Map",
-      class = "btn btn-success neut-btn recentre-btn"
     )
   )
 }

@@ -3,39 +3,69 @@
 #' @param input,output,session Internal parameters for {shiny}.
 #'     DO NOT REMOVE.
 #' @import shiny
-#' @export
 #' @noRd
 
 app_server <- function(input, output, session) {
   
-  # UI for Sidebar with Fixed Bottom Container
+  # Add session end handler for browser window close
+  session$onSessionEnded(function() {
+    isolate({
+      QuitApp()
+    })
+  })
+  
+  # UI for Sidebar with Fixed buttons along the top
   output$dynamic_sidebar <- shiny::renderUI({
-    if (!is.null(atlas_env$opcats_spatial())) {
-      shiny::tagList(
-        div(
-          style = "display: flex; flex-direction: column; height: 100%;", 
-          
-          # Scrollable Content Section (Takes remaining space)
-          div(
-            style = "flex-grow: 1; overflow-y: auto; padding: 10px;",
-            shiny::tabsetPanel(
-              id = "sidebar",
-              shiny::tabPanel("Toggle Waterbody View", mod_wbview_ui("wbview_1")),
-              shiny::tabPanel("Select Data Layers", mod_layerselect_ui("layerselect_1"))
-            )
-          ),
-          
-          # Fixed Bottom Container (100px height)
-          div(
-            style = "height: 1px; background: transparent;"
-          )
+    # Create the buttons div that will always be present
+    buttons_div <- div(
+      style = "display: flex; justify-content: space-between; padding: 10px;",
+      
+      # Area selection button
+      shiny::actionButton(
+        "AreaSelect",
+        "Select Area",
+        class = "btn btn-success green-btn sidebar-btn"
+      ),
+      
+      # Map recentre button
+      shiny::actionButton(
+        "Recentre",
+        "Recentre Map",
+        class = "btn btn-success neut-btn sidebar-btn"
+      ),
+      
+      # Quit button
+      shiny::actionButton(
+        "quitApp",
+        "Quit",
+        class = "btn btn-danger quit-btn sidebar-btn"
+      )
+    )
+    
+    # Create the dynamic content section
+    dynamic_content <- if (!is.null(atlas_env$opcats_spatial())) {
+      div(
+        style = "flex-grow: 1; overflow-y: auto; padding: 10px;",
+        shiny::tabsetPanel(
+          id = "sidebar",
+          shiny::tabPanel("Toggle Waterbody View", mod_wbview_ui("wbview_1")),
+          shiny::tabPanel("Select Data Layers", mod_layerselect_ui("layerselect_1"))
         )
       )
     } else {
-      NULL
+      # Empty div when no selection
+      div(style = "flex-grow: 1;")
     }
+    
+    # Return the combined layout
+    shiny::tagList(
+      div(
+        style = "display: flex; flex-direction: column; height: 100%;", 
+        buttons_div,
+        dynamic_content
+      )
+    )
   })
-  
   
   # Module servers
   mod_map_server("map_1")
@@ -65,6 +95,7 @@ app_server <- function(input, output, session) {
     stopApp()
   })
   
+  # Recentre the map when the recentre button is pressed
   shiny::observeEvent(input$Recentre, {
     atlas_env$recentre_trigger(Sys.time())
   })

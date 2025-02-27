@@ -7,7 +7,9 @@ Spatial:
     ""
   Lakes:
     ""
-  Marine area outline:
+  Transitional and coastal operational catchments:
+    ""
+  Ices rectangles:
     ""
 
 Marine:
@@ -24,16 +26,14 @@ Marine:
   Biota:
     Benthic:
       Seagrass:
-        Intertidal seagrass:
-          Mixed/Unspecified Sp.:
-            ""
-          Ruppia Sp.:
-            ""
-          Zostera Sp.:
-            ""
-        Subtidal seagrass:
-          Zostera Sp.:
-            ""
+        Intertidal seagrass - Mixed/Unspecified Sp.:
+          ""
+        Intertidal seagrass - Ruppia Sp.:
+          ""
+        Intertidal seagrass - Zostera Sp.:
+          ""
+        Subtidal seagrass - Zostera Sp.:
+          ""
       Saltmarsh and saline reed beds:
         ""
     Pelagic:

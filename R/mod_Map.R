@@ -68,9 +68,12 @@ mod_map_server <- function(id){
       Plot_wbs_outlines(leaflet::leafletProxy("map", session))
     })
     
-    # Display marine area as needed
-    shiny::observeEvent(atlas_env$wb_triggers$marine, {
-      Plot_marinearea(leaflet::leafletProxy("map", session))
+    # Display trac and ices areas as needed
+    shiny::observeEvent(atlas_env$wb_triggers$ices, {
+      Plot_ices(leaflet::leafletProxy("map", session))
+    })
+    shiny::observeEvent(atlas_env$wb_triggers$trac, {
+      Plot_trac(leaflet::leafletProxy("map", session))
     })
   })
 }   

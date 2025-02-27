@@ -11,18 +11,13 @@ Imports:
     shiny,
     shinyjs,
     leaflet,
-    RSQLite,
     dplyr,
     htmltools,
-    htmlwidgets,
     magrittr,
-    plotly,
     plyr,
     reactable,
-    reactablefmtr,
     sf,
     shinyWidgets,
-    tibble,
     tidyr,
     data.table,
     shinycssloaders,
@@ -30,7 +25,6 @@ Imports:
     lwgeom,
     yaml,
     shinydashboard,
-    bslib,
     utils
 Encoding: UTF-8
 LazyData: true
@@ -42,3 +36,5 @@ Config/testthat/edition: 3
 Language: en-US
 URL: https://github.com/mariolambrette/CoastalHealth
 BugReports: https://github.com/mariolambrette/CoastalHealth/issues
+Depends: 
+    R (>= 2.10)

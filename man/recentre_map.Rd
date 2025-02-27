@@ -6,6 +6,9 @@
 \usage{
 recentre_map(map_proxy)
 }
+\arguments{
+\item{map_proxy}{leaflet map proxy to be recentred}
+}
 \value{
 NULL - updates the view of an existing map
 }
