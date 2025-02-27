@@ -40,6 +40,18 @@ createtable <- function(layers, ns) {
     dplyr::select(name, source_list, url_list, sf_compatible, id, url, source, 
                   browser_compatible, spatial_filtering, temporal_filtering)
   
+  # Extract a vector of all urls and for bulk processing by browser
+  atlas_env$selected_urls_browser <- layers %>%
+    dplyr::filter(browser_compatible == "T") %>%
+    dplyr::pull(url_list) %>%
+    unlist() %>%
+    unique()
+  
+  # Extract a vector of all urls and for bulk processing by sf
+  atlas_env$selected_urls_sf <- layers %>%
+    dplyr::filter(sf_compatible == "T") %>%
+    dplyr::pull(url_list, name = id)
+  
   reactable::reactable(
     data = layers,
     
@@ -98,7 +110,7 @@ createtable <- function(layers, ns) {
           # check is link is browser download compatible
           browser_compatible <- layers$browser_compatible[index]
           
-          if (browser_compatible) {
+          if (browser_compatible == "T") {
             
             # Generate clickable hyperlinks for each URL
             links <- sapply(value, function(link) {
@@ -122,14 +134,23 @@ createtable <- function(layers, ns) {
         vAlign = "top",
         
         cell = function(value, index, row) {
-          if (value) {
+          if (value == "T") {
+            
+            # Get the url_list from the current row
+            url_value <- layers$url_list[[index]]
+            url_json <- jsonlite::toJSON(url_value)
+            
+            # Get the layer id
+            id <- layers$id[[index]]
+            id_json <- jsonlite::toJSON(id)
+            
             shiny::tags$button(
               type = "button",
-              class = "btn neut-btn",
+              class = "btn neut-btn btn-allsf",
               "Load with sf",
               onclick = paste0("Shiny.setInputValue('", ns("load_layer_sf"), "',
-                               {ts: Date.now(), row: ", index, "}, 
-                               { priority: 'event' })")
+                         {ts: Date.now(), id: ", id_json, ", url: ", url_json, "}, 
+                         { priority: 'event' })")
             )
           }
         }

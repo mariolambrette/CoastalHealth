@@ -69,7 +69,7 @@ mod_layerpopup_server <- function(id){
             
             shiny::tags$button(
               type = "button",
-              class = "btn neut-btn",
+              class = "btn neut-btn btn-allsf",
               "Download all layers to computer",
               onclick = paste0("Shiny.setInputValue('", ns("all_download"), "', Date.now(), {priority: 'event'})")
             ),
@@ -108,15 +108,8 @@ mod_layerpopup_server <- function(id){
         )
       )
       
-      # Code to load all layers as sf objects
-      shiny::observeEvent(input$all_sf_load, {
-        print("clicked all sf")
-      })
       
-      # Code to download all layers to computer
-      shiny::observeEvent(input$all_download, {
-        print("clicked download all")
-      })
+
       
       # Code to download layer table
       shiny::observeEvent(input$download_table, {
@@ -125,9 +118,75 @@ mod_layerpopup_server <- function(id){
       
       # Code to download individual sf
       shiny::observeEvent(input$load_layer_sf, {
-        print(input$load_layer_sf)
-        ## NEED TO ACCESS PROCESSED URL FROM REACTABLE
+        
+        # input$load_layer_sf is a list of two elements, 'ts' (the timestamp in
+        # unix time, used as a unique id) and 'url', a list of urls to load
+        # with sf. It may be a list of length 1 or more than 1
+        
+        cat(paste0("loading layer ", input$load_layer_sf$id[[1]]))
+        
+        # Check if there is more than one url
+        if (length(input$load_layer_sf$url) > 1) {
+          
+          # If there is more than one url, load each one, combine them and assign
+          # the result ot the global environment
+          assign(
+            x     = input$load_layer_sf$id[[1]], 
+            value = plyr::llply(
+              input$load_layer_sf$url,
+              sf::read_sf
+            ) %>%
+              dplyr::bind_rows(), 
+            envir = .GlobalEnv
+          )
+          
+        } else {
+          load_sf(
+            url = input$load_layer_sf$url[[1]],
+            id  = input$load_layer_sf$id[[1]]
+          )
+        }
+        
       })
+      
+      # Code to load all layers as sf objects
+      shiny::observeEvent(input$all_sf_load, {
+        
+        cat("Loading all layers with sf...")
+        
+        ids <- names(atlas_env$selected_urls_sf)
+        
+        for (i in seq_along(ids)) {
+          
+          if (length(atlas_env$selected_urls_sf[[i]]) > 1) {
+            assign(
+              x = ids[[i]],
+              value = plyr::llply(
+                atlas_env$selected_urls_sf[[i]],
+                sf::read_sf
+              ) %>%
+                dplyr::bind_rows(),
+              envir = .GlobalEnv
+            )
+          } else {
+            assign(
+              x = ids[[i]],
+              value = sf::read_sf(atlas_env$selected_urls_sf[[i]]),
+              envir = .GlobalEnv
+            )
+          }
+        }
+        
+        cat("All layers loaded with sf.")
+        
+      })
+      
+      # Code to download all layers to computer
+      shiny::observeEvent(input$all_download, {
+        cat("Downloading all layers via browser..")
+        openURLs(atlas_env$selected_urls_browser)
+      })
+      
     })
  
   })

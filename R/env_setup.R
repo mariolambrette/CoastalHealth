@@ -62,4 +62,8 @@ env_setup <- function(reset = FALSE) {
   
   # Reactive trigger for area selection
   atlas_env$areatrigger <- shiny::reactiveVal(NULL)
+  
+  # Placeholder for selected layer urls for bulk downloads
+  atlas_env$selected_urls_browser <- NULL
+  atlas_env$selected_urls_sf      <- NULL
 }

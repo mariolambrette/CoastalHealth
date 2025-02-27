@@ -77,14 +77,6 @@ st_erase <- function(x, y){
 }
 
 
-
-
-
-
-
-
-
-
 #' Assign node attributes
 #' 
 #' @description
@@ -117,3 +109,22 @@ assign_node_attrs <- function(tree) {
   }
   return(tree)
 }
+
+
+
+#' Open urls in web browser
+#' 
+#' @description
+#' Takes a single url, or a list of urls, and passes each one to the machine's
+#' default web browser for openining. Used to bulk download layers.
+#' 
+#' @param urls list of urls (or a single url) as character strings
+#' @return NULL
+#' @noRd
+
+openURLs <- function(urls) {
+  for (i in seq_along(urls)) {
+    browseURL(urls[i])
+  }
+}
+

@@ -1,7 +1,6 @@
 ## Functions to handle sf objects when the layer popup is displayed.
 # i.e. to load single or multiple sf objects into users global environment
 
-
 #' Load sf object to global environment
 #'
 #' @param id String denoting the varibale name to assign the sf object to
@@ -18,7 +17,7 @@
 #' 
 #' @importFrom sf st_read
 
-load_sf <- function(id, url) {
+load_sf <- function(url, id) {
   
   assign(
     x     = id, 
@@ -27,3 +26,7 @@ load_sf <- function(id, url) {
   )
   
 }
+
+
+
+

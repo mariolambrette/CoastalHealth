@@ -43,6 +43,10 @@
   outline: none;
 }
 
+/* Disable text selection */
+.btn-allsf:after {
+  background-color: #51878a;
+}
 
 /* Quit buttons GENERAL */
 .quit-btn {
