@@ -15,7 +15,9 @@
 #'    Name=emodnet:shellfish")
 #' }
 #' 
-#' @importFrom sf st_read
+#' @importFrom sf read_sf
+#' 
+#' @noRd
 
 load_sf <- function(url, id) {
   

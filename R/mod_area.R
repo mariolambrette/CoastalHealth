@@ -6,21 +6,13 @@
 #'
 #' @noRd 
 #'
-#' @importFrom shiny NS tagList checkboxGroupInput
+#' @importFrom shiny NS tagList actionButton
+#' @importFrom shinyTree shinyTree
+
 mod_area_ui <- function(id) {
   ns <- NS(id)
   tagList(
     
-    # # Scrollable checkbox group for mncat selection
-    # tags$div(
-    #   style = "height: 400px; width: 300; overflow-y: scroll; border: 1px solid #ccc; padding: 10px;",
-    #   shiny::checkboxGroupInput(
-    #     ns("mncat_select"),
-    #     label = "Select Management Catchments of interest",
-    #     choices = unique(atlas_env$opcats_all$mncat_name)
-    #   )
-    # ),
-    # 
     shinyTree::shinyTree(
       ns("area_tree"),
       checkbox = TRUE,
@@ -54,8 +46,8 @@ mod_area_ui <- function(id) {
 #' 
 #' @import shiny
 #' @import magrittr
-#' @importFrom dplyr filter
-#' @importFrom shinycssloaders withSpinner
+#' @importFrom dplyr filter select arrange
+#' @importFrom shinyTree dfToTree renderTree get_selected
 
 mod_area_server <- function(id){
   moduleServer(id, function(input, output, session){
@@ -87,10 +79,6 @@ mod_area_server <- function(id){
         shiny::modalDialog(
           title = "Processing Selection",
           h4("Please wait while we retrieve the data..."),
-          div(
-            style = "text-align: center; padding: 20px;",
-            shinycssloaders::withSpinner(shiny::div(style = "height: 50px; width: 50px;"))
-          ),
           footer = NULL,
           easyClose = FALSE
         )

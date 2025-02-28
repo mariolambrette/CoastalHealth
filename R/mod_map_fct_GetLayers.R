@@ -19,15 +19,16 @@
 #' opcat.polygons <- Get_opcats()
 #' }
 #' 
-#' @importFrom sf st_read
+#' @importFrom sf read_sf
 #' @importFrom dplyr filter bind_rows
+#' 
+#' @noRd
  
 Get_opcats <- function(){
   
   # Read the geoJSON file containing all opcats and filter for user selection
-  opcats.spatial <- sf::st_read(
+  opcats.spatial <- sf::read_sf(
     system.file("extdata", "OperationalCatchmentsSpatial.gpkg", package = "CoastalHealth"),
-    quiet = TRUE
   ) %>%
     dplyr::filter(opcat_id %in% atlas_env$opcats()$opcat_id)
   
@@ -49,7 +50,12 @@ Get_opcats <- function(){
 #' @return NULL - atlas_env level reactive values containing river, lake and 
 #'  boundary data are modified within the function to trigger plotting functions 
 #'  in the map server function.
-#'
+#' 
+#' @importFrom dplyr pull select mutate filter
+#' @importFrom plyr ldply
+#' @importFrom sf read_sf
+#' 
+#' @noRd
 
 Get_wbs <- function(){
   
@@ -60,7 +66,7 @@ Get_wbs <- function(){
       .,
       function(id){
         wb_url <- sprintf("https://environment.data.gov.uk/catchment-planning/OperationalCatchment/%s.geojson", id)
-        wb_data <- sf::st_read(wb_url, quiet = TRUE)
+        wb_data <- sf::read_sf(wb_url)
         return(wb_data)
       }
     ) %>%
@@ -88,6 +94,9 @@ Get_wbs <- function(){
 #'
 #' @importFrom sf st_as_sf
 #' @importFrom dplyr filter
+#' @import magrittr
+#' 
+#' @noRd
 
 Get_marinearea <- function() {
   atlas_env$ices <- ices_selection %>%
@@ -99,12 +108,7 @@ Get_marinearea <- function() {
     sf::st_as_sf(crs = 4326)
 }
 
-
-
-
-Get_seasubstrate <- function(){
-  
-  ## Requires emodnet package fix
-}
-
-
+# Get_seasubstrate <- function(){
+#   
+#   ## Requires emodnet package fix
+# }

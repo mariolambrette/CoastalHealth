@@ -6,8 +6,9 @@
 #'
 #' @noRd 
 #'
-#' @importFrom shiny NS tagList 
+#' @importFrom shiny NS tagList actionButton dateRangeInput tags
 #' @importFrom shinyTree shinyTree
+
 mod_layerselect_ui <- function(id) {
   ns <- NS(id)
   tagList(
@@ -72,6 +73,8 @@ mod_layerselect_ui <- function(id) {
 #' @noRd 
 #' 
 #' @importFrom shinyTree renderTree get_selected set_node_attrs
+#' @importFrom shiny observeEvent
+
 mod_layerselect_server <- function(id){
   moduleServer(id, function(input, output, session){
     ns <- session$ns

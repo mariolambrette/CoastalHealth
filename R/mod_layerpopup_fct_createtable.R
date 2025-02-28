@@ -1,10 +1,13 @@
-## Function that creates a reactable object from the selected layers. 
-## The output is the result from `reactable::reactable()`. the function is
-## used in the server side of the layerpopup module to create and format the
-## table to rendered in the ui.
 
 
 #' Create reactable widget for rendering
+#' 
+#' @description
+#' Function that creates a reactable object from the selected layers. The output
+#' is the result from `reactable::reactable()`. the function is
+#' used in the server side of the layerpopup module to create and format the 
+#' table to be rendered in the ui..
+#' 
 #'
 #' @param layers Filtered verion of the layer_urls table containing user selected layers.
 #' @param ns Module namepace for correct internal varibale namespacing
@@ -12,14 +15,17 @@
 #' @return a `reactable` widget that can be rendered by `reactable::renderReactable()`
 #' 
 #' @importFrom reactable reactable reactableTheme colDef
-#' @importFrom dplyr rowwise mutate
+#' @importFrom dplyr rowwise mutate select ungroup pull
+#' @importFrom jsonlite toJSON
+#' @import magrittr
 #'
 #' @examples
 #' \dontrun{
-#' layers <- read.csv(system.file("extdata", "layer_urls.csv", package = "CoastalHealth"))
+#' layers <- data.table::fread(system.file("extdata", "layer_urls.csv", package = "CoastalHealth"))
 #' createtable(layers[1:5,])
 #' }
 #' 
+#' @noRd
 
 createtable <- function(layers, ns) {
   
@@ -220,6 +226,8 @@ createtable <- function(layers, ns) {
 #'  -d465-11e4-8cc3-f0def148f590/ogc/features/v1/collections/Saltmarsh_Extents_
 #'  and_Zonation/items?limit=300000&bbox={xmin},{ymin},{xmax},{xmin}")
 #' }
+#' 
+#' @noRd
 
 process_url <- function(url) {
   

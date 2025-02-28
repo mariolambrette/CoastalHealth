@@ -6,13 +6,14 @@
 #'
 #' @noRd 
 #'
-#' @importFrom shiny NS tagList HTML
+#' @importFrom shiny NS tagList HTML tags
+
 mod_layerpopup_ui <- function(id) {
   ns <- NS(id)
   tagList(
     
     # CSS for modal rendering
-    shiny::tags$style(shiny::HTML("
+    tags$style(shiny::HTML("
       .modal-dialog {
         width: 50% !important; /* Set modal width */
         height: 75% !important; /* Set modal height */
@@ -33,9 +34,11 @@ mod_layerpopup_ui <- function(id) {
 #' 
 #' @importFrom data.table fread
 #' @importFrom dplyr filter
+#' @importFrom plyr llply
 #' @importFrom reactable renderReactable reactableOutput
-#' @importFrom shiny moduleServer observeEvent showModal modalDialog div tagList modalButton
+#' @importFrom shiny moduleServer observeEvent showModal modalDialog div tagList modalButton tags
 #' @importFrom htmltools p
+#' @importFrom sf read_sf
 
 mod_layerpopup_server <- function(id){
   shiny::moduleServer(id, function(input, output, session){

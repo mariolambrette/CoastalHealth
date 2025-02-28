@@ -54,7 +54,7 @@ run_app()
 6.  Once you are happy with your selection you can click the confirm
     button and you will be shown a table containing all the selected
     layers.
-7.  You can use the available buttons/hyperlinks to (i) navigate to the
+7.  You can use the available buttons/hyperlinks to (1) navigate to the
     data layer’s home webpage, (2) Load the layer into your active R
     session, (3) Download the layer directly to your computer, (4)
     perform the above actions in bulk for all selected layers and/or (5)
@@ -64,152 +64,35 @@ Where possible (i.e. where the data provider allows) data will be
 spatially cropped to the management catchment area(s) and time period
 selected.
 
-## About
+## Bug reports
 
-You are reading the doc about version : 0.0.0.9000
+If you find any bugs/problems with the Coastal Health Data explorer
+please submit an issue
+[here](https://github.com/mariolambrette/CoastalHealth/issues). You can
+also use issues to suggest datasets to be added to the tool.
+Alternatively, if you have ideas for developments/improvements you can
+contact the authors directly or submit a pull request. Specific
+instructions for adding additional data to the explorer are detailed
+below.
 
-This README has been compiled on the
+## For Developers
 
-``` r
-Sys.time()
-#> [1] "2025-02-11 12:03:17 GMT"
-```
+This repository is publicly available and free for anyone to fork and
+build on in any way. If you have any improvements to suggest you can
+submit an issue or a pull request.
 
-Here are the tests results and package coverage:
+For more information on the architecture of the data explorer please see
+[here](...README%20explaining%20overall%20explorer%20architecture...)
 
-``` r
-devtools::check(quiet = TRUE)
-#> ℹ Loading CoastalHealth
-#> ── R CMD check results ─────────────────────────── CoastalHealth 0.0.0.9000 ────
-#> Duration: 1m 18.4s
-#> 
-#> ❯ checking tests ...
-#>   See below...
-#> 
-#> ❯ checking for missing documentation entries ... WARNING
-#>   Undocumented code objects:
-#>     'app_server' 'app_ui'
-#>   All user-level objects in a package should have documentation entries.
-#>   See chapter 'Writing R documentation files' in the 'Writing R
-#>   Extensions' manual.
-#> 
-#> ❯ checking Rd \usage sections ... WARNING
-#>   Undocumented arguments in documentation object 'recentre_map'
-#>     'map_proxy'
-#>   
-#>   Functions with \usage entries need to have the appropriate \alias
-#>   entries, and all their arguments documented.
-#>   The \usage entries must correspond to syntactically valid R code.
-#>   See chapter 'Writing R documentation files' in the 'Writing R
-#>   Extensions' manual.
-#> 
-#> ❯ checking package dependencies ... NOTE
-#>   Imports includes 25 non-default packages.
-#>   Importing from so many packages makes the package vulnerable to any of
-#>   them becoming unavailable.  Move as many as possible to Suggests and
-#>   use conditionally.
-#> 
-#> ❯ checking installed package size ... NOTE
-#>     installed size is 90.0Mb
-#>     sub-directories of 1Mb or more:
-#>       app       1.1Mb
-#>       extdata  88.8Mb
-#> 
-#> ❯ checking for future file timestamps ... NOTE
-#>   unable to verify current time
-#> 
-#> ❯ checking top-level files ... NOTE
-#>   Non-standard file/directory found at top level:
-#>     'notebook'
-#> 
-#> ❯ checking package subdirectories ... NOTE
-#>   Problems with news in 'NEWS.md':
-#>   No news entries found.
-#> 
-#> ❯ checking dependencies in R code ... NOTE
-#>   Namespaces in Imports field not imported from:
-#>     'htmlwidgets' 'plotly' 'reactablefmtr' 'tibble' 'tidyr'
-#>     All declared Imports should be used.
-#> 
-#> ❯ checking R code for possible problems ... [11s] NOTE
-#>   Get_marinearea: no visible binding for global variable '.'
-#>   Get_opcats: no visible binding for global variable 'opcat_id'
-#>   Get_wbs: no visible binding for global variable 'opcat_id'
-#>   Get_wbs: no visible binding for global variable '.'
-#>   Get_wbs: no visible binding for global variable 'uri'
-#>   Get_wbs: no visible binding for global variable 'geometry.type'
-#>   Get_wbs: no visible binding for global variable 'geometry'
-#>   Get_wbs: no visible binding for global variable 'type'
-#>   Get_wbs: no visible binding for global variable 'water.body.type'
-#>   Plot_opcats: no visible binding for global variable '.'
-#>   createtable: no visible binding for global variable 'name'
-#>   createtable: no visible binding for global variable 'source_list'
-#>   createtable: no visible binding for global variable 'url_list'
-#>   createtable: no visible binding for global variable 'sf_compatible'
-#>   createtable: no visible binding for global variable 'id'
-#>   createtable: no visible binding for global variable
-#>     'browser_compatible'
-#>   createtable: no visible binding for global variable 'spatial_filtering'
-#>   createtable: no visible binding for global variable
-#>     'temporal_filtering'
-#>   mod_area_server : <anonymous>: no visible binding for global variable
-#>     'rbd_name'
-#>   mod_area_server : <anonymous>: no visible binding for global variable
-#>     'mncat_name'
-#>   mod_layerpopup_server : <anonymous>: no visible binding for global
-#>     variable 'name'
-#>   Undefined global functions or variables:
-#>     . browser_compatible geometry geometry.type id mncat_name name
-#>     opcat_id rbd_name sf_compatible source_list spatial_filtering
-#>     temporal_filtering type uri url_list water.body.type
-#>   
-#>   Found the following assignments to the global environment:
-#>   File 'CoastalHealth/R/mod_layerpopup_fct_sf_handling.R':
-#>     assign(x = id, value = sf::st_read(url), envir = .GlobalEnv)
-#> 
-#> ── Test failures ───────────────────────────────────────────────── testthat ────
-#> 
-#> > # This file is part of the standard setup for testthat.
-#> > # It is recommended that you do not modify it.
-#> > #
-#> > # Where should you do additional test configuration?
-#> > # Learn more about the roles of various files in:
-#> > # * https://r-pkgs.org/testing-design.html#sec-tests-files-overview
-#> > # * https://testthat.r-lib.org/articles/special-files.html
-#> > 
-#> > library(testthat)
-#> Warning message:
-#> package 'testthat' was built under R version 4.4.0 
-#> > library(ExeAtlas)
-#> Error in library(ExeAtlas) : there is no package called 'ExeAtlas'
-#> Execution halted
-#> 
-#> 1 error ✖ | 2 warnings ✖ | 7 notes ✖
-#> Error: R CMD check found ERRORs
-```
+If you with to add additional data to the explorer, you can do so via a
+pull request by following [these
+intructions](...README%20explaining%20how%20to%20add%20data%20layers...)
 
-``` r
-covr::package_coverage()
-#> CoastalHealth Coverage: 0.00%
-#> R/app_config.R: 0.00%
-#> R/app_server.R: 0.00%
-#> R/app_ui.R: 0.00%
-#> R/env_setup.R: 0.00%
-#> R/golem_utils_server.R: 0.00%
-#> R/golem_utils_ui.R: 0.00%
-#> R/mod_area.R: 0.00%
-#> R/mod_layerpopup.R: 0.00%
-#> R/mod_layerpopup_fct_createtable.R: 0.00%
-#> R/mod_layerpopup_fct_sf_handling.R: 0.00%
-#> R/mod_layerselect.R: 0.00%
-#> R/mod_Map.R: 0.00%
-#> R/mod_Map_fct_BaseMap.R: 0.00%
-#> R/mod_map_fct_GetLayers.R: 0.00%
-#> R/mod_map_fct_PlotLayers.R: 0.00%
-#> R/mod_wbview.R: 0.00%
-#> R/on_load.R: 0.00%
-#> R/run_app.R: 0.00%
-#> R/utils.R: 0.00%
-```
+## Attribution/Copyright
 
-## Data availability
+The Coastal Health Data Explorer is made available under the MIT open
+license. The data made available via the tool is subject to the data
+holder’s licence restrictions. The majority of data is availbel under an
+Open Government License but users should should check any license
+retrictions upon individual datasets (via the probvided web links)
+before using/distributing them.

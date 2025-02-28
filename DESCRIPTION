@@ -17,24 +17,24 @@ Imports:
     plyr,
     reactable,
     sf,
-    shinyWidgets,
-    tidyr,
     data.table,
-    shinycssloaders,
     shinyTree,
-    lwgeom,
     yaml,
     shinydashboard,
-    utils
+    utils, 
+    jsonlite
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.3.1
 Suggests: 
+    knitr,
+    rmarkdown,
     spelling,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Language: en-US
 URL: https://github.com/mariolambrette/CoastalHealth
 BugReports: https://github.com/mariolambrette/CoastalHealth/issues
-Depends: 
+Depends:
     R (>= 2.10)
+VignetteBuilder: knitr

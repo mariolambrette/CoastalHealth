@@ -1,0 +1,57 @@
+---
+title: "Add data to the Coastal Health Data Explorer"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Add data to the Coastal Health Data Explorer}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(CoastalHealth)
+```
+
+The Coastal Health Data Explorer relies on the url to a dataset's API being provided to it. The package authors included a number of data sources in the Explorer's initial release, but the list is by no means exhaustive. The ongoing usage of the Explorer relies on up-to-date data sources being added to the explorer, so if you know of a dataset that should be made available via the Coastal Health Data Explorer, this vignette will tell you how you can do that.
+
+## What data sources can I add?
+
+Any dataset that is publicly accessible via the internet can be added to the explorer, all you *need* is a URL and the name of the dataset. However, if the dataset you wish to add is accessible via an API, that will dramitcally increase its' ease of use via the Explorer by enabling automatic downloads of the dataset. If you can find an API accessible source for the dataset you wish to add that is always preferable.
+
+## I have a data source I want to add.. What now?
+
+Requirments: RStudio, Github, Git
+
+1. Navigate to the Data Explorer Github page [here](https://github.com/mariolambrette/CoastalHealth) 
+2. Fork the github repository to create your own copy
+3. Clone the repository onto your machine
+4. Add your forked github repository as the remote for your local copy
+5. In the cloned copy go to inst/extdata/layer_urls.csv
+6. Fill in the fields with the correct information for your data source
+  Name (display name for the data)
+  id (An easy to understand id for the data name. Must not contain numbers or spaces)
+  url (An API url for the data source. Variables such as bounding coordinates and time periods should be added following the correct format)
+  sf_comptabile (Can the *url* be used to load the layer with sf (T/F))
+  browser_compatible (Can the *url* be pasted into a web browser to download the data layer to a machine)
+  spatial_filtering (Does the API url allow spatial filtering of the data with bounding cooradinates)
+  temporal filtering (Does the API url allow temporal filtering of the data (staert and end dates))
+7. Save the updated file
+8. Go to inst/extdata/data_structure.yaml
+9. This yaml file denotes the structure of the data layer selection tree you see when you open the Coastal Health Data Explorer. You need to place your data layer in this tree. If you are unfamiliar with the yal file format please see [here](https://spacelift.io/blog/yaml). Keys that are followed by `""` are the names of available data layers. Write the name of the data layer you wish to add under the appriate category heading. Ensure the name is **exactly** the same as the layer name in the urls csv file and ensure it is followed by `: ""`.
+10. save the updated file.
+11. Ensure you working directory is set to the root directory of the package (This should be called CoastalHealth and is the directory that was created when you cloned the github repo)
+12. Run `devtools::load_all()` to load the modified version of the package and then `run_app()` to launch the app
+13. Select a catchment area as you normally would (any catchment is fine) and then navigate the data layer menu. You should see your data layer appear in the menu.
+14. Select it and press 'confirm selection'
+15. In the table that appears you should see you data layer. Try clicking its links (i.e. go to the source page, downlaod via browser and load with sf) to test that the urls work properly
+16. Pucsh the updates package to your forked copy of the CoastalHealth repo
+17. Submit a PR to the main repo with your changes.
+18. The CHDE maintainers will review your changes and integrate them into the app, making the added data source avilable through the app.
+
+

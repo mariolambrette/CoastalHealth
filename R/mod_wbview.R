@@ -6,7 +6,8 @@
 #'
 #' @noRd 
 #'
-#' @importFrom shiny NS tagList 
+#' @importFrom shiny NS tagList  checkboxInput
+
 mod_wbview_ui <- function(id) {
   ns <- NS(id)
   tagList(
@@ -21,6 +22,9 @@ mod_wbview_ui <- function(id) {
 #' wbview Server Functions
 #'
 #' @noRd 
+#' 
+#' @importFrom shiny observe updateCheckboxInput observe
+
 mod_wbview_server <- function(id){
   moduleServer(id, function(input, output, session){
     ns <- session$ns

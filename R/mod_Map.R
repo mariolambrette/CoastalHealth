@@ -8,8 +8,9 @@
 #'
 #' @noRd 
 #'
-#' @importFrom shiny NS tagList fluidPage
+#' @importFrom shiny NS tagList
 #' @importFrom leaflet leafletOutput
+
 mod_map_ui <- function(id) {
   ns <- shiny::NS(id)
   shiny::tagList(
@@ -23,7 +24,9 @@ mod_map_ui <- function(id) {
 #' @noRd
 #' 
 #' @import leaflet
-#' @importFrom shiny observeEvent observe
+#' @import magrittr
+#' @importFrom shiny observeEvent observe req
+
 mod_map_server <- function(id){
   moduleServer(id, function(input, output, session){
     ns <- session$ns
@@ -52,7 +55,7 @@ mod_map_server <- function(id){
     
     # Display selected opcats
     shiny::observe({
-      req(atlas_env$opcats_spatial())
+      shiny::req(atlas_env$opcats_spatial())
       
       Plot_opcats(leaflet::leafletProxy("map", session))
     })
@@ -83,6 +86,3 @@ mod_map_server <- function(id){
     
 ## To be copied in the server
 # mod_map_server("map_1")
-
-
-

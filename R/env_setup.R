@@ -1,14 +1,28 @@
 ## Function for setting up/resetting package environment
 
+#' Set ap atlas_env
+#'
+#' @param reset Boolean determining whether an existing environment is being
+#'  reset (TRUE) or a new environemnt is ebing created (FALSE)
+#'
+#' @return Creates the atlas_env package environment in its default state ready
+#'  for the app to run
+#' 
+#' @importFrom shiny reactiveVal reactiveValues
+#' @importFrom sf read_sf
+#' @importFrom yaml read_yaml
+#' 
+#' @noRd
+
+
 env_setup <- function(reset = FALSE) {
   
   # These are parts of the environment set up that only need to be run when
   # the package is first loaded
   if (!reset) {
     # Polygon of UK land
-    atlas_env$land <- sf::st_read(
+    atlas_env$land <- sf::read_sf(
       system.file("extdata", "land_polygons.gpkg", package = "CoastalHealth"),
-      quiet = TRUE
     )
     
     # Dataframe of names and IDs for all management catchments in England

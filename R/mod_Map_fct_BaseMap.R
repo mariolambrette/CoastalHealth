@@ -7,7 +7,6 @@
 #' arguments but the returned map can be modified by using `leafletProxy`
 #'   
 #' @return A leaflet base map to be modified using `leafletProxy`
-#' @export
 #' 
 #' @examples
 #' map <- BaseMap()
@@ -15,7 +14,7 @@
 #' @importFrom leaflet leaflet addTiles setView addMapPane addLayersControl 
 #'  setMaxBounds pathOptions leafletOptions
 #' 
-#' 
+#' @noRd
 
 BaseMap <- function(){
   

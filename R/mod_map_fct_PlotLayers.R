@@ -24,8 +24,10 @@
 #' }
 #' 
 #' @importFrom leaflet clearGroup addPolygons fitBounds
-#' @importFrom sf st_bbox st_centroid st_distance st_transform
-#' @importFrom lwgeom st_minimum_bounding_circle
+#' @importFrom sf st_bbox st_union
+#' @import magrittr
+#' 
+#' @noRd
 
 Plot_opcats <- function(map_proxy){
   
@@ -69,7 +71,13 @@ Plot_opcats <- function(map_proxy){
 #'  layer will be plotted
 #'
 #' @return NULL - updates the existing map
+#' 
+#' @importFrom leaflet addPolylines addPolygons clearGroup pathOptions
+#' @importFrom sf st_as_sf
+#' @import magrittr
 #'
+#' 
+#' @noRd
 
 Plot_wbs_rivers <- function(map_proxy){
   
@@ -84,7 +92,7 @@ Plot_wbs_rivers <- function(map_proxy){
         opacity = 1,
         fill = F,
         group = "rivers",
-        options = pathOptions(pane = "overlay")
+        options = leaflet::pathOptions(pane = "overlay")
       )
   } else {
     map_proxy %>%
@@ -152,7 +160,11 @@ Plot_wbs_lakes <- function(map_proxy){
 #'  layer will be plotted
 #'
 #' @return NULL - plots marine area directly onto leaflet map given by map_proxy
-#'
+#' 
+#' @importFrom leaflet addPolygons pathOptions clearGroup
+#' @import magrittr
+#' 
+#' @noRd
 
 Plot_ices <- function(map_proxy) {
   if (atlas_env$wb_triggers$ices) {
@@ -165,7 +177,7 @@ Plot_ices <- function(map_proxy) {
         fill = TRUE,
         fillOpacity = 0.03,
         group = "ices",
-        options = pathOptions(pane = "overlay")
+        options = leaflet::pathOptions(pane = "overlay")
       )
   } else {
     map_proxy %>%
@@ -184,26 +196,10 @@ Plot_trac <- function(map_proxy) {
         fill = TRUE,
         fillOpacity = 0.03,
         group = "trac",
-        options = pathOptions(pane = "overlay")
+        options = leaflet::pathOptions(pane = "overlay")
       )
   } else {
     map_proxy %>%
       leaflet::clearGroup("trac")
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

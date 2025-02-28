@@ -1,6 +1,5 @@
 ## Utility functions
 
-
 #' Quit app
 #' 
 #' @description
@@ -11,6 +10,7 @@
 #' @importFrom shiny stopApp
 #' @importFrom shinyjs runjs
 #' 
+#' @noRd
 
 QuitApp <- function(){
   
@@ -44,6 +44,9 @@ QuitApp <- function(){
 #' }
 #' 
 #' @importFrom leaflet flyToBounds
+#' @import magrittr
+#' 
+#' @noRd
 
 recentre_map <- function(map_proxy){
   
@@ -71,6 +74,8 @@ recentre_map <- function(map_proxy){
 #' @return sf object containing all geometries in x that do not overlap with y
 #' 
 #' @importFrom sf st_difference st_union st_combine
+#' 
+#' @noRd
 
 st_erase <- function(x, y){
   sf::st_difference(x, sf::st_union(sf::st_combine(y)))
@@ -88,6 +93,7 @@ st_erase <- function(x, y){
 #'
 #' @return Nested list with assigned attributes for leafs and nodes
 #' 
+#' @noRd
 
 assign_node_attrs <- function(tree) {
   for (name in names(tree)) {
@@ -127,4 +133,3 @@ openURLs <- function(urls) {
     browseURL(urls[i])
   }
 }
-
