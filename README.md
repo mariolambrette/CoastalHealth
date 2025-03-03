@@ -77,16 +77,16 @@ below.
 
 ## For Developers
 
-This repository is publicly available and free for anyone to fork and
-build on in any way. If you have any improvements to suggest you can
-submit an issue or a pull request.
+This repository is publicly available and we are always open to
+suggestions for improvement. If you have any suggestions, you can submit
+an issue or a pull request.
 
 For more information on the architecture of the data explorer please see
-[here](...README%20explaining%20overall%20explorer%20architecture...)
+[here](https://github.com/mariolambrette/CoastalHealth/tree/main.vignettes/app-structure.html)
 
-If you with to add additional data to the explorer, you can do so via a
+If you wish to add additional data to the explorer, you can do so via a
 pull request by following [these
-intructions](...README%20explaining%20how%20to%20add%20data%20layers...)
+intructions](https://github.com/mariolambrette/CoastalHealth/tree/main.vignettes/add-data.html)
 
 ## Attribution/Copyright
 

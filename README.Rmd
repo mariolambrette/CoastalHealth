@@ -65,11 +65,11 @@ If you find any bugs/problems with the Coastal Health Data explorer please submi
 
 ## For Developers
 
-This repository is publicly available and free for anyone to fork and build on in any way. If you have any improvements to suggest you can submit an issue or a pull request.
+This repository is publicly available and we are always open to suggestions for improvement. If you have any suggestions, you can submit an issue or a pull request.
 
-For more information on the architecture of the data explorer please see [here](...README explaining overall explorer architecture...)
+For more information on the architecture of the data explorer please see [here](https://github.com/mariolambrette/CoastalHealth/tree/main.vignettes/app-structure.html)
 
-If you with to add additional data to the explorer, you can do so via a pull request by following [these intructions](...README explaining how to add data layers...)
+If you wish to add additional data to the explorer, you can do so via a pull request by following [these intructions](https://github.com/mariolambrette/CoastalHealth/tree/main.vignettes/add-data.html)
 
 ## Attribution/Copyright
 
