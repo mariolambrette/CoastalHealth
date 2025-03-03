@@ -82,11 +82,11 @@ suggestions for improvement. If you have any suggestions, you can submit
 an issue or a pull request.
 
 For more information on the architecture of the data explorer please see
-[here](https://github.com/mariolambrette/CoastalHealth/tree/main.vignettes/app-structure.html)
+[here](https://github.com/mariolambrette/CoastalHealth/tree/main/vignettes/app-structure.html)
 
 If you wish to add additional data to the explorer, you can do so via a
 pull request by following [these
-intructions](https://github.com/mariolambrette/CoastalHealth/tree/main.vignettes/add-data.html)
+intructions](https://github.com/mariolambrette/CoastalHealth/tree/main/vignettes/add-data.html)
 
 ## Attribution/Copyright
 
