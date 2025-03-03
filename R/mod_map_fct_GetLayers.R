@@ -70,17 +70,17 @@ Get_wbs <- function(){
         return(wb_data)
       }
     ) %>%
-    dplyr::select(-uri, -geometry.type) %>%
+    dplyr::select(-uri, -`geometry-type`) %>%
     dplyr::mutate(type = sf::st_geometry_type(geometry))
   
   # Split the water body data into lakes, river and wb outlines and store each
   # element in the relevant place in the atlas_env
   atlas_env$wb_spatial$rivers <- wbs %>%
-    dplyr::filter(type == "MULTILINESTRING", grepl("River", water.body.type))
+    dplyr::filter(type == "MULTILINESTRING", grepl("River", `water-body-type`))
   atlas_env$wb_spatial$lakes <- wbs %>%
-    dplyr::filter(type == "POLYGON", grepl("Lake", water.body.type))
+    dplyr::filter(type == "POLYGON", grepl("Lake", `water-body-type`))
   atlas_env$wb_spatial$outlines <- wbs %>%
-    dplyr::filter(type == "POLYGON", grepl("River", water.body.type))
+    dplyr::filter(type == "POLYGON", grepl("River", `water-body-type`))
  
   ## These layers are found within the opcat layer download
   
@@ -99,6 +99,7 @@ Get_wbs <- function(){
 #' @noRd
 
 Get_marinearea <- function() {
+  
   atlas_env$ices <- ices_selection %>%
     dplyr::filter(mncat_id %in% unique(isolate(atlas_env$opcats_spatial())$mncat_id)) %>%
       sf::st_as_sf(crs = 4326)

@@ -1,106 +1,67 @@
 Spatial:
-  Operational catchment outlines:
-    ""
-  Waterbody catchment outlines:
-    ""
-  Rivers:
-    ""
-  Lakes:
-    ""
-  Transitional and coastal operational catchments:
-    ""
-  Ices rectangles:
-    ""
+  Operational catchment outlines: ""
+  Waterbody catchment outlines: ""
+  Rivers: ""
+  Lakes: ""
+  Transitional and coastal operational catchments: ""
+  Ices rectangles: ""
 
 Marine:
   Physical properties:
     Benthic:
-      None available:
-        ""
+      None available: ""
     Pelagic:
-      None available:
-        ""
+      None available: ""
   Human influences:
-    Aquaculture sites:
-      ""
+    Aquaculture sites: ""
   Biota:
     Benthic:
       Seagrass:
-        Intertidal seagrass - Mixed/Unspecified Sp.:
-          ""
-        Intertidal seagrass - Ruppia Sp.:
-          ""
-        Intertidal seagrass - Zostera Sp.:
-          ""
-        Subtidal seagrass - Zostera Sp.:
-          ""
-      Saltmarsh and saline reed beds:
-        ""
+        Intertidal seagrass - Mixed/Unspecified Sp.: ""
+        Intertidal seagrass - Ruppia Sp.: ""
+        Intertidal seagrass - Zostera Sp.: ""
+        Subtidal seagrass - Zostera Sp.: ""
+      Saltmarsh and saline reed beds: ""
     Pelagic:
-      None available:
-        ""
+      None available: ""
 
 Land:
   Pysical properties:
-    AIMS land:
-      ""
+    AIMS land: ""
   Human influences:
     Agriculture:
-      None available:
-        ""
+      None available: ""
     Other:
-      None available:
-        ""
+      None available: ""
   Biota:
     Priority habitats:
-      Ancient woodland:
-        ""
-      Chalk rivers:
-        ""
-      Natural England Priority Habitats inventory:
-        ""
-      Priority lake habitats:
-        ""
-      Priority river habitat (headwater areas):
-        ""
-      Priority river habitat (rivers):
-        ""
+      Ancient woodland: ""
+      Chalk rivers: ""
+      Natural England Priority Habitats inventory: ""
+      Priority lake habitats: ""
+      Priority river habitat (headwater areas): ""
+      Priority river habitat (rivers): ""
 
 River:
   Physical properties:
     Chemistry:
-      None available:
-        ""
+      None available: ""
     Physics/hydrology:
-      None available:
-        ""
+      None available: ""
   Human influences:
-    None available:
-      ""
+    None available: ""
   Biota:
-    None available:
-      ""
+    None available: ""
 
 Management areas:
-  Biosphere reserves:
-    ""
-  Heritage coast:
-    ""
-  Local nature reserves:
-    ""
-  Marine conservation zones (MCZs):
-    ""
-  National landscapes (previously AONBs):
-    ""
-  National parks (NPs):
-    ""
-  Protected wrecks:
-    ""
-  Ramsar sites:
-    ""
-  Sites of special scientific interest (SSSIs):
-    ""
-  Special areas of conservation (SACs):
-    ""
-  Special protection areas (SPAs):
-    ""
+  Biosphere reserves: ""
+  Heritage coast: ""
+  Local nature reserves: ""
+  Marine conservation zones (MCZs): ""
+  National landscapes (previously AONBs): ""
+  National parks (NPs): ""
+  Protected wrecks: ""
+  Ramsar sites: ""
+  Sites of special scientific interest (SSSIs): ""
+  Special areas of conservation (SACs): ""
+  Special protection areas (SPAs): ""

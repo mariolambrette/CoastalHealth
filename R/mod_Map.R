@@ -56,6 +56,7 @@ mod_map_server <- function(id){
     # Display selected opcats
     shiny::observe({
       shiny::req(atlas_env$opcats_spatial())
+      shiny::req(atlas_env$ices)
       
       Plot_opcats(leaflet::leafletProxy("map", session))
     })

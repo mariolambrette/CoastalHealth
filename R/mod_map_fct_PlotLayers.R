@@ -50,7 +50,7 @@ Plot_opcats <- function(map_proxy){
       options = pathOptions(pane = "overlay")
     ) %>%
     leaflet::fitBounds(
-      lng1 = atlas_env$bounds[1] %>% as.numeric() - 0.4, # Change these to proportions (e.g. 10% on either side)
+      lng1 = atlas_env$bounds[1] %>% as.numeric() - 0.4,
       lat1 = atlas_env$bounds[2] %>% as.numeric() - 0.4,
       lng2 = atlas_env$bounds[3] %>% as.numeric() + 0.4,
       lat2 = atlas_env$bounds[4] %>% as.numeric() + 0.4
