@@ -1,10 +1,10 @@
-Spatial:
+Waterbody data:
   Operational catchment outlines: ""
   Waterbody catchment outlines: ""
   Rivers: ""
   Lakes: ""
   Transitional and coastal operational catchments: ""
-  Ices rectangles: ""
+  ICES rectangles: ""
 
 Marine:
   Physical properties:

@@ -35,7 +35,7 @@ BaseMap <- function(){
     
     # Defines the view of the map when the app is launched
     leaflet::setView(lng = -1.4657, lat = 52.5648, 
-                     zoom = 7, 
+                     zoom = 7,
                      options = list(maxZoom = 25)) %>%
     
     # Add a pane for each category of layers that can be displayed.

@@ -76,6 +76,6 @@ If you wish to add additional data to the explorer, you can do so via a pull req
 ## Attribution/Copyright
 
 The Coastal Health Data Explorer is made available under the MIT open license.
-The data made available via the tool is subject to the data holder's licence restrictions. The majority of data is availbel under an Open Government License but users should should check any license retrictions upon individual datasets (via the probvided web links) before using/distributing them.
+The data made available via the tool is subject to the data holder's licence restrictions. The majority of data is available under an Open Government License but users should should check any license restrictions upon individual datasets (via the provided web links) before using/distributing them.
 
 

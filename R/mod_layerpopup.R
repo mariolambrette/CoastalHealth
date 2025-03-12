@@ -50,75 +50,122 @@ mod_layerpopup_server <- function(id){
       layers <- data.table::fread(system.file("extdata", "layer_urls.csv", package = "CoastalHealth")) %>%
         dplyr::filter(name %in% atlas_env$selected_layers)
       
-      output$table <- reactable::renderReactable({
-        createtable(layers, ns = ns)
-      })
       
-      # Define and show the modal dialog
-      shiny::showModal(
-        shiny::modalDialog(
-          title = "Selected layers",
-          size = "l",  # Large modal
-          easyClose = TRUE,  # Allow closing with Esc or clicking outside
-          footer = shiny::div(
-            class = "layerpopup-footer",
-            
-            shiny::tags$button(
-              type = "button",
-              class = "btn neut-btn",
-              "Download layer table",
-              onclick = paste0("Shiny.setInputValue('", ns("download_table"), "', Date.now(), {priority: 'event'})")
+      if (nrow(layers) > 0) {
+        output$table <- reactable::renderReactable({
+          createtable(layers, ns = ns)
+        })
+        
+        # Define and show the modal dialog
+        shiny::showModal(
+          shiny::modalDialog(
+            title = "Selected layers",
+            size = "l",  # Large modal
+            easyClose = TRUE,  # Allow closing with Esc or clicking outside
+            footer = shiny::div(
+              class = "layerpopup-footer",
+              
+             shiny::downloadButton(
+                outputId = ns("download_table"),
+                label = "Download layer table",
+                class = "btn neut-btn btn-allsf",
+                icon = NULL
+              ),
+              
+              shiny::tags$button(
+                type = "button",
+                class = "btn neut-btn btn-allsf",
+                "Download all layers to computer",
+                onclick = paste0("Shiny.setInputValue('", ns("all_download"), "', Date.now(), {priority: 'event'})")
+              ),
+              
+              shiny::tags$button(
+                type = "button",
+                class = "btn neut-btn",
+                "Load all with sf",
+                onclick = paste0("Shiny.setInputValue('", ns("all_sf_load"), "', Date.now(), {priority: 'event'})")
+              ),
+              
+              shiny::tags$button(
+                type = "button",
+                class = "btn quit-btn",
+                "Close",
+                onclick = "$('.modal').modal('hide')" # Hides the modal
+              ),
+              
+              shiny::tags$script(HTML("
+                Shiny.addCustomMessageHandler('triggerDownload', function(id) {
+                  let link = document.createElement('a');
+                  link.href = document.getElementById(id).href;
+                  link.click();
+                });
+              "))
+              
             ),
             
-            shiny::tags$button(
-              type = "button",
-              class = "btn neut-btn btn-allsf",
-              "Download all layers to computer",
-              onclick = paste0("Shiny.setInputValue('", ns("all_download"), "', Date.now(), {priority: 'event'})")
-            ),
-            
-            shiny::tags$button(
-              type = "button",
-              class = "btn neut-btn",
-              "Load all with sf",
-              onclick = paste0("Shiny.setInputValue('", ns("all_sf_load"), "', Date.now(), {priority: 'event'})")
-            ),
-            
-            shiny::tags$button(
-              type = "button",
-              class = "btn quit-btn",
-              "Close",
-              onclick = "$('.modal').modal('hide')" # Hides the modal
-            )
-            
-          ),
-          
-          # Modal content
-          shiny::tagList(
-            # Brief instructions
-            htmltools::p(
-              "The following layers were selected. You can use the links to 
+            # Modal content
+            shiny::tagList(
+              # Brief instructions
+              htmltools::p(
+                "The following layers were selected. You can use the links to 
               navigate to the source webpage for each layer, or use the links to 
               download the data directly. Additionally, you can use the blue 
               download buttons to load the selected layer directly into your R
               session as an sf object."
-            ),
-            # Render the table
-            shiny::div(
-              reactable::reactableOutput(ns("table"))
+              ),
+              htmltools::p(
+                style = "font-style: italic;",
+                "Note that data loaded into your R session will only become 
+              available once you close the app."
+              ),
+              
+              # Render the table
+              shiny::div(
+                reactable::reactableOutput(ns("table"))
+              )
             )
           )
         )
-      )
-      
-      
-
+      } else {
+        # Show warning modal when no layers are selected
+        shiny::showModal(
+          shiny::modalDialog(
+            title = "No layers selected",
+            size = "m",  # Medium modal
+            easyClose = TRUE,
+            footer = shiny::tags$button(
+              type = "button",
+              class = "btn quit-btn",
+              "Close",
+              onclick = "$('.modal').modal('hide')"
+            ),
+            
+            # Warning message content
+            shiny::div(
+              style = "text-align: center; padding: 20px;",
+              shiny::tags$i(class = "fa fa-exclamation-triangle", style = "font-size: 48px; color: #f39c12; margin-bottom: 15px;"),
+              htmltools::p(
+                style = "font-size: 18px; margin-top: 15px;",
+                "You have not selected any valid layers."
+              ),
+              htmltools::p(
+                "Please go back and select at least one layer."
+              )
+            )
+          )
+        )
+      }
       
       # Code to download layer table
-      shiny::observeEvent(input$download_table, {
-        print("clicked download table")
-      })
-      
+      output$download_table <- downloadHandler(
+        filename = function() {
+          paste0("selected_layers_", Sys.Date(), ".csv")
+        },
+        content = function(file) {
+          write.csv(download_tab(layers), file, row.names = FALSE)
+        }
+      )
+
       # Code to download individual sf
       shiny::observeEvent(input$load_layer_sf, {
         
@@ -132,14 +179,15 @@ mod_layerpopup_server <- function(id){
         if (length(input$load_layer_sf$url) > 1) {
           
           # If there is more than one url, load each one, combine them and assign
-          # the result ot the global environment
+          # the result to the global environment
           assign(
-            x     = input$load_layer_sf$id[[1]], 
+            x = input$load_layer_sf$id[[1]], 
             value = plyr::llply(
               input$load_layer_sf$url,
               sf::read_sf
             ) %>%
-              dplyr::bind_rows(), 
+              dplyr::bind_rows() %>%
+              sf::st_crop(., sf::st_as_sfc(atlas_env$bounds)), 
             envir = .GlobalEnv
           )
           

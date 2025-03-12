@@ -43,8 +43,9 @@ createtable <- function(layers, ns) {
       url_list = strsplit(url, ","),
       source_list = strsplit(source, ",")
     ) %>%
-    dplyr::select(name, source_list, url_list, sf_compatible, id, url, source, 
-                  browser_compatible, spatial_filtering, temporal_filtering)
+    dplyr::select(name, source_list, url_list, download_format, sf_compatible, id, url, source, 
+                  browser_compatible, spatial_filtering, temporal_filtering, 
+                  )
   
   # Extract a vector of all urls and for bulk processing by browser
   atlas_env$selected_urls_browser <- layers %>%
@@ -91,16 +92,30 @@ createtable <- function(layers, ns) {
           url <- layers$url[index]
           
           if (url != "NA (internal data)") {
-            # Generate clickable hyperlinks for each URL
-            links <- sapply(value, function(link) {
-              sprintf('<a href="%s" target="_blank" style="color: blue;">link</a>', link)
-            })
-            # Combine links into a single cell with line breaks
-            paste(links, collapse = "<br>")
+            
+            if (length(value) == 1) {
+              # Single URL - create a direct hyperlink
+              return(sprintf('<a href="%s" target="_blank" style="color: blue;">open source</a>', value))
+            } else {
+              # Multiple URLs - create a single clickable link that opens all in new tabs
+              urls_json <- jsonlite::toJSON(value, auto_unbox = TRUE)
+              js_function <- sprintf(
+                '<a href="#" onclick=\'(function() { 
+             var urls = %s; 
+             urls.forEach(function(url) { 
+               window.open(url, "_blank"); 
+             }); 
+             return false;
+           })()\' style="color: blue;">open all sources</a>',
+                urls_json
+              )
+              
+              return(js_function)
+            }
+            
           } else {
             return("NA")
           }
-
         },
         html = TRUE
       ),
@@ -113,23 +128,55 @@ createtable <- function(layers, ns) {
         vAlign = "top",
         cell = function(value, index) {
           
-          # check is link is browser download compatible
+          # check if link is browser download compatible
           browser_compatible <- layers$browser_compatible[index]
           
           if (browser_compatible == "T") {
             
-            # Generate clickable hyperlinks for each URL
-            links <- sapply(value, function(link) {
-              sprintf('<a href="%s" target="_blank" style="color: blue;">link</a>', link)
-            })
-            # Combine links into a single cell with line breaks
-            paste(links, collapse = "<br>")
-          
+            if (length(value) == 1) {
+              # Single URL case - just create a direct link
+              return(sprintf('<a href="%s" target="_blank" style="color: blue;">download</a>', value))
+            } else {
+              # Multiple URLs case - create a single link with an onClick handler
+              urls_json <- jsonlite::toJSON(value, auto_unbox = TRUE) # Ensure JSON is an array, not a string
+              js_function <- sprintf(
+                '<a href="#" onclick=\'(function() { 
+             var urls = %s; 
+             urls.forEach(function(url) { 
+               window.open(url, "_blank"); 
+             }); 
+             return false;
+           })()\' style="color: blue;">download all</a>',
+                urls_json
+              )
+              
+              return(js_function)
+            }
+            
           } else {
             return("NA")
           }
         },
         html = TRUE
+      ),
+      
+      download_format = reactable::colDef(
+        name = "Download format",
+        searchable = FALSE,
+        align = "left",
+        vAlign = "top",
+        cell = function(value, index) {
+          
+          # check is link is browser download compatible
+          browser_compatible <- layers$browser_compatible[index]
+          
+          
+          if (browser_compatible == "T") {
+            return(value)
+          } else {
+            return("NA")
+          }
+        }
       ),
       
       # sf download button
@@ -201,63 +248,4 @@ createtable <- function(layers, ns) {
       
     )
   )
-}
-
-
-#' Process urls to add variables
-#'  
-#' @description
-#' Helper function to process web urls to add variables such as opcat ids and 
-#' spatial and temporal extents
-#' 
-#' Variables should follow the below format:
-#' 
-#' **operational catchmnet id:** {opcat_id}
-#' **Spatial extent:** {xmin}, {xmax} etc.
-#' **Temporal extent:** {sd_YYYY-MM-DD}, {ed_YYYY-MM-DD}. Replace with the appropriate format to be used as a character string in R datetime processing functions
-#' 
-#' @param url A web url where any variables follow the above stated format
-#'
-#' @return Process urls as character strings
-#'
-#' @examples
-#' \dontrun{
-#'  process_url("https://environment.data.gov.uk/geoservices/datasets/6da82900
-#'  -d465-11e4-8cc3-f0def148f590/ogc/features/v1/collections/Saltmarsh_Extents_
-#'  and_Zonation/items?limit=300000&bbox={xmin},{ymin},{xmax},{xmin}")
-#' }
-#' 
-#' @noRd
-
-process_url <- function(url) {
-  
-  if (grepl("\\{opcat_id\\}", url)) { # Check if opcat_ids need to be added
-    
-    # Replace {opcat_id} with all the opcat ids
-    url <- paste0(
-      sapply(unique(atlas_env$trac$opcat_id), function(id) gsub("\\{opcat_id\\}", id, url)),
-      collapse = ","
-    )
-  }
-  
-  if (grepl("\\{mncat_id\\}", url)) { # Check if mncat_ids need to be added
-    
-    # Replace {mncat_id} with all the mncat ids
-    url <- paste0(
-      sapply(unique(isolate(atlas_env$opcats_spatial())$mncat_id), function(id) gsub("\\{mncat_id\\}", id, url)),
-      collapse = ","
-    )
-  }
-  
-  if ((grepl("\\{xmax\\}", url))) { # Check for spatial filtering
-    
-    # Replace with values from atlas_env$bounds
-    url <- gsub("\\{xmin\\}", atlas_env$bounds[[1]], url)
-    url <- gsub("\\{ymin\\}", atlas_env$bounds[[2]], url)
-    url <- gsub("\\{xmax\\}", atlas_env$bounds[[3]], url)
-    url <- gsub("\\{ymax\\}", atlas_env$bounds[[4]], url)
-  
-  }
-  return(url)
-  
 }

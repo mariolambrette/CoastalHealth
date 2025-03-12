@@ -14,8 +14,8 @@
 
 QuitApp <- function(){
   
-  # # Reset environment
-  # env_setup(reset = TRUE)
+  # Reset environment
+  env_setup(reset = TRUE)
   
   # Close the browser window
   shinyjs::runjs("window.close();")

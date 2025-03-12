@@ -43,9 +43,9 @@ Plot_opcats <- function(map_proxy){
     leaflet::addPolygons(
       data = atlas_env$opcats_spatial(),
       group = "opcats",
-      color = "black",
+      color = "#242424",
       opacity = 1,
-      weight = 2,
+      weight = 1,
       fillOpacity = 0.03,
       options = pathOptions(pane = "overlay")
     ) %>%
@@ -88,7 +88,7 @@ Plot_wbs_rivers <- function(map_proxy){
         data = atlas_env$wb_spatial$rivers %>%
           sf::st_as_sf(),
         color = "#2674c5",
-        weight = 2,
+        weight = 1,
         opacity = 1,
         fill = F,
         group = "rivers",
@@ -109,7 +109,7 @@ Plot_wbs_outlines <- function(map_proxy){
         data = atlas_env$wb_spatial$outlines %>%
           sf::st_as_sf(),
         color = "black",
-        weight = 1,
+        weight = 0.75,
         opacity = 1,
         dashArray = "4,4",
         fill = T,
@@ -172,7 +172,7 @@ Plot_ices <- function(map_proxy) {
       leaflet::addPolygons(
         data = atlas_env$ices,
         color = "#2674c5",
-        weight = 1,
+        weight = 0.75,
         opacity = 1,
         fill = TRUE,
         fillOpacity = 0.03,
@@ -191,7 +191,7 @@ Plot_trac <- function(map_proxy) {
       leaflet::addPolygons(
         data = atlas_env$trac,
         color = "#2674c5",
-        weight = 1,
+        weight = 0.75,
         opacity = 1,
         fill = TRUE,
         fillOpacity = 0.03,

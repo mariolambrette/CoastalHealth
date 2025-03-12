@@ -15,7 +15,7 @@
 #'    Name=emodnet:shellfish")
 #' }
 #' 
-#' @importFrom sf read_sf
+#' @importFrom sf read_sf st_crop st_as_sfc
 #' 
 #' @noRd
 
@@ -23,7 +23,8 @@ load_sf <- function(url, id) {
   
   assign(
     x     = id, 
-    value = sf::read_sf(url), 
+    value = sf::read_sf(url) %>%
+      sf::st_crop(., sf::st_as_sfc(atlas_env$bounds)), 
     envir = .GlobalEnv
   )
   
