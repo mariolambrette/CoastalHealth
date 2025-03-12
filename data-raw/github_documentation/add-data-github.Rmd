@@ -1,0 +1,73 @@
+---
+title: "Add data to the Coastal Health Data Explorer"
+output: github_document
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(CoastalHealth)
+```
+
+The Coastal Health Data Explorer relies on the url to a dataset's API being provided to it. The package authors included a number of data sources in the Explorer's initial release, but the list is by no means exhaustive. The ongoing usage of the Explorer relies on up-to-date data sources being added to the explorer, so if you know of a dataset that should be made available via the Coastal Health Data Explorer, this vignette will tell you how you can do that.
+
+## What data sources can I add?
+
+Any dataset that is publicly accessible via the internet can be added to the explorer, all you *need* is a URL and the name of the dataset. However, if the dataset you wish to add is accessible via an API, that will dramitcally increase its' ease of use via the Explorer by enabling automatic downloads of the dataset. If you can find an API accessible source for the dataset you wish to add that is always preferable.
+
+## I have a data source I want to add.. What now?
+
+**Requirements:** You will need a github account and git and RStudio installed on your computer. You should also be familiar with GitHub operations (e.g. forks, pull requests etc.). 
+
+If you do not have any of these, then please email us at [ml673@exeter.ac.uk](mailto:ml673@exeter.ac.uk) with details of the data you would like to add and we will endeavour to add it as soon as possible.
+
+If you are conformtable using Git pull requests, you can use them to add data to the explorer. You will need to make changes to the following files:
+
+#### inst/extdata/layer_urls.csv
+* *name:* The name of the data source you want to add (e.g. 'Marine currents' or 'Agricultural intensity').
+* *id:* An easy to understand id for the layer. This will be the variable name of the data layer when loaded into the user's R session and must not contain any spaces or start with a number. It must also be unique, please check it does not match an existing id.
+* *url:* An API or browser download URL for the data source. If your dataset is accessible via API and can be loaded with `sf::read_sf()` directly, this URL should be in the correct format to do that. The only caveat to this is when the API allows for spatial filtering via lat/lon bounding coordinates or temporal filtering via start and end dates. In these cases the values should be omitted and replaced with curly brackets `{}` enclosing the variable name. The format for variable names is given in the documentation for the `process_url()` function (R/mod_layerpopup_fct_createtable.R).
+* *source:* A URL to the source webpage for the dataset. When clicked this url should lead directly to the data's 'homepage'. For example, for the 'National Parks' layer, we provide [this URL](https://naturalengland-defra.opendata.arcgis.com/datasets/Defra::national-parks-england/about).
+* *sf_comptabile:* T/F, is the 'url' provided compatible with `sf::read_sf()` once any {} have been processed.
+* *browser_compatible:* T/F, is the 'url' provided compatible with web browser download. i.e. if the link is clicked or pasted into a web browser is the dataset instantly downloaded.
+* *spatial_filtering:* T/F, does the API url allow for spatial filtering of the dataset.
+* *temporal_filtering:* T/F, does the API url allow for temporal filtering of the dataset.
+
+#### inst/extdata/data_structure.yaml
+* This yaml file provides the structure for the data selection tree seen in the app's sidebar. As such all data layers present must be added to it. The data is structured as follows:
+ 
+```{}
+.
+├── Spatial
+├── Marine
+│   ├── Physical properties
+│   │   ├── Benthic
+│   │   └── Pelagic
+│   ├── Biota
+│   │   ├── Benthic
+│   │   └── Pelagic
+│   └── Human influences
+├── Land
+│   ├── Physical properties
+│   ├── Biota
+│   └── Human influences
+├── River
+│   ├── Physical properties
+│   ├── Biota
+│   └── Human influences
+└── Management areas
+```
+
+* Within the yaml file, keys that are followed by `""` indicate the names of available data layers in their respective category. In order to add your file you should go to the correct category add the name of the file **exactly** as it appears in the *name* column of the 'layer_urls.csv' file (see above), followed by a colon and empty double quotation marks (`""`).
+* If needed you can other categories/subcategories to the yaml file but please keep this to a minimum.
+ 
+Once you have edited these two files, save them and test the changes locally to see if the layer displays correctly in the selection menu and can be downloaded as intended. Once you are happy submit a Pull Request on GitHub and we will integrate your additions as quickly as possible.
+
+## Other changes
+
+We welcome any changes/suggestions you may want to make regarding the broader features of the app outside of simply adding new data sources. Please submit a GitHub issue or contact us via email ([ml673@exeter.ac.uk](mailto:ml673@exeter.ac.uk)) with your thoughts.
