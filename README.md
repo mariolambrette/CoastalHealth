@@ -21,11 +21,11 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 ## Installation
 
 You can install the development version of the Coastal Health Data
-Explorer like so:
+Explorer in R/RStudio like so:
 
 ``` r
 
-devtools::install_github("mariolambrette/CoastalHealth")
+devtools::install_github("mariolambrette/CoastalHealth", build_vignettes = TRUE)
 ```
 
 ## Run
@@ -42,23 +42,33 @@ run_app()
 1.  After running `run_app()` the Data Explorer will launch in a new tab
     in your browser
 2.  You will be presented with a map of England and Wales.
-3.  You can use the button in the bottom right corner of the screen to
-    select one or more EA management catchment areas of inteest.
-4.  The outline of the selected management catchments will be shown ot
+3.  You can use the button in the top left corner of the screen to
+    select one or more Environment Agency (EA) management catchment
+    areas of interest.
+4.  The outline of the selected management catchments will be shown to
     you and you can optionally use the sidebar to also render the
     rivers, lakes, waterbody outlines and the relevant marine area on
     the map.
 5.  You can use the ‘Select Data Layers’ tab in the sidebar to select
     data layers that you are interested in by navigating the menu and
     highlighting layers of interest.
-6.  Once you are happy with your selection you can click the confirm
+6.  Some layers contain temporal data. You can use the date range
+    selection in the sidebar to select a time period of interest. Where
+    possible, data will be filtered to this time period.
+7.  Once you are happy with your selection you can click the confirm
     button and you will be shown a table containing all the selected
     layers.
-7.  You can use the available buttons/hyperlinks to (1) navigate to the
-    data layer’s home webpage, (2) Load the layer into your active R
-    session, (3) Download the layer directly to your computer, (4)
+8.  You can use the available buttons/hyperlinks to (1) navigate to the
+    data layer’s home webpage, (2) load the layer into your active R
+    session, (3) download the layer directly to your computer, (4)
     perform the above actions in bulk for all selected layers and/or (5)
     download the table of layer names and urls.
+9.  When you have finished you can close the app and return to your R
+    session by either (1) closing the browser tab running the app or (2)
+    pressing the ‘Quit’ button in the top left of the screen. If the app
+    crashes or closes in some other way, you can still relaunch it but
+    may find some odd behaviour on start up. If this happens, close the
+    app ‘properly’ and relaunch it.
 
 Where possible (i.e. where the data provider allows) data will be
 spatially cropped to the management catchment area(s) and time period
@@ -82,11 +92,11 @@ suggestions for improvement. If you have any suggestions, you can submit
 an issue or a pull request.
 
 For more information on the architecture of the data explorer please see
-[here](https://github.com/mariolambrette/CoastalHealth/tree/main/vignettes/app-structure.html)
+[here](https://github.com/mariolambrette/CoastalHealth/blob/main/data-raw/github_documentation/app-structure-github.md)
 
 If you wish to add additional data to the explorer, you can do so via a
 pull request by following [these
-intructions](https://github.com/mariolambrette/CoastalHealth/tree/main/vignettes/add-data.html)
+intructions](https://github.com/mariolambrette/CoastalHealth/blob/main/data-raw/github_documentation/add-data-github.md)
 
 ## Attribution/Copyright
 
