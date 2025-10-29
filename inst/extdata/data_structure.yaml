@@ -24,6 +24,9 @@ Marine:
       Saltmarsh and saline reed beds: ""
     Pelagic:
       None available: ""
+  Monitoring:
+    Tide gauge stations: ""
+    Tide gauge readings: ""
 
 Land:
   Pysical properties:
@@ -32,7 +35,7 @@ Land:
     Agriculture:
       None available: ""
     Other:
-      None available: ""
+      Flood defense assets: ""
   Biota:
     Priority habitats:
       Ancient woodland: ""
@@ -47,11 +50,22 @@ River:
     Chemistry:
       None available: ""
     Physics/hydrology:
-      None available: ""
+      Hydrology gauging stations: ""
+      Hydrology readings: ""
+      Rainfall monitoring stations: ""
+      Rainfall readings: ""
   Human influences:
     None available: ""
   Biota:
-    None available: ""
+    Fish count surveys: ""
+    Invertebrate surveys: ""
+    Ecology classifications: ""
+  Monitoring:
+    Flood monitoring stations: ""
+    Flood monitoring readings: ""
+    Flood monitoring measures: ""
+    Flood warnings: ""
+    Flood warning areas: ""
 
 Management areas:
   Biosphere reserves: ""
