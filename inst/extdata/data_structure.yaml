@@ -25,17 +25,14 @@ Marine:
     Pelagic:
       None available: ""
   Monitoring:
-    Tide gauge stations: ""
-    Tide gauge readings: ""
 
 Land:
-  Pysical properties:
+  Physical properties:
     AIMS land: ""
   Human influences:
     Agriculture:
       None available: ""
     Other:
-      Flood defense assets: ""
   Biota:
     Priority habitats:
       Ancient woodland: ""
@@ -50,10 +47,6 @@ River:
     Chemistry:
       None available: ""
     Physics/hydrology:
-      Hydrology gauging stations: ""
-      Hydrology readings: ""
-      Rainfall monitoring stations: ""
-      Rainfall readings: ""
   Human influences:
     None available: ""
   Biota:
