@@ -24,7 +24,6 @@ Marine:
       Saltmarsh and saline reed beds: ""
     Pelagic:
       None available: ""
-  Monitoring: ""
 
 Land:
   Physical properties:
@@ -32,7 +31,6 @@ Land:
   Human influences:
     Agriculture:
       None available: ""
-    Other: ""
   Biota:
     Priority habitats:
       Ancient woodland: ""
@@ -46,7 +44,6 @@ River:
   Physical properties:
     Chemistry:
       None available: ""
-    Physics/hydrology: ""
   Human influences:
     None available: ""
   Biota:
@@ -56,6 +53,7 @@ River:
   Monitoring:
     Flood monitoring stations: ""
     Flood monitoring readings: ""
+    Flood stations with latest levels: ""
     Flood monitoring measures: ""
     Flood warnings: ""
     Flood warning areas: ""
