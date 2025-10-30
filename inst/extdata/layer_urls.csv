@@ -30,17 +30,7 @@ Special protection areas (SPAs),spas,https://services.arcgis.com/JJzESW51TqeY9ua
 Sites of special scientific interest (SSSIs),sssis,https://services.arcgis.com/JJzESW51TqeY9uat/arcgis/rest/services/SSSI_England/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json,https://naturalengland-defra.opendata.arcgis.com/datasets/Defra::sites-of-special-scientific-interest-england/about,geojson,T,T,F,F
 Ramsar sites,ramsars,https://services.arcgis.com/JJzESW51TqeY9uat/arcgis/rest/services/Ramsar_England/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json,https://naturalengland-defra.opendata.arcgis.com/datasets/Defra::ramsar-england/about,geojson,T,T,F,F
 Flood monitoring stations,flood_stations,https://environment.data.gov.uk/flood-monitoring/id/stations,https://environment.data.gov.uk/flood-monitoring/doc/reference,geojson,T,T,T,F
-Flood monitoring readings,flood_readings,https://environment.data.gov.uk/flood-monitoring/id/stations/{station_id}/readings,https://environment.data.gov.uk/flood-monitoring/doc/reference,geojson,T,T,F,T
-Flood monitoring measures,flood_measures,https://environment.data.gov.uk/flood-monitoring/id/measures,https://environment.data.gov.uk/flood-monitoring/doc/reference,geojson,T,T,T,F
+Flood monitoring readings,flood_readings,https://environment.data.gov.uk/flood-monitoring/id/stations/{station_id}/readings,https://environment.data.gov.uk/flood-monitoring/doc/reference,geojson,F,T,F,T
+Flood monitoring measures,flood_measures,https://environment.data.gov.uk/flood-monitoring/id/measures,https://environment.data.gov.uk/flood-monitoring/doc/reference,geojson,F,T,T,F
 Flood warnings,flood_warnings,https://environment.data.gov.uk/flood-monitoring/id/floods,https://environment.data.gov.uk/flood-monitoring/doc/reference,geojson,T,T,T,F
 Flood warning areas,flood_areas,https://environment.data.gov.uk/flood-monitoring/id/floodAreas,https://environment.data.gov.uk/flood-monitoring/doc/reference,geojson,T,T,T,F
-Hydrology gauging stations,hydro_stations,https://environment.data.gov.uk/hydrology/id/stations,https://environment.data.gov.uk/hydrology/doc/reference,geojson,T,T,T,F
-Hydrology readings,hydro_readings,https://environment.data.gov.uk/hydrology/id/stations/{station_id}/readings,https://environment.data.gov.uk/hydrology/doc/reference,geojson,T,T,F,T
-Fish count surveys,fish_counts,https://environment.data.gov.uk/ecology/api/v1/surveys,https://environment.data.gov.uk/ecology/explorer/,geojson,T,T,T,T
-Invertebrate surveys,invertebrate_surveys,https://environment.data.gov.uk/ecology/api/v1/surveys?survey-type=INV,https://environment.data.gov.uk/ecology/explorer/,geojson,T,T,T,T
-Ecology classifications,ecology_classifications,https://environment.data.gov.uk/ecology/api/v1/classifications,https://environment.data.gov.uk/ecology/explorer/,geojson,T,T,T,T
-Flood defense assets,flood_assets,https://environment.data.gov.uk/asset-management/v1/assets,https://environment.data.gov.uk/asset-management/,geojson,T,T,T,F
-Tide gauge stations,tide_stations,https://environment.data.gov.uk/hydrology/id/stations?type=TideGauge,https://environment.data.gov.uk/hydrology/doc/reference,geojson,T,T,T,F
-Tide gauge readings,tide_readings,https://environment.data.gov.uk/hydrology/id/stations/{station_id}/readings,https://environment.data.gov.uk/hydrology/doc/reference,geojson,T,T,F,T
-Rainfall monitoring stations,rainfall_stations,https://environment.data.gov.uk/flood-monitoring/id/stations?type=Rainfall,https://environment.data.gov.uk/flood-monitoring/doc/reference,geojson,T,T,T,F
-Rainfall readings,rainfall_readings,https://environment.data.gov.uk/flood-monitoring/id/stations/{station_id}/readings,https://environment.data.gov.uk/flood-monitoring/doc/reference,geojson,T,T,F,T
