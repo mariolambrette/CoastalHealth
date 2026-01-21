@@ -205,7 +205,11 @@ createtable <- function(layers, ns) {
                          {ts: Date.now(), id: ", id_json, ", url: ", url_json, "}, 
                          { priority: 'event' })")
             )
-          }
+          } else {
+            shiny::tags$p(
+              style = "color: red;",
+              "Not sf compatible."
+            )
         }
       ),
       
