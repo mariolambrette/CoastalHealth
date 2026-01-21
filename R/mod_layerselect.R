@@ -20,15 +20,15 @@ mod_layerselect_ui <- function(id) {
       class = "green-btn"
     ),
     
-    shiny::dateRangeInput(
-      ns("date_range"),
-      label = "Select date range",
-      start = "2014-01-01",
-      end   = Sys.Date(),
-      format = "yyyy-mm-dd",
-      separator = " to ",
-      width = "100%"
-    ),
+#    shiny::dateRangeInput(
+#      ns("date_range"),
+#      label = "Select date range",
+#      start = "2014-01-01",
+#      end   = Sys.Date(),
+#      format = "yyyy-mm-dd",
+#      separator = " to ",
+#      width = "100%"
+#    ),
     
     # Selection tree with search option and checkboxes
     shinyTree::shinyTree(
