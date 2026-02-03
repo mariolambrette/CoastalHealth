@@ -211,7 +211,8 @@ createtable <- function(layers, ns) {
               "Not sf compatible."
             )
         }
-      ),
+      }  
+    ),
       
       id = reactable::colDef(
         show = FALSE
