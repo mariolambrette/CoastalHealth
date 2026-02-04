@@ -197,21 +197,10 @@ CEFAS:
       Quota Stocks Data D3UKMS: ''
       Readme Columnheaders Quotastocks: ''
       Readme Columnheaders Shellfishnonquota: ''
-      Shellfish Non Quota Stocks Data D3UKMS: ''
-    ? Fisheries Sensitivity Mapping and Displacement Modelling (FISMADIM) - Fisheries
-      Context Providing Information (Average 2012-2021)
-    : Read Me Gear Codes: ''
-    ? Fisheries Sensitivity Mapping and Displacement Modelling (FISMADIM) - Fisheries
-      Sensitivity Index 1 - Data Product - Average for - 2012 to 2021
-    : Read Me Gear Codes: ''
-    ? Fisheries Sensitivity Mapping and Displacement Modelling (FiSMaDiM) - Fisheries
-      Sensitivity Index 2 - Data Product - Average for - 2012 to 2021
-    : Read Me Gear Codes: ''
+      Shellfish Non Quota Stocks Data D3UKMS: ""
+      Read Me Gear Codes: ''
     Fisheries Sensitivity Mapping and Displacement Modelling (FISMADIM) - Fishing Effort Data Product - 2012 to 2021:
       Read Me Gear Codes: ''
-    ? Fisheries Spawning and Nursery Areas 'Fishery Sensitivity Maps in British Waters'
-      Geographic Information System Layers - 1998
-    : Nursery Grounds 1998: ''
       Read Me: ''
       Spawning Grounds 1998: ''
     Highly Mobile Fish Species Distributions in UK Waters:
@@ -247,9 +236,6 @@ CEFAS:
       Rspb Forage Fish Arcgis: ''
       Rspb Forage Fish Qgis: ''
       Tif Files: ''
-    ? Trophic Interaction Data and Taxonomic Information for Fish Predators and Their
-      Prey Spanning the North East Atlantic and Its Marginal Seas Between - 1836-2013
-    : Column Prey Taxonomy for Diet Matrix: ''
       Diet Matrix for Feeding Guild Assessment: ''
       Readme: ''
       Row Predator Taxonomy for Diet Matrix: ''
@@ -262,10 +248,7 @@ CEFAS:
     UK Inshore Fishing Activities Intensity - Geographic Information System Data Layer - 2011-2012:
       MB0117Inshore Fishing Data: ''
   Aquaculture, Shellfish & Fish Health:
-    ? A Data Product Describing Carbon and Nitrogen Impacts of Seaweed and Mussel
-      Aquaculture Estimated Using Life Cycle Impact Assessment
-    : Mussel Lca Gwp Outputs: ''
-      Mussel Lca Mep Outputs: ''
+        Mussel Lca Mep Outputs: ''
       Mussel Lca Simapro: ''
       Mussels Lca Simapro: ''
       Readme: ''
@@ -276,56 +259,21 @@ CEFAS:
       Seaweed Biodiesel Centralised Inventoryof Emissions: ''
     Antibiotic Susceptibility Results for Pathogen Yersinia Ruckeri 1967 - 2023:
       Ast Data Yersinia Ruckeri CEFAS: ''
-    ? Catchment Boundaries for England and Wales Based on Existing Fish Health Inspectorate
-      (Fish Health Inspectorate) Catchments - British National Grid (BNG) - 2023
-    : Generation of the New Layer of Fhi Catchments Based on Ceh Integrated Hydrological Units: ''
-      Ihucatchments Fhi WFD Ew Bng: ''
-    ? Catchment Boundaries for England and Wales Based on Existing Fish Health Inspectorate
-      (Fish Health Inspectorate) Catchments 2023 (WGS84)
-    : Generation of the New Layer of Fhi Catchments Based on Ceh Integrated Hydrological Units: ''
+        Ihucatchments Fhi WFD Ew Bng: ''
       Ihucatchments Fhi WFD Ew Wgs: ''
-    ? Catchment Boundaries for England, Scotland and Wales Based on Existing Fish
-      Health Inspectorate (Fish Health Inspectorate) and Scottish Environment Protection
-      Agency Catchments (BNG) 2023
-    : Ihucatchments Fhi WFD Gb Bng: ''
-    ? Catchment Boundaries for England, Scotland and Wales Based on Existing Fish
-      Health Inspectorate (Fish Health Inspectorate) and Scottish Environment Protection
-      Agency Catchments (WGS84) 2023
-    : Ihucatchments Fhi WFD Gb Wgs: ''
-    ? Catchment Boundaries for Scotland Based on Scottish Environment Protection Agency
-      (Scottish Environment Protection Agency) Catchments (WGS84) 2023
-    : Generation of the New Layer of Fhi Catchments Based on Ceh Integrated Hydrological Units: ''
       Ihucatchments Fhi WFD Sc Wgs: ''
-    ? Catchment Boundaries for Scotland Based on Scottish Environment Protection Agency
-      (Scottish Environment Protection Agency) Catchments British National Grid (BNG)
-      2023
-    : Ihucatchments Fhi WFD Sc Bng: ''
-    Data Products Covering Precipitation and Temperature Suitable for Purposes of Aquaculture Under Climate Change Scenarios:
+      Data Products Covering Precipitation and Temperature Suitable for Purposes of Aquaculture Under Climate Change Scenarios:
       Disease Mapping Data Precipitation: ''
       Disease Mapping Data Tiffs: ''
     England and Wales - Shellfish Classification Zones of England and Wales:
       Combined CZ Rectangle: ''
       Combined CZ Region: ''
-    ? Marine Biotoxin Data Measured Within Crab and Lobster Flesh Taken from Samples
-      Gathered from the Northumberland Coast and 2022 - 2021
-    : Complete Results Summary: ''
       Read Me for Results Summary: ''
-    ? Results of Aquanet-Mod for Projecting the Economic Burden of the World Organisation
-      for Animal Health (World Organisation for Animal Health) Listed Diseases Across
-      English and Welsh Salmonid Industry
-    : Fallow Period: ''
-      Fishery Cull: ''
+        Fishery Cull: ''
       N Sims: ''
       Scenarios: ''
       Sensitivity Tests: ''
-    ? Scores Representing Magallana Gigas (Pacific Oyster) Environmental Suitability
-      and Introduction / Spread Risk for UK Waters Based on Data from 2013 to 2015.
-    : C7699 Grid Scores Suitability Risk: ''
   Pollution:
-    ? Abundance of Microlitter (Including Microplastics) in Riverine Samples (Sediment,
-      Surface Waters and Biota) at Selected Locations Across the Orange-Senqu River
-      Basin and Associated Land Use Data - 2021
-    : All Microlitter Data JBS3 Nbp Readme Column Headers: ''
       List Microlitter Biota: ''
       List Microlitter Sediment: ''
       List Microlitter Surface Waters: ''
@@ -390,26 +338,17 @@ CEFAS:
       Seafloor Marine Litter MSFD 2017 v2: ''
     UK Disposal Site Layer:
       Disposal Sites25 v16: ''
-    ? Volumes, Dredged Area Measurements and Estimated Contaminants of Material Disposed
-      at Licensed Offshore Sites Around the UK Coast from - 2000 to 2020
-    : Datapaper Contaminant Load: ''
       Datapaper Contaminant Load Readme: ''
       Datapaper Licence Details: ''
       Datapaper Licence Details Readme: ''
       Datapaper Licence Disposal Return Quantities: ''
       Disposal Sites Layer November 2020: ''
   Physical & Chemical Oceanography:
-    ? Acoustic Backscatter Profile Data for Mixed Layer Depth for the Peltic Surveys
-      in the Eastern Celtic Seas and English Channel from - 2012 to 2019
-    : Coastal Health Hydro Vu AT200 Continuous River Water Sampling River Mole 20241113 20250331: ''
       Peltic Survey Strata Bristol Channel: ''
       Peltic Survey Strata English Channel North: ''
       Svprofiles.Sv: ''
     Coastal Temperature Network Data - 1892 to 2018:
       Coastal Temperature Network Data 1892 to 2018: ''
-    ? Continuous River Water Quality Monitoring Data from the Rivers Taw and Torridge,
-      North Devon, UK Sampled Between November 2024 and March - 2025
-    : Coastal Health Hydro Vu AT200 Continuous River Water Sampling Upper Torridge 20241113 20250331: ''
       Coastal Health Hydro Vu AT600 Continuous River Water Sampling Barnstaple Yeo 20241113 20250331: ''
       Coastal Health Hydro Vu AT600 Continuous River Water Sampling Lower Taw 20241113 20250331: ''
       Coastal Health Hydro Vu AT600 Continuous River Water Sampling Lower Torridge 20241113 20250331: ''
@@ -521,9 +460,8 @@ CEFAS:
     Biotope (Macrofaunal Assemblage) Map and Associated Confidence Layer Based on Grab and Core Data from - 1976 to 2020:
       Macro Assemblages: ''
       Macro Assemblages Confidence: ''
-    Ichthyoplankton Analysis Data from the UK's Western Coastal Shelf - 2016:
-      Ichthyoplankton Analysis Data Western Coastal Shelf 2016: ''
-      Icthyoplankton Survey Description Infographic: ''
+    Ichthyoplankton Analysis Data Western Coastal Shelf 2016: ''
+    Icthyoplankton Survey Description Infographic: ''
     Irish Sea Fish Egg Production Survey - 2010:
       Irish Sea 2010 Fish Egg Production Survey Plankton Analysis Data: ''
       Irish Sea 2010 Fish Egg Production Survey Station Details: ''
@@ -573,15 +511,8 @@ CEFAS:
       Posedion Phytoplankton Abundance Bydivision: ''
       Posedion Phytoplankton Abundance Byspecies: ''
       Posedion Phytoplankton Size: ''
-    ? Plankton Imager Zooplankton Data, Acoustic Fish Biomass Estimates, Chlorophyll
-      Measurements and CTD Data from the Celtic Sea and Western English Channel in
-      October - 2018
-    : Indicator Paper Chlorophyll Acoustics Ctddata: ''
       Indicator Paper Plankton Imager Data: ''
       Read Me: ''
-    ? Potentially Toxic Phytoplankton Counts from Water Samples Collected from Shellfish
-      Growing Areas in Jersey from - 2004 to 2019
-    : Jersey Toxic Algae Annual Results 2004-2019: ''
     Predicting Marine Phytoplankton Community Size Structure from Empirical Relationships with Remotely Sensed Variables:
       Primary Production Data with Finer Scale Environmentals: ''
     Quantitative Sediment Composition Predictions for the North-West European Continental Shelf:
@@ -603,9 +534,6 @@ CEFAS:
     West Gabbard Zooplankton Abundance Time Series Monitoring Using ZooScan from - 2016 to 2022:
       West Gabbard Zooplankton 2016 2020 Osparformat: ''
       Wgabbard CEND0221-0222 Abundance Results Final: ''
-    ? Zooplankton Abundance Data Derived from the Plankton Imager System from the
-      Western English Channel and Eastern Irish Sea from - 2016 to 2019
-    : CEFAS Plankton Imager Data 2016 2019: ''
   Climate Change, Conservation & Human Impacts:
     Climate Projections of Marine Non-Native Species in North-West Europe:
       Climate Projections Input Data Doi: ''
@@ -619,21 +547,10 @@ CEFAS:
       North Sea Man Made Structures Turbine: ''
     'Georeferenced Data of Wrecks in the North Sea: 2016':
       North Sea Man Made Structures Wreck: ''
-    ? Hydrological Sections for England, Scotland and Wales with Associated River
-      Catchment 2023, Water Framework Directive (Water Framework Directive) Waterbody
-      and Regional Information (WGS84).
-    : Generation of the New Layer of Fhi Catchments Based on Ceh Integrated Hydrological Units: ''
       Ihu Fhi Geopackage: ''
-    ? Hydrological Sections for England, Scotland and Wales with Associated River
-      Catchment 2023, Water Framework Directive (Water Framework Directive) Waterbody
-      and Regional Information British National Grid (BNG).
-    : Generation of the New Layer of Fhi Catchments Based on Ceh Integrated Hydrological Units: ''
       Ihu Fhi Geopackage: ''
     Modelled Projections of Habitat for Commercial Fish Around North-Western Europe Under Climate Change, - 2020 to 2060:
       Enm Climate Projections: ''
-    ? Modelled Projections of Habitat for Fish Species Feeding Guilds Around North-Western
-      Europe Under Climate Change, - 2010 to 2095
-    : Modelled Projections of Habitat for Fish Species Feeding Guilds: ''
     Non-Indigenous Species Introduction Records in UK Waters - 2003 to 2020:
       Nis Introductions UK Data Ukms: ''
       Read Me Column Headers: ''
@@ -645,12 +562,6 @@ CEFAS:
       Spiked: ''
     Pacific Oyster Physiology Data with Different Microalgal Diets - 2020-2022:
       Pacific Oyster Physiology 2020-2022: ''
-    ? Saltmarsh Areas in the Marine Protected Areas - South West - Marine Management
-      Organisation - Marine Plan Area Calculated - 2014
-    : Saltmarsh Mpas Sw Mmo Plan Area: ''
-    ? Seahorse Species Predicted Habitat Distributions and Associated Environmental
-      Data Layers Covering the Shelf Seas Surrounding the UK
-    : Bathy.Tif.Aux: ''
       Bluemel Et Al 2023 Seahorse Habitat Distribution CEFAS: ''
       Dist Co.Tif.Aux: ''
       Distance from Seagrass.Tif.Aux: ''
@@ -661,9 +572,6 @@ CEFAS:
       Kriging Chla Min Winter Smooth.Tif.Aux: ''
       Kriging Sst Summer Max.Tif.Aux: ''
       Kriging Sst Winter Min.Tif.Aux: ''
-    ? Species Distribution Model Agreement Data for 19 Vulnerable Marine Species Under
-      Future Climate Change Scenarios in Northwest Europe from - 2020 to 2100
-    : Model Input Data Read Me: ''
       Model Performance: ''
       Model Performance Read Me: ''
       Species: ''
@@ -999,9 +907,6 @@ EMODnet:
       Hexachlorobenzene (Measurements Percentages): ''
       Hexachlorobenzene (Median Values): ''
     Beach Litter - Other Sources - Beaches Locations & Litter List Used: ''
-    ? Beach Litter - Other Sources - Median Number of Cigarette (Without UNEP_MARLIN)
-      Related Items Normalised per 100m & to 1 Survey
-    : ''
     Beach Litter - Other Sources - Number of Surveys & Temporal Coverage per Beach: ''
     CDI Marine Litter, Including Plastics Records: ''
     Micro Litter - Other Specific Protocols - Density per Net Normalised in Grams per km¶ý: ''
