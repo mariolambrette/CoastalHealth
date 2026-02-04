@@ -1,958 +1,1202 @@
 BGS:
-  BGS Geology 625k Bedrock: ""
-  BGS Geology 625k Dykes: ""
-  BGS Geology 625k Faults: ""
-  BGS Geology 625k Superficial: ""
-  BGS Offshore Backscatter Polygons & Data: ""
-  BGS Offshore Bedrock Summary Lithologies: ""
-  BGS Offshore Core Sample Analysis Data: ""
-  BGS Offshore Geophysical Data - Gravity: ""
-  BGS Offshore Geophysical Survey Lines: ""
-  BGS Offshore Geophysical Survey Shot Points: ""
-  BGS Offshore Geotechnical Data: ""
-  BGS Offshore Hydrocarbon Wells: ""
-  BGS Offshore Oil & Gas Industry Site Surveys: ""
-  BGS Offshore Quaternary Deposits Summary Lithologies: ""
-  BGS Offshore Sample Geochemical Data: ""
-  BGS Offshore SEA Areas: ""
-  BGS Offshore SEA Point Data: ""
-  BGS Offshore SEA Polygon Data: ""
-  BGS Offshore Seabed Sediment Data: ""
-  Offshore Sample Activity Data: ""
-  Offshore Survey Overview: ""
-CEFAS:
-  Bbicfra BT4 - 25 Jan 2022 - Haul by Spp: ""
-  Bbicfra OT4 - 07 Mar 2022 - Haul by Spp: ""
-  Bbicn Spa OT4 - 25 Jan 2022 - Haul by Spp: ""
-  Bbicpor OT4 - 25 Jan 2022 - Haul by Spp: ""
-  Bbics Spa OT1 - 25 Jan 2022 - Haul by Spp: ""
-  Bbics Spa OT4 - 25 Jan 2022 - Haul by Spp: ""
-  Cseng BT1 - 25 Jan 2022 - Haul by Spp: ""
-  Cseng BT3 - 25 Jan 2022 - Haul by Spp: ""
-  Cseng BT3 - Bchannel - 25 Jan 2022 - Haul by Spp: ""
-  Csfra OT4 - 25 Jan 2022 - Haul by Spp: ""
-  Csire OT4 - 25 Jan 2022 - Haul by Spp: ""
-  Csnir OT1 - 25 Jan 2022 - Haul by Spp: ""
-  Csnir OT4 - 25 Jan 2022 - Haul by Spp: ""
-  Cssco OT1 - 25 Jan 2022 - Haul by Spp: ""
-  Cssco OT1 - Hist - 25 Jan 2022 - Haul by Spp: ""
-  Cssco OT4 - 25 Jan 2022 - Haul by Spp: ""
-  Cssco OT4 - Hist - 25 Jan 2022 - Haul by Spp: ""
-  Gnsbel BT3 - 25 Jan 2022 - Haul by Spp: ""
-  Gnseng BT3 - 25 Jan 2022 - Haul by Spp: ""
-  Gnsfra OT4 - 25 Jan 2022 - Haul by Spp: ""
-  Gnsger BT3 - 25 Jan 2022 - Haul by Spp: ""
-  Gnsint OT1 - 25 Jan 2022 - Haul by Spp - Part 1: ""
-  Gnsint OT1 - 25 Jan 2022 - Haul by Spp - Part 2: ""
-  Gnsint OT1 - Channel - 25 Jan 2022 - Haul by Spp: ""
-  Gnsint OT3 - 25 Jan 2022 - Haul by Spp - Part 1: ""
-  Gnsint OT3 - 25 Jan 2022 - Haul by Spp - Part 2: ""
-  Gnsint OT3 - 25 Jan 2022 - Haul by Spp - Part 3: ""
-  Gnsint OT3 - 25 Jan 2022 - Haul by Spp - Part 4: ""
-  Gnsint OT3 - 25 Jan 2022 - Haul by Spp - Part 5: ""
-  Gnsnet BT3 - 25 Jan 2022 - Haul by Spp: ""
-  Read Me Column Headers: ""
-  Wasco OT3 - 25 Jan 2022 - Haul by Spp: ""
-  Wasco OT3 - Hist - 25 Jan 2022 - Haul by Spp: ""
-  Waspa OT3 - 25 Jan 2022 - Haul by Spp: ""
-  Mussel Lca Gwp Outputs: ""
-  Mussel Lca Mep Outputs: ""
-  Mussel Lca Simapro: ""
-  Mussels Lca Simapro: ""
-  Readme: ""
-  Readme Seaweed: ""
-  Seaweed Biochar Centralised Impacts: ""
-  Seaweed Biochar Centralised Inventoryof Emissions: ""
-  Seaweed Biodiesel Centralised Impacts: ""
-  Seaweed Biodiesel Centralised Inventoryof Emissions: ""
-  All Microlitter Data JBS3 Nbp Readme Column Headers: ""
-  List Microlitter Biota: ""
-  List Microlitter Sediment: ""
-  List Microlitter Surface Waters: ""
-  Locations: ""
-  Lu Data: ""
-  Coastal Health Hydro Vu AT200 Continuous River Water Sampling River Mole 20241113 20250331: ""
-  Peltic Survey Strata Bristol Channel: ""
-  Peltic Survey Strata English Channel North: ""
-  Svprofiles.Sv: ""
-  Ast Data Yersinia Ruckeri CEFAS: ""
-  Biomass Data with Functional Group and Environmentals: ""
-  CEND/07/2007 Station Details: ""
-  CEND/08/2009 Station Details: ""
-  CEND/09/2010 Station Details: ""
-  CEND/10/2008 Station Details: ""
-  CEND/14/2007 Station Details: ""
-  Epifauna Genus Data: ""
-  Infauna Genus Data: ""
-  Individual Whelk Data: ""
-  Individual Whelk Data Readme: ""
-  Macro Assemblages: ""
-  Macro Assemblages Confidence: ""
-  Spatial Statistics Charts - All Regions Charts: ""
-  Spatial Statistics Charts - Pelagic Data: ""
-  Spatial Statistics Charts - Region Iv - Motor Line Data: ""
-  Spatial Statistics Charts - Region Iv - Motor Seine Data: ""
-  Spatial Statistics Charts - Region Iv - Motor Trawl Data: ""
-  Spatial Statistics Charts - Region Iv - Sail Trawl Data: ""
-  Spatial Statistics Charts - Region Iv - Steam Line Data: ""
-  Spatial Statistics Charts - Region Iv - Steam Seine Data: ""
-  Spatial Statistics Charts - Region Iv - Steam Trawl Data: ""
-  Spatial Statistics Charts - Region Va - Trawl Data: ""
-  Spatial Statistics Charts - Region Vb - Trawl Data: ""
-  Spatial Statistics Charts - Region Vi - Motor Seine Data: ""
-  Spatial Statistics Charts - Region Vi - Motor Trawl Data: ""
-  Spatial Statistics Charts - Region Vi - Steam Trawl Data: ""
-  Spatial Statistics Charts - Region Vii - Motor Seine Data: ""
-  Spatial Statistics Charts - Region Vii - Motor Trawl Data: ""
-  Spatial Statistics Charts - Scottish Data: ""
-  Spatial Statistics Charts - Tonnage Data: ""
-  'Technical Report #128': ""
-  Generation of the New Layer of Fhi Catchments Based on Ceh Integrated Hydrological Units: ""
-  Ihucatchments Fhi WFD Ew Bng: ""
-  Ihucatchments Fhi WFD Ew Wgs: ""
-  Ihucatchments Fhi WFD Gb Bng: ""
-  Ihucatchments Fhi WFD Gb Wgs: ""
-  Ihucatchments Fhi WFD Sc Wgs: ""
-  Ihucatchments Fhi WFD Sc Bng: ""
-  Climate Projections Input Data Doi: ""
-  Maxent Outputs 2055: ""
-  Maxent Outputs 2085: ""
-  Coastal Temperature Network Data 1892 to 2018: ""
-  Coastal Health Hydro Vu AT200 Continuous River Water Sampling Upper Torridge 20241113 20250331: ""
-  Coastal Health Hydro Vu AT600 Continuous River Water Sampling Barnstaple Yeo 20241113 20250331: ""
-  Coastal Health Hydro Vu AT600 Continuous River Water Sampling Lower Taw 20241113 20250331: ""
-  Coastal Health Hydro Vu AT600 Continuous River Water Sampling Lower Torridge 20241113 20250331: ""
-  Coastal Health Hydro Vu AT600 Continuous River Water Sampling River Caen 20241113 20250331: ""
-  Dapstom Ices View: ""
-  Dapstom View: ""
-  Disease Mapping Data Precipitation: ""
-  Disease Mapping Data Tiffs: ""
-  Contents Table: ""
-  Hypoxia Tolerance (Pcrit) in Fish: ""
-  Dissolved Oxygen in UK Coastal and Transitional Waters Readme: ""
-  Dissolved Oxygen UK Coastal&Transition Raw2nd Clean: ""
-  Dissolved Oxygen UK Raw1st Clean: ""
-  Report 14 Eastern Irish Sea Razor Clam 2009 10: ""
-  Read Me: ""
-  Transitional Water Adult Eel Data WFD Surveys England Final: ""
-  Transitional Water Adult Eel Surveys Data: ""
-  Combined CZ Rectangle: ""
-  Combined CZ Region: ""
-  Quota Stocks Data D3UKMS: ""
-  Readme Columnheaders Quotastocks: ""
-  Readme Columnheaders Shellfishnonquota: ""
-  Shellfish Non Quota Stocks Data D3UKMS: ""
-  Read Me Gear Codes: ""
-  Nursery Grounds 1998: ""
-  Spawning Grounds 1998: ""
-  Getm Ersem Decadal Avs: ""
-  North Sea Man Made Structures Platform: ""
-  North Sea Man Made Structures Turbine: ""
-  North Sea Man Made Structures Wreck: ""
-  Glaven and Stiffkey Estuarine and Coastal Investigation Jun 2016 Sep 2017 Nutrients: ""
-  Stiffkey 04 17 07 17 08 17: ""
-  Glaven and Stiffkey Estuarine and Coastal Investigation 2016 2017 Nutrients: ""
-  Glaven and Stiffkey Estuarine and Coastal Investigation 2016 2017 Phytoplankton: ""
-  Stiffkey 1 16: ""
-  Stiffkey 1 17: ""
-  Stiffkey 2 16: ""
-  Glaven and Stiffkey Estuarine and Coastal Investigation Jun 2017 Sep 2017 Phytoplankton: ""
-  Glaven and Stiffkey Estuarine and Coastal Investigation 2016 2017 Microbiology: ""
-  MPA Half Rectangle Layer: ""
-  MPA Quarter Rectangle Layer: ""
-  MPA Rectangle Layer: ""
-  Seabed Drifters Dataseries 15032019 Dataseries: ""
-  Seabed Drifters Dataseries 15032019 Seabed Count: ""
-  Ihu Fhi Geopackage: ""
-  Ichthyoplankton Analysis Data Western Coastal Shelf 2016: ""
-  Icthyoplankton Survey Description Infographic: ""
-  Data Metal Inputs Indicator Assessment: ""
-  Rid Data Input of Hg Cd Pb Indicator Assessment: ""
-  Report 63 Inshore Longline Survey 2019 2020: ""
-  UKAssessment2020-Fish&Shellfish Stock Data: ""
-  Cefasdatadoi 130 V2: ""
-  Datafield Description-Fish&Shellfish Stock Assessment2021data: ""
-  Irish Sea 2010 Fish Egg Production Survey Plankton Analysis Data: ""
-  Irish Sea 2010 Fish Egg Production Survey Station Details: ""
-  Shoreham Tyne Thames Macrobenthos 2000 2006: ""
-  Shoreham Tyne Thames Macrobenthos 2000 2006 Dw C E Mo F: ""
-  Shoreham Tyne Thames Macrobenthos 2000 2006 Dw C Events: ""
-  Shoreham Tyne Thames Macrobenthos 2000 2006 Dw C Occurrences: ""
-  Litter Matrix: ""
-  Readme Column Headers Litter Matrix: ""
-  Readme Litter Code: ""
-  Station Locations: ""
-  Complete Results Summary: ""
-  Read Me for Results Summary: ""
-  Peltic 2017 Mesozooplankton Abundance Data: ""
-  Peltic 2018 Mesozooplankton Abundance Data: ""
-  Peltic 2019 Mesozooplankton Abundance Data: ""
-  Peltic 2020 Mesozooplankton Abundance Data: ""
-  Peltic 2021 Mesozooplankton Abundance Data: ""
-  Peltic 2022 Mesozooplankton Abundance Data: ""
-  Peltic 2023 Mesozooplankton Abundance Data: ""
-  Mp Abundance Mussel Data: ""
-  Mp Abundance Mussel Fluorescence Data: ""
-  Mp Fluorescent Item Descriptions: ""
-  Mp Item Descriptions: ""
-  Mps Readme: ""
-  Mpyn Readme: ""
-  Rinse Item Descriptions: ""
-  Rinse Results: ""
-  Condition Index: ""
-  Length Weight: ""
-  Lysomal Data Jb: ""
-  Column Headers Readme: ""
-  Abundance of Mps in Seafloor Sediment Csemp 2013 2021: ""
-  Floating Microplastic Abundances: ""
-  Raw Data: ""
-  UK Seafloor Sediment Ftir: ""
-  Enm Climate Projections: ""
-  Modelled Projections of Habitat for Fish Species Feeding Guilds: ""
-  Analysed Spim 199801 200109: ""
-  Analysed Spim 200110 200506: ""
-  Analysed Spim 200507 200903: ""
-  Analysed Spim 200904 201212: ""
-  Analysed Spim 201301 201506: ""
-  Analysed Spim Individual Years: ""
-  Spm: ""
-  Nis Introductions UK Data Ukms: ""
-  Nis Established Species Spread UK: ""
-  Cgigas Spiked Results 20250516 075014: ""
-  Readme for Real-Time Results Tables: ""
-  Spiked: ""
-  ME5301 2009 Organic Carbon Data: ""
-  ME5301 2010 Organic Carbon Data: ""
-  ME5301 2011 Organic Carbon Data: ""
-  ME5301 2009 Sediment Oxygen Profiles: ""
-  ME5301 2009 Sediment Oxygen Profiles Adjusted Profiles: ""
-  ME5301 2010 Oxygen Penetration Depth: ""
-  ME5301 2011 Sediment Oxygen Data: ""
-  ME5301 2011 Sediment Oxygen Data Saturation Percentage: ""
-  ME5301 2011 Sediment Oxygen Profiles: ""
-  ME5301 2009 Sediment Profile Image Analysis: ""
-  ME5301 2010 Sediment Profile Image Analysis: ""
-  North Sea 2004 Cod Spawning Study Plankton Data: ""
-  North Sea 2004 Cod Spawning Study Station Data: ""
-  Phytopigment Abbreviations: ""
-  Phytopigment Surveys: ""
-  Phytopigments All 09012010 27102019: ""
-  Phytopigments Main 09012010 27102019: ""
-  Phytopigments All 05102020 26102023: ""
-  Phytopigments Main 05102020 26102023: ""
-  Nutrient Data for Autumn 2018 and Spring 2019 in the Celtic Sea: ""
-  All Hauls: ""
-  Sensitive Fish Occurrence FC1: ""
-  Supplementary Read Me File: ""
-  Pacific Oyster Physiology 2020-2022: ""
-  Fish Pfas Results: ""
-  Fish Pfas Results Header Explanation - Readme: ""
-  Phytoplankton Abundance Data for Spring and Autumn of 2018 in the Celtic Sea: ""
-  Posedion Phytoplankton Abundance Bydivision: ""
-  Posedion Phytoplankton Abundance Byspecies: ""
-  Posedion Phytoplankton Size: ""
-  Indicator Paper Chlorophyll Acoustics Ctddata: ""
-  Indicator Paper Plankton Imager Data: ""
-  Jersey Toxic Algae Annual Results 2004-2019: ""
-  Primary Production Data with Finer Scale Environmentals: ""
-  Sediment Composition Predictions Qgis Layer Formatting: ""
-  Sediment Predictions: ""
-  Fallow Period: ""
-  Fishery Cull: ""
-  N Sims: ""
-  Scenarios: ""
-  Sensitivity Tests: ""
-  Saltmarsh Mpas Sw Mmo Plan Area: ""
-  C7699 Grid Scores Suitability Risk: ""
-  Ifca Surveys - Additional Data: ""
-  Ifca Surveys - Catch Data: ""
-  Ifca Surveys - Economic Data: ""
-  Ifca Surveys - Interviews: ""
-  Ifca Surveys - Site Visits: ""
-  Holding b'C6C2BF91-006D-40CB-9952-C5279DEEB886': ""
-  Celtic Sea Seafloor Litter Aldfg: ""
-  North Sea Seafloor Litter Aldfg: ""
-  Readme Heading Descriptors: ""
-  Seafloor Marine Litter MSFD 2017 Readme: ""
-  Seafloor Marine Litter MSFD 2017 v2: ""
-  Bathy.Tif.Aux: ""
-  Bluemel Et Al 2023 Seahorse Habitat Distribution CEFAS: ""
-  Dist Co.Tif.Aux: ""
-  Distance from Seagrass.Tif.Aux: ""
-  Hippocampus Guttulatus Maxent.Asc: ""
-  Hippocampus Hippocampus Maxent.Asc: ""
-  Hippocampus Sp. Maxent.Asc: ""
-  Kriging Chla Max Summer Smooth Current.Tif: ""
-  Kriging Chla Min Winter Smooth.Tif.Aux: ""
-  Kriging Sst Summer Max.Tif.Aux: ""
-  Kriging Sst Winter Min.Tif.Aux: ""
-  Trend: ""
-  CEFAS Seawater Temperature Data 1880 - 2014: ""
-  CEFAS SWTdata20170707source01: ""
-  CEFAS SWTdata20170707source02: ""
-  CEFAS SWTdata20170707source03: ""
-  CEFAS SWTdata20170707source04: ""
-  CEFAS SWTdata20170707source05: ""
-  CEFAS SWTdata20170707source06: ""
-  CEFAS SWTdata20170707source07: ""
-  CEFAS SWTdata20170707source08: ""
-  CEFAS SWTdata20170707source09: ""
-  CEFAS SWTdata20170707source10: ""
-  CEFAS SWTdata20170707source11: ""
-  CEFAS SWTdata20170707source12: ""
-  CEFAS SWTdata20170707source13: ""
-  CEFAS SWTdata20170707source14: ""
-  CEFAS SWTdata20170707source15: ""
-  CEFAS SWTdata20170707source16: ""
-  CEFAS SWTdata20170707source17: ""
-  Sediment Organic Carbon 1996 2015 Column Header Descriptions V1.0: ""
-  Sediment Organic Carbon 1996 2015 V1.0: ""
-  Candyfloss 2014 2015: ""
-  Candyfloss Ssb: ""
-  CELTDEEP2L 2014 2015: ""
-  CELTDEEP2LANDER Ssb: ""
-  CELTDEEP2 2014 2015: ""
-  CELTDEEP2 Ssb: ""
-  Eastceltdeep Ssb: ""
-  Eceltdeep 2014 2014: ""
-  Easthaigfras Ssb: ""
-  Ehaigfras 2014 2015: ""
-  Nymphbank 2014 2014: ""
-  Nymphbank Ssb: ""
-  Smart Buoy Phytoplankton Data 2001 to 2017: ""
-  Smart Buoy Phytoplankton Data 2001 to 2017 Dw C E Mo F: ""
-  Smart Buoy Phytoplankton Data 2001 to 2017 Dw C Events: ""
-  Smart Buoy Phytoplankton Data 2001 to 2017 Dw C Occurrences: ""
-  Smart Buoy Phytoplankton Data 2001 to 2017 Osparformat: ""
-  Smart Buoy Phytoplankton Data 2018 to 2019 Osparformat: ""
-  Smart Buoy Phytoplankton Data 2018 to 2019 V2: ""
-  Smartbuoy Phytoplankton Data 2020 to Aug 2023: ""
-  Nursery Data 2010: ""
-  Nursery Grounds 2010: ""
-  Spawning Data 2010: ""
-  Spawning Grounds 2010: ""
-  Rspb Forage Fish Arcgis: ""
-  Rspb Forage Fish Qgis: ""
-  Tif Files: ""
-  Model Input Data Read Me: ""
-  Model Performance: ""
-  Model Performance Read Me: ""
-  Species: ""
-  Abiotic Factors Sampling Sites 1997 1998: ""
-  Inshore Nematode Copepod Presence 1997 1998: ""
-  Offshore Nematode Copepod Presence 1997 1998: ""
-  Abiotic Factors: ""
-  Nematode Assemblages: ""
-  Column Prey Taxonomy for Diet Matrix: ""
-  Diet Matrix for Feeding Guild Assessment: ""
-  Row Predator Taxonomy for Diet Matrix: ""
-  Disposal Sites25 v16: ""
-  UK Ices Data Limited Fish Stock Assessment Data: ""
-  Ices Fish Stock and Shellfish Stock Assessment Data 2017 Column Descriptions: ""
-  Spi Ct Stock data2 281117: ""
-  UK Ices Fish Stock and Shellfish Stock Assessment Data 2017: ""
-  MB0117Inshore Fishing Data: ""
-  Bb P50 2018 Ukms: ""
-  Bb P50 2021 Ukms: ""
-  Percentages of Region Areas Exceeding Sound Levels: ""
-  Stephens&Diesing2015 Component & Class Predictions Rasters: ""
-  Stephens&Diesing2015 Folk Sediment Class Shapefile: ""
-  Ferrybox Data v1.01: ""
-  Datapaper Contaminant Load: ""
-  Datapaper Contaminant Load Readme: ""
-  Datapaper Licence Details: ""
-  Datapaper Licence Details Readme: ""
-  Datapaper Licence Disposal Return Quantities: ""
-  Disposal Sites Layer November 2020: ""
-  Wave Net - Last 48 Hours of Data: ""
-  West Gabbard Zooplankton 2016 2020 Osparformat: ""
-  Wgabbard CEND0221-0222 Abundance Results Final: ""
-  CEFAS Plankton Imager Data 2016 2019: ""
+  Geology:
+    BGS Geology 625k Bedrock: ''
+    BGS Geology 625k Dykes: ''
+    BGS Geology 625k Faults: ''
+    BGS Geology 625k Superficial: ''
+  Offshore:
+    BGS Offshore 250k Backscatter Polygons & Data: ''
+    BGS Offshore 250k Bedrock Summary Lithologies: ''
+    BGS Offshore 250k Core Sample Analysis Data: ''
+    BGS Offshore 250k Geophysical Data - Gravity: ''
+    BGS Offshore 250k Geophysical Survey Lines: ''
+    BGS Offshore 250k Geophysical Survey Shot Points: ''
+    BGS Offshore 250k Geotechnical Data: ''
+    BGS Offshore 250k Hydrocarbon Wells: ''
+    BGS Offshore 250k Oil & Gas Industry Site Surveys: ''
+    BGS Offshore 250k Quaternary Deposits Summary Lithologies: ''
+    BGS Offshore 250k Sample Geochemical Data: ''
+    BGS Offshore 250k Strategic Environmental Assessment Areas: ''
+    BGS Offshore 250k Strategic Environmental Assessment Point Data: ''
+    BGS Offshore 250k Strategic Environmental Assessment Polygon Data: ''
+    BGS Offshore 250k Seabed Sediment Data: ''
+    BGS Offshore Sample Activity Data: ''
+    BGS Offshore Survey Overview: ''
 CaBA:
-  Water Management Areas: ""
-  American Mink (Neovison vison) occurences points: ""
-  American Mink (Neovison vison) occurences polygons: ""
-  Big River Watch Data: ""
-  CaBA Catchment Parterships: ""
-  Chinese Mitten Crab (Eriocheir sinensis) occurrence points: ""
-  Chinese Mitten Crab (Eriocheir sinensis) occurrence polygons: ""
-  Coastal Partnerships Network: ""
-  Cockle Farm (S-AQ-1): ""
-  Current Bathing Water Status: ""
-  EA River Flood Gauges with CaBA catchments: ""
-  EA Water Quality Continuous Monitoring Sonde Historical Locations (Up to March 2022): ""
-  EA Water Quality Sampling Sites (Open WIMS): ""
-  Environment Agency Water Quality Sampling Sites: ""
-  Environmental Pollution Incidents (Category 1 and 2) 2001 to 2023: ""
-  Environmental Pollution Incidents (Category 1 and 2) CaBA Identity: ""
-  Eutrophic Lakes Sensitive Areas: ""
-  Eutrophic Rivers Sensitive Areas: ""
-  Flood Defences: ""
-  Giant Hogweed (Heracleum mantegazzianum) occurences: ""
-  Hard Clam Cultivation (S-AQ-1): ""
-  High Intensity Fish Nursery Grounds: ""
-  High Intensity Fish Spawning Grounds: ""
-  Himalayan Balsam (Impatiens glandulifera) occurences: ""
-  Historic Flood Map: ""
-  Historical Oyster Habitat and Fisheries in English Coastal Waters¶ÿ: ""
-  Important Bird Areas (RSPB): ""
-  Japanese Knotweed (Fallopia japonica) occurences: ""
-  Lake Sites of Special Scientific Interest: ""
-  LIDAR Composite DTM (Digital Terrain Model): ""
-  Manila Clam Cultivation (S-AQ-1): ""
-  'Modular River Survey: MoRPh Rivers Citizen Science': ""
-  Mussel Cultivation (S-AQ-1): ""
-  National Nature Reserves (England): ""
-  National Seagrass Layer: ""
-  Native Oyster Bed Potential areas: ""
-  Native Oyster Cultivation (S-AQ-1): ""
-  Neptune Coastline Campaign Land Use 1965: ""
-  Neptune Coastline Campaign Land Use 2014: ""
-  New Zealand Pigmyweed (Crassula helmsii) occurrences points: ""
-  New Zealand Pigmyweed (Crassula helmsii) occurrences polygons: ""
-  Nitrates Sensitive Areas: ""
-  Open River Network with CaBA ID: ""
-  Pacific Oyster Cultivation (S-AQ-1): ""
-  Principal Salmon Rivers of England and Wales: ""
-  Risk of Flooding from Surface Water Extents: ""
-  River Barriers: ""
-  River Canal and SWT Waterbody Classifications: ""
-  River Obstacles: ""
-  Riverfly Monitoring Targets and Triggers: ""
-  Riverfly Survey Sites: ""
-  Rivers Trusts Boundaries: ""
-  SAGIS Mean River Phosphate concentration mg/L All Sources -  points: ""
-  SAGIS Mean River Phosphate concentration mg/L All Sources - charts: ""
-  SAGIS Mean River Phosphate concentration mg/L from Arable and Livestock Farming: ""
-  SAGIS Mean River Phosphate concentration mg/L from Diffuse sources: ""
-  SAGIS Mean River Phosphate concentration mg/L from Highways: ""
-  SAGIS Mean River Phosphate concentration mg/L from Industrial Discharges: ""
-  SAGIS Mean River Phosphate concentration mg/L from Intermittent Discharges: ""
-  SAGIS Mean River Phosphate concentration mg/L from Other Sources: ""
-  SAGIS Mean River Phosphate concentration mg/L from Septic Tanks: ""
-  SAGIS Mean River Phosphate concentration mg/L from Sewage Treatment Works: ""
-  SAGIS Mean River Phosphate concentration mg/L from Urban run off: ""
-  SEPARATE - All sources of Nitrate: ""
-  SEPARATE - All sources of Phosphorus: ""
-  SEPARATE - All sources of Sediment: ""
-  SEPARATE - Dissolved phosphorus to rivers in England and Wales: ""
-  Shellfish Protected Waters 2021: ""
-  Shellfisheries and associated catchments: ""
-  Signal Crayfish (Pacifastacus leniusculus) occurrences points: ""
-  Statutory Main River Map: ""
-  Storm Overflows - Event Duration Monitoring 2019: ""
-  Storm Overflows - Event Duration Monitoring 2020: ""
-  Storm Overflows - Event Duration Monitoring 2021: ""
-  Storm Overflows - Event Duration Monitoring 2022: ""
-  Storm Overflows - Event Duration Monitoring 2023: ""
-  Storm Overflows - Event Duration Monitoring 2024: ""
-  Water Company Sewer Storm Overflow Under Investigation: ""
-  Wildlife Trust Regional Boundaries: ""
-Crown Estate:
-  'Aggregates Site Agreements ': ""
-  'Carbon Capture and Storage Site Agreements ': ""
-  Celtic Sea Floating Offshore Wind - Area of Interest: ""
-  Celtic Sea Floating Offshore Wind - Refined Areas of Search: ""
-  'Fixed Wind Key Resource Areas ': ""
-  Future of Offshore Wind - Regional Areas of Potential Opportunity: ""
-  'Mining Site Agreements ': ""
-  'Natural Gas Storage Pipeline Agreements ': ""
-  'Natural Gas Storage Site Agreements ': ""
-  Tidal Stream Cable Agreements: ""
-  Tidal Stream Site Agreements: ""
-  Wind Cable Agreements: ""
-  Wind Site Agreements: ""
-EMODnet:
-  Aggregate Extraction Areas: ""
-  Aggregate Extraction Locations: ""
-  All DDT Measurements Counts per Year: ""
-  Antifoulants - Tributyltin (Measurements Counts) All Years: ""
-  Antifoulants - Tributyltin (Measurements Counts) per Year: ""
-  Antifoulants - Tributyltin (Median Values): ""
-  Antifoulants - Triphenyltin (Measurements Counts) All Years: ""
-  Antifoulants - Triphenyltin (Measurements Counts) per Year: ""
-  Antifoulants - Triphenyltin (Median Values): ""
-  Aquaculture sites: ""
-  Beach Litter - Other Sources - Beaches Locations & Litter List Used: ""
-  ? Beach Litter - Other Sources - Median Number of Cigarette (Without UNEP_MARLIN)
-    Related Items Normalised per 100m & to 1 Survey
-  : ""
-  Beach Litter - Other Sources - Number of Surveys & Temporal Coverage per Beach: ""
-  Benzo(a)pyrene Measurements Counts per Year: ""
-  Biogenic Substrate in European Waters - Points (2025): ""
-  Biogenic Substrate in European Waters - Polygons (2025): ""
-  CDI Acidity Records: ""
-  CDI Chlorophyll Records: ""
-  CDI Dissolved Gasses Records: ""
-  CDI Hydrocarbons Records: ""
-  CDI Marine Litter, Including Plastics Records: ""
-  CDI Metals and Metalloids Records: ""
-  CDI N+P Nutrients Records: ""
-  CDI Organic Matter Records: ""
-  CDI Organohalogens Records: ""
-  CDI Organometals Records: ""
-  CDI Pesticides Records: ""
-  CDI Radionuclides Records: ""
-  CDI Silicates Records: ""
-  Contaminants Monitored Matrices All Years: ""
-  Contaminants Monitored Matrices per Year: ""
-  Desalination Plants: ""
-  Dredge Spoil Dumping (Points): ""
-  Dredge Spoil Dumping (Polygons): ""
-  Dumped Munitions (Points): ""
-  Dumped Munitions (Polygons): ""
-  ECoSS - Database of Annotated Data: ""
-  Emerald Network polygon: ""
-  EU Fisheries and fishing intensity: ""
-  EU Marine Nationally Designated Areas: ""
-  EU Maritime Spatial Planning: ""
-  'EU Military Areas ': ""
-  EU Shellfish Aquaculture Licenced Sites: ""
-  EU Waste at Ports (m3/tonnes): ""
-  European Bathymetry Contours 2022: ""
-  European Dredging Overview: ""
-  European Shellfish Production: ""
-  European Wind Farms (Points): ""
-  European Wind Farms (Polygons): ""
-  First Sales of Fish by Species: ""
-  Fish Catches by FAO Fishery Statistical Areas: ""
-  Fishing Effort by FAO Areas/GFCM Subareas and Country: ""
-  Fishing Effort by FAO Areas/GFCM Subareas and Vessel Type: ""
-  Fishing Quotas by FMZs: ""
-  Aquaculture - Freshwater Production: ""
-  Heavy Metals - Cadmium (Measurements Counts) All Years: ""
-  Heavy Metals - Cadmium (Measurements Counts) per Year: ""
-  Heavy Metals - Cadmium (Measurements Percentages): ""
-  Heavy Metals - Cadmium (Median Values): ""
-  Heavy Metals - Lead (Measurements Counts) All Years: ""
-  Heavy Metals - Lead (Measurements Counts) per Year: ""
-  Heavy Metals - Lead (Measurements Percentages): ""
-  Heavy Metals - Lead (Median Values): ""
-  Heavy Metals - Mercury (Measurements Counts) All Years: ""
-  Heavy Metals - Mercury (Measurements Counts) per Year: ""
-  Heavy Metals - Mercury (Measurements Percentages): ""
-  Heavy Metals - Mercury (Median Values): ""
-  Heavy Metals - Nickel (Measurements Counts) All Years: ""
-  Heavy Metals - Nickel (Measurements Counts) per Year: ""
-  Heavy Metals - Nickel (Measurements Percentages): ""
-  Heavy Metals - Nickel (Median Values): ""
-  Heritage Ship Wrecks: ""
-  Hydrocarbons (PAH) - Anthracene (Measurements Counts) All Years: ""
-  Hydrocarbons (PAH) - Anthracene (Measurements Counts) per Year: ""
-  Hydrocarbons (PAH) - Anthracene (Median Values): ""
-  Hydrocarbons (PAH) - Benzo(a)pyrene (Measurements Counts) All Years: ""
-  Hydrocarbons (PAH) - Benzo(a)pyrene (Measurements Counts) per Year: ""
-  Hydrocarbons (PAH) - Benzo(a)pyrene (Measurements Percentages): ""
-  Hydrocarbons (PAH) - Benzo(a)pyrene (Median Values): ""
-  Hydrocarbons (PAH) - Fluoranthene (Measurements Counts) All Years: ""
-  Hydrocarbons (PAH) - Fluoranthene (Measurements Counts) per Year: ""
-  Hydrocarbons (PAH) - Fluoranthene (Measurements Percentages): ""
-  Hydrocarbons (PAH) - Fluoranthene (Median Values): ""
-  Hydrocarbons (PAH) - Naphthalene (Measurements Counts) All Years: ""
-  Hydrocarbons (PAH) - Naphthalene (Measurements Counts) per Year: ""
-  Hydrocarbons (PAH) - Naphthalene (Median Values): ""
-  Lighthouses: ""
-  Aquaculture - Macroalgae production: ""
-  Main Ports and Vessel Traffic: ""
-  Micro Litter - Other Specific Protocols - Density per Net Normalised in Grams per km¶ý: ""
-  Micro Litter - Other Specific Protocols - Density per Net Normalised per km¶ý: ""
-  Micro Litter - Other Specific Protocols - Density per Net Normalised per m¶ü: ""
-  Micro Litter - Other Specific Protocols - Nets Location & Mesh Size Used: ""
-  Micro Litter - Other Specific Protocols - Size of Litter per Net: ""
-  Micro Litter - Other Specific Protocols - Spatial Distribution of the Sampling Effort (Period 2017-2022): ""
-  Micro Litter - Other Specific Protocols - Type of Litter per Net: ""
-  Micro Litter - Research and Monitoring Protocols - Density per Net Normalised in Grams per km¶ý: ""
-  Micro Litter - Research and Monitoring Protocols - Density per Net Normalised per km¶ý: ""
-  Micro Litter - Research and Monitoring Protocols - Density per Net Normalised per m¶ü: ""
-  Micro Litter - Research and Monitoring Protocols - Nets Location & Mesh Size Used: ""
-  Micro Litter - Research and Monitoring Protocols - Size of Litter per Net: ""
-  Micro Litter - Research and Monitoring Protocols - Spatial Distribution of Litter Density Normalised per km¶ý: ""
-  Micro Litter - Research and Monitoring Protocols - Spatial Distribution of the Sampling Effort (Period 2017-2022): ""
-  Micro Litter - Research and Monitoring Protocols - Type of Litter per Net: ""
-  Aquaculture - Microalgae Production: ""
-  MSFD marine regions and sub regions: ""
-  Natura 2000: ""
-  Nuclear Power Plants: ""
-  Ocean Energy - Project Locations: ""
-  Ocean Energy - Test Sites: ""
-  Oil and Gas Boreholes: ""
-  Oil and Gas Offshore Installations: ""
-  Pesticides and Biocides - DDT-DDE-DDD (Measurements Counts) All Years: ""
-  Pesticides and Biocides - DDT-DDE-DDD (Measurements Counts) per Year: ""
-  Pesticides and Biocides - DDT-DDE-DDD (Measurements Percentages): ""
-  Pesticides and Biocides - DDT-DDE-DDD (Median Values): ""
-  Pesticides and Biocides - Hexachlorobenzene (Measurements Counts) All Years: ""
-  Pesticides and Biocides - Hexachlorobenzene (Measurements Counts) per Year: ""
-  Pesticides and Biocides - Hexachlorobenzene (Measurements Percentages): ""
-  Pesticides and Biocides - Hexachlorobenzene (Median Values): ""
-  Physics - Absolute Sea Level Trends - SONEL: ""
-  Physics - European Impulsive Noise Events Registry: ""
-  Physics - Global Sea Level Anomalies - ATLAS: ""
-  Physics - Global Sea Level Anomalies - PSMSL: ""
-  Physics - in situ European river gauging stations data platforms: ""
-  Physics - in situ SST data platforms: ""
-  Physics - in situ Water Salinity data platforms: ""
-  Physics - in situ waves data platforms: ""
-  Physics - in situ Wind data platforms: ""
-  Physics - Near Real Time Sea Level - 60m: ""
-  Physics - North Sea Concentration of total suspended matter: ""
-  Physics - Registry of Continuous Noise Monitoring Sites: ""
-  Pipelines: ""
-  Power Cables - DE BSH-CONTIS: ""
-  Power Cables - FR SHOM: ""
-  Power Cables - NL Rijkswaterstaat: ""
-  Power Cables - NO NVE: ""
-  Seafloor Litter - Composition of Litter According to Material Categories in Percent per Trawl: ""
-  Seafloor Litter - Density per Trawl Normalised per km¶ý: ""
-  Seafloor Litter - Fishing Related Items Density Normalised per km¶ý: ""
-  Seafloor Litter - Plastic Bags Density Normalised per km¶ý: ""
-  Seafloor Litter - Spatial Distribution of Fishing Related Items Density Normalised per km¶ý: ""
-  Seafloor Litter - Spatial Distribution of Litter Density Normalised per km¶ý: ""
-  Seafloor Litter - Spatial Distribution of Plastic Bags Density Normalised per km¶ý: ""
-  Seafloor Litter - Spatial Distribution of the Sampling Effort (Period 2017-2022): ""
-  Seafloor Litter - Trawls Locations: ""
-  Shellfish Protected Areas Under the Water Framework Directive: ""
-  Aquaculture - Spirulina Production: ""
-  State of European Bathing Waters: ""
-  Telecommunication Cables - DE BSH-CONTIS: ""
-  Telecommunication Cables - ES CICA: ""
-  Telecommunication Cables - FR SHOM: ""
-  Telecommunication Cables - FR SIGCables: ""
-  Telecommunication Cables - NL Rijkswaterstaat: ""
-  Telecommunication Cables - UK OGA: ""
-  Temporal Turnover in European Macrobenthos Communities: ""
-  UNESCO World Heritage Convention: ""
-  'Urban Waste Water Treatment Discharge points ': ""
-  Waste Waster Treatment Plants: ""
-  World Database on Marine Protected Areas: ""
-  Worldwide Wreck Locations (UK Hydrographic Office): ""
-Environment Agency:
-  EA Bathing Water Profiles: ""
-  EA Bathing Water Risk Predictions: ""
-  EA Bathing Water Samples - Latest: ""
-  EA Bathing Water Short Term Pollution Risk: ""
-  EA Bathing Water Advice Against Bathing: ""
-  EA Bathing Water Pollution Incidents: ""
-  EA Bathing Waters - All: ""
-  EA Bathing Waters - Coastal: ""
-  EA Bathing Waters - Inland: ""
-  EA Ecology Observable Properties: ""
-  EA Ecology Observation Types: ""
-  EA Ecology Observations: ""
-  EA Ecology Sites - All: ""
-  EA Ecology Sites - With Properties: ""
-  EA Ecology Species: ""
-  EA Ecology Surveys - All: ""
-  EA Ecology Taxa: ""
-  EA Flood Areas - All: ""
-  EA Flood Measures - All: ""
-  EA Flood Readings - Flow Latest: ""
-  EA Flood Readings - Latest All: ""
-  EA Flood Readings - Level Latest: ""
-  EA Flood Readings - Today: ""
-  EA Flood Stations - Active: ""
-  EA Flood Stations - All: ""
-  EA Flood Stations - Coastal: ""
-  EA Flood Stations - Flow: ""
-  EA Flood Stations - Groundwater: ""
-  EA Flood Stations - Level: ""
-  EA Flood Stations - Tidal: ""
-  EA Flood Warnings - Active: ""
-  EA Flood Warnings - All Current: ""
-  EA Hydrology Measures - All: ""
-  EA Hydrology Measures - Flow: ""
-  EA Hydrology Measures - Level: ""
-  EA Hydrology Stations - Active: ""
-  EA Hydrology Stations - All: ""
-  EA Hydrology Stations - Ammonium: ""
-  EA Hydrology Stations - Conductivity: ""
-  EA Hydrology Stations - Dissolved Oxygen: ""
-  EA Hydrology Stations - Flow: ""
-  EA Hydrology Stations - Groundwater: ""
-  EA Hydrology Stations - Level: ""
-  EA Hydrology Stations - Nitrate: ""
-  EA Hydrology Stations - pH: ""
-  EA Hydrology Stations - Rainfall: ""
-  EA Hydrology Stations - Temperature: ""
-  EA Hydrology Stations - Turbidity: ""
-  EA Rainfall Measures - All: ""
-  EA Rainfall Readings - Latest: ""
-  EA Rainfall Readings - Today: ""
-  EA Rainfall Stations - All: ""
-  EA Tide Gauge Measures - All: ""
-  EA Tide Gauge Readings - Latest: ""
-  EA Tide Gauge Readings - Today: ""
-  EA Tide Gauge Stations - All: ""
-  EA Tide Gauge Stations - mAOD: ""
-  Lakes: ""
-  Operational catchment outlines: ""
-  Rivers: ""
-  Transitional and coastal operational catchments: ""
-  Waterbody catchment outlines: ""
-Food Standards Agency:
-  FSA Approved Establishments Catalogue: ""
-  FSA Food Alerts: ""
-  FSA Food Hygiene Business Types: ""
-  FSA Food Hygiene Ratings - Authorities: ""
-  FSA Food Hygiene Ratings - Establishments: ""
-  FSA Food Hygiene Ratings Values: ""
-Historic England:
-  Protected wrecks: ""
-ICES:
-  Cetacean sightings all years: ""
-  Cetacean sightings per grid and year: ""
-  Cetacean species per grid and year: ""
-  Cetacean species richness per grid and year: ""
-  Cetacean survey effort (good conditions) per grid and year: ""
-  ICES rectangles: ""
-Met Office:
-  HadUk Monthly Precipitation Observations 1991-2020 12km: ""
-  HadUk Annual Precipitation Observations 1991-2020 12km: ""
-  HadUk Monthly Precipitation Observations 1991-2020 2km: ""
-  HadUK Annual Count of 10mm Rainfall days 1991-2020 2km: ""
-  HadUK Monthly Temperature Observations 1991-2020 12km: ""
-  HadUK Annual Temperature Observations 1991-2020 12km: ""
-  HadUK Annual Min Temperature Observations 1991-2020 12km: ""
-  HadUK Annual Max Temperature Observations 1991-2020 12km: ""
-  HadUK Annual Count of Icing Days 1991-2020 12km: ""
-  HadUK Monthly Min Temperature Observations 1991-2020 12km: ""
-  HadUK Monthly Max Temperature Observations 1991-2020 12km: ""
-  'HadUK Annual Count of Frost Days 1991-2020 12km ': ""
-  'HadUK Annual Count of Summer Days 1991-2020 12km ': ""
-  UKCP18 Time-mean Sea Level Projections to 2100 (cm): ""
-NBN Atlas:
-  NBN Atlas - Algae Count: ""
-  NBN Atlas - Algae GeoJSON: ""
-  NBN Atlas - Algae Species List: ""
-  NBN Atlas - All Occurrences Search: ""
-  NBN Atlas - All Species GeoJSON: ""
-  NBN Atlas - All Species Groups Summary: ""
-  NBN Atlas - Amphibians Count: ""
-  NBN Atlas - Amphibians GeoJSON: ""
-  NBN Atlas - Amphibians Species List: ""
-  NBN Atlas - Bacteria Count: ""
-  NBN Atlas - Bacteria GeoJSON: ""
-  NBN Atlas - Bacteria Species List: ""
-  NBN Atlas - Birds Count: ""
-  NBN Atlas - Birds GeoJSON: ""
-  NBN Atlas - Birds Species List: ""
-  NBN Atlas - Bryophytes Count: ""
-  NBN Atlas - Bryophytes GeoJSON: ""
-  NBN Atlas - Bryophytes Species List: ""
-  NBN Atlas - Chromista Count: ""
-  NBN Atlas - Chromista GeoJSON: ""
-  NBN Atlas - Chromista Species List: ""
-  NBN Atlas - Conifers Count: ""
-  NBN Atlas - Conifers GeoJSON: ""
-  NBN Atlas - Conifers Species List: ""
-  NBN Atlas - Crustaceans Count: ""
-  NBN Atlas - Crustaceans GeoJSON: ""
-  NBN Atlas - Crustaceans Species List: ""
-  NBN Atlas - Ferns Count: ""
-  NBN Atlas - Ferns GeoJSON: ""
-  NBN Atlas - Ferns Species List: ""
-  NBN Atlas - Fish Count: ""
-  NBN Atlas - Fish GeoJSON: ""
-  NBN Atlas - Fish Species List: ""
-  NBN Atlas - Flowering Plants Count: ""
-  NBN Atlas - Flowering Plants GeoJSON: ""
-  NBN Atlas - Flowering Plants Species List: ""
-  NBN Atlas - Fungi Count: ""
-  NBN Atlas - Fungi GeoJSON: ""
-  NBN Atlas - Fungi Species List: ""
-  NBN Atlas - Insects Count: ""
-  NBN Atlas - Insects GeoJSON: ""
-  NBN Atlas - Insects Species List: ""
-  NBN Atlas - Lichens Count: ""
-  NBN Atlas - Lichens GeoJSON: ""
-  NBN Atlas - Lichens Species List: ""
-  NBN Atlas - Mammals Count: ""
-  NBN Atlas - Mammals GeoJSON: ""
-  NBN Atlas - Mammals Species List: ""
-  NBN Atlas - Molluscs Count: ""
-  NBN Atlas - Molluscs GeoJSON: ""
-  NBN Atlas - Molluscs Species List: ""
-  NBN Atlas - Plants Count: ""
-  NBN Atlas - Plants GeoJSON: ""
-  NBN Atlas - Plants Species List: ""
-  NBN Atlas - Protozoa Count: ""
-  NBN Atlas - Protozoa GeoJSON: ""
-  NBN Atlas - Protozoa Species List: ""
-  NBN Atlas - Reptiles Count: ""
-  NBN Atlas - Reptiles GeoJSON: ""
-  NBN Atlas - Reptiles Species List: ""
-  NBN Atlas - Spiders Count: ""
-  NBN Atlas - Spiders GeoJSON: ""
-  NBN Atlas - Spiders Species List: ""
-Natural England:
-  Ancient woodland: ""
-  Biosphere reserves: ""
-  Catchment Sensitive Farming Air Quality Priority Areas (England): ""
-  Chalk rivers: ""
-  England Peat Map Collated Peaty Soil Presence and Depth Observations: ""
-  England Peat Map Collated Vegetation Class Observations: ""
-  England Peat Map Peat Depth Surveys: ""
-  England Peat Map Soil Surveys: ""
-  England Peat Map Upland Peat Erosion and Drainage Grip Dams: ""
-  England Peat Map Upland Peat Erosion and Drainage Grips: ""
-  England Peat Map Upland Peat Erosion and Drainage Gullies: ""
-  England Peat Map Upland Peat Erosion and Drainage Haggs: ""
-  England Peat Map Vegetation Surveys: ""
-  Heritage coast: ""
-  Intertidal seagrass - Mixed/Unspecified Sp.: ""
-  Intertidal seagrass - Ruppia Sp.: ""
-  Intertidal seagrass - Zostera Sp.: ""
-  Local nature reserves: ""
-  Marine conservation zones (MCZs): ""
-  National landscapes (previously AONBs): ""
-  National parks (NPs): ""
-  Natural England Priority Habitats inventory: ""
-  Priority lake habitats: ""
-  Priority river habitat (headwater areas): ""
-  Priority river habitat (rivers): ""
-  Ramsar sites: ""
-  Sites of special scientific interest (SSSIs): ""
-  Special areas of conservation (SACs): ""
-  Special protection areas (SPAs): ""
-  Subtidal seagrass - Zostera Sp.: ""
-Stream:
-  Anglian Water Appointed Wastewater Boundary: ""
-  Anglian Water Appointed Water Supply Boundary: ""
-  Anglian Water Sewer Catchment Boundaries: ""
-  'Anglian Water Storm Overflow Activity ': ""
-  Northumbrian Water Storm Overflow Activity: ""
-  Severn Trent Water Appointed Water Supply Boundaries: ""
-  Severn Trent Water Sewer Catchment Boundaries: ""
-  'Severn Trent Water Storm Overflow Activity ': ""
-  South West Water Appointed Wastewater Boundary: ""
-  South West Water Appointed Water Supply Boundary: ""
-  South West Water Storm Overflow Activity: ""
-  Southern Water Appointed Supply Boundary: ""
-  Southern Water Sewer Catchment Boundaries: ""
-  Southern Water Storm Overflow Activity: ""
-  Thames Water Storm Overflow Activity: ""
-  United Utilities Appointed Wastewater Boundary: ""
-  United Utilities Appointed Water Supply Boundary: ""
-  United Utilities Storm Overflow Activity: ""
-  Wessex Water Appointed Supply Boundary: ""
-  Wessex Water Appointed Wastewater Boundary: ""
-  Wessex Water Environmental Water Quality: ""
-  Wessex Water Storm Overflow Activity: ""
-  Yorkshire Water Appointed Wastewater Boundaries: ""
-  Yorkshire Water Appointed Water Supply Boundaries: ""
-  Yorkshire Water Storm Overflow Activity: ""
+  Catchment Planning & Reference:
+    Hydrology Measures - Level:
+      Water Management Areas: ''
+      CaBA Catchment Parterships: ''
+      Rivers Trusts Boundaries: ''
+      Statutory Main River Map: ''
+    Rivers:
+      Open River Network with CaBA ID: ''
+    Rainfall Stations - All:
+      River Canal and SWT Waterbody Classifications: ''
+  Biodiversity & Nature:
+    Hydrology Measures - All:
+      American Mink (Neovison vison) occurences points: ''
+      American Mink (Neovison vison) occurences polygons: ''
+      Chinese Mitten Crab (Eriocheir sinensis) occurrence points: ''
+      Chinese Mitten Crab (Eriocheir sinensis) occurrence polygons: ''
+      Giant Hogweed (Heracleum mantegazzianum) occurences: ''
+      Himalayan Balsam (Impatiens glandulifera) occurences: ''
+      Japanese Knotweed (Fallopia japonica) occurences: ''
+      New Zealand Pigmyweed (Crassula helmsii) occurrences points: ''
+      New Zealand Pigmyweed (Crassula helmsii) occurrences polygons: ''
+      Signal Crayfish (Pacifastacus leniusculus) occurrences points: ''
+      Signal Crayfish (Pacifastacus leniusculus) occurrences polygons: ''
+    Aquaculture:
+      Cockle Farm (S-AQ-1): ''
+      Hard Clam Cultivation (S-AQ-1): ''
+      Manila Clam Cultivation (S-AQ-1): ''
+      Mussel Cultivation (S-AQ-1): ''
+      Native Oyster Bed Potential areas: ''
+      Native Oyster Cultivation (S-AQ-1): ''
+      Pacific Oyster Cultivation (S-AQ-1): ''
+    Hydrology Stations - Temperature:
+      High Intensity Fish Nursery Grounds: ''
+      High Intensity Fish Spawning Grounds: ''
+      Important Bird Areas (RSPB): ''
+      'Modular River Survey: MoRPh Rivers Citizen Science': ''
+      National Seagrass Layer: ''
+      Principal Salmon Rivers of England and Wales: ''
+      Riverfly Monitoring Targets and Triggers: ''
+      Riverfly Survey Sites: ''
+    Hydrology Stations - Turbidity:
+      Lake Sites of Special Scientific Interest: ''
+      National Nature Reserves (England): ''
+      Shellfish Protected Waters 2021: ''
+      Wildlife Trust Regional Boundaries: ''
+  Water Quality & Pollution:
+    Water Quality Monitoring:
+      Big River Watch Data: ''
+      EA Water Quality Continuous Monitoring Sonde Historical Locations (Up to March 2022): ''
+      Environment Agency Water Quality Sampling Sites: ''
+    Hydrology Stations - pH:
+      Current Bathing Water Status: ''
+      Environmental Pollution Incidents (Category 1 and 2) 2001 to 2023: ''
+      Environmental Pollution Incidents (Category 1 and 2) CaBA Identity: ''
+      Nitrates Sensitive Areas: ''
+    Hydrology Stations - Rainfall:
+      Eutrophic Lakes Sensitive Areas: ''
+      Eutrophic Rivers Sensitive Areas: ''
+    Hydrology Stations - Level:
+      SAGIS Mean River Phosphate concentration mg/L All Sources -  points: ''
+      SAGIS Mean River Phosphate concentration mg/L All Sources - charts: ''
+      SAGIS Mean River Phosphate concentration mg/L from Arable and Livestock Farming: ''
+      SAGIS Mean River Phosphate concentration mg/L from Diffuse sources: ''
+      SAGIS Mean River Phosphate concentration mg/L from Highways: ''
+      SAGIS Mean River Phosphate concentration mg/L from Industrial Discharges: ''
+      SAGIS Mean River Phosphate concentration mg/L from Intermittent Discharges: ''
+      SAGIS Mean River Phosphate concentration mg/L from Other Sources: ''
+      SAGIS Mean River Phosphate concentration mg/L from Septic Tanks: ''
+      SAGIS Mean River Phosphate concentration mg/L from Sewage Treatment Works: ''
+      SAGIS Mean River Phosphate concentration mg/L from Urban run off: ''
+      SEPARATE - All sources of Nitrate: ''
+      SEPARATE - All sources of Phosphorus: ''
+      SEPARATE - All sources of Sediment: ''
+      SEPARATE - Dissolved phosphorus to rivers in England and Wales: ''
+    Hydrology Stations - Groundwater:
+      Storm Overflows - Event Duration Monitoring 2019: ''
+      Storm Overflows - Event Duration Monitoring 2020: ''
+      Storm Overflows - Event Duration Monitoring 2021: ''
+      Storm Overflows - Event Duration Monitoring 2022: ''
+      Storm Overflows - Event Duration Monitoring 2023: ''
+      Storm Overflows - Event Duration Monitoring 2024: ''
+      Water Company Sewer Storm Overflow Under Investigation: ''
+  Land & Coastal Management:
+    Rainfall Readings - Today:
+      Coastal Partnerships Network: ''
+      Historical Oyster Habitat and Fisheries in English Coastal Waters¶ÿ: ''
+      Shellfisheries and associated catchments: ''
+    Rainfall Readings - Latest:
+      Neptune Coastline Campaign Land Use 1965: ''
+      Neptune Coastline Campaign Land Use 2014: ''
+  Hydrology & Flooding:
+    EA River Flood Gauges with CaBA catchments: ''
+    Flood Defences: ''
+    Historic Flood Map: ''
+    Risk of Flooding from Surface Water Extents: ''
+    River Barriers: ''
+    River Obstacles: ''
+  Water Quality Monitoring:
+    Water Quality Monitoring:
+      EA Water Quality Sampling Sites (Open WIMS): ''
+  LIDAR Composite DTM (Digital Terrain Model): ''
+CEFAS:
+  Fisheries Science:
+    A Data Product Derived from Northeast Atlantic Groundfish Data from Scientific Trawl Surveys - 1983-2020:
+      Bbicfra BT4 - 25 Jan 2022 - Haul by Spp: ''
+      Bbicfra OT4 - 07 Mar 2022 - Haul by Spp: ''
+      Bbicn Spa OT4 - 25 Jan 2022 - Haul by Spp: ''
+      Bbicpor OT4 - 25 Jan 2022 - Haul by Spp: ''
+      Bbics Spa OT1 - 25 Jan 2022 - Haul by Spp: ''
+      Bbics Spa OT4 - 25 Jan 2022 - Haul by Spp: ''
+      Cseng BT1 - 25 Jan 2022 - Haul by Spp: ''
+      Cseng BT3 - 25 Jan 2022 - Haul by Spp: ''
+      Cseng BT3 - Bchannel - 25 Jan 2022 - Haul by Spp: ''
+      Csfra OT4 - 25 Jan 2022 - Haul by Spp: ''
+      Csire OT4 - 25 Jan 2022 - Haul by Spp: ''
+      Csnir OT1 - 25 Jan 2022 - Haul by Spp: ''
+      Csnir OT4 - 25 Jan 2022 - Haul by Spp: ''
+      Cssco OT1 - 25 Jan 2022 - Haul by Spp: ''
+      Cssco OT1 - Hist - 25 Jan 2022 - Haul by Spp: ''
+      Cssco OT4 - 25 Jan 2022 - Haul by Spp: ''
+      Cssco OT4 - Hist - 25 Jan 2022 - Haul by Spp: ''
+      Gnsbel BT3 - 25 Jan 2022 - Haul by Spp: ''
+      Gnseng BT3 - 25 Jan 2022 - Haul by Spp: ''
+      Gnsfra OT4 - 25 Jan 2022 - Haul by Spp: ''
+      Gnsger BT3 - 25 Jan 2022 - Haul by Spp: ''
+      Gnsint OT1 - 25 Jan 2022 - Haul by Spp - Part 1: ''
+      Gnsint OT1 - 25 Jan 2022 - Haul by Spp - Part 2: ''
+      Gnsint OT1 - Channel - 25 Jan 2022 - Haul by Spp: ''
+      Gnsint OT3 - 25 Jan 2022 - Haul by Spp - Part 1: ''
+      Gnsint OT3 - 25 Jan 2022 - Haul by Spp - Part 2: ''
+      Gnsint OT3 - 25 Jan 2022 - Haul by Spp - Part 3: ''
+      Gnsint OT3 - 25 Jan 2022 - Haul by Spp - Part 4: ''
+      Gnsint OT3 - 25 Jan 2022 - Haul by Spp - Part 5: ''
+      Gnsnet BT3 - 25 Jan 2022 - Haul by Spp: ''
+      Read Me Column Headers: ''
+      Wasco OT3 - 25 Jan 2022 - Haul by Spp: ''
+      Wasco OT3 - Hist - 25 Jan 2022 - Haul by Spp: ''
+      Waspa OT3 - 25 Jan 2022 - Haul by Spp: ''
+    Biological Data on Individual Whelks (Buccinum Undatum) to Determine Population Dynamics in UK Waters:
+      Individual Whelk Data: ''
+      Individual Whelk Data Readme: ''
+    'Catalogue of Defra Historical Catch and Effort Charts: Six Decades of Detailed Spatial Statistics for British Fisheries':
+      Spatial Statistics Charts - All Regions Charts: ''
+      Spatial Statistics Charts - Pelagic Data: ''
+      Spatial Statistics Charts - Region Iv - Motor Line Data: ''
+      Spatial Statistics Charts - Region Iv - Motor Seine Data: ''
+      Spatial Statistics Charts - Region Iv - Motor Trawl Data: ''
+      Spatial Statistics Charts - Region Iv - Sail Trawl Data: ''
+      Spatial Statistics Charts - Region Iv - Steam Line Data: ''
+      Spatial Statistics Charts - Region Iv - Steam Seine Data: ''
+      Spatial Statistics Charts - Region Iv - Steam Trawl Data: ''
+      Spatial Statistics Charts - Region Va - Trawl Data: ''
+      Spatial Statistics Charts - Region Vb - Trawl Data: ''
+      Spatial Statistics Charts - Region Vi - Motor Seine Data: ''
+      Spatial Statistics Charts - Region Vi - Motor Trawl Data: ''
+      Spatial Statistics Charts - Region Vi - Steam Trawl Data: ''
+      Spatial Statistics Charts - Region Vii - Motor Seine Data: ''
+      Spatial Statistics Charts - Region Vii - Motor Trawl Data: ''
+      Spatial Statistics Charts - Scottish Data: ''
+      Spatial Statistics Charts - Tonnage Data: ''
+      'Technical Report #128': ''
+    DAPSTOM Fish Stomach Data - 1836 to Present:
+      Dapstom Ices View: ''
+      Dapstom View: ''
+    Eastern Irish Sea Razor Clam Survey - Fisheries Science Partnership - 2009/10:
+      Report 14 Eastern Irish Sea Razor Clam 2009 10: ''
+    Eel Survey Records from Estuaries Around England and Associated Physical and Environmental Factors - 1981-2018:
+      Read Me: ''
+      Transitional Water Adult Eel Data WFD Surveys England Final: ''
+      Transitional Water Adult Eel Surveys Data: ''
+    Fish and Shellfish Stock Assessments Data for the UK Marine Strategy 2024 Assessment of Descriptor 3:
+      Quota Stocks Data D3UKMS: ''
+      Readme Columnheaders Quotastocks: ''
+      Readme Columnheaders Shellfishnonquota: ''
+      Shellfish Non Quota Stocks Data D3UKMS: ''
+    ? Fisheries Sensitivity Mapping and Displacement Modelling (FISMADIM) - Fisheries
+      Context Providing Information (Average 2012-2021)
+    : Read Me Gear Codes: ''
+    ? Fisheries Sensitivity Mapping and Displacement Modelling (FISMADIM) - Fisheries
+      Sensitivity Index 1 - Data Product - Average for - 2012 to 2021
+    : Read Me Gear Codes: ''
+    ? Fisheries Sensitivity Mapping and Displacement Modelling (FiSMaDiM) - Fisheries
+      Sensitivity Index 2 - Data Product - Average for - 2012 to 2021
+    : Read Me Gear Codes: ''
+    Fisheries Sensitivity Mapping and Displacement Modelling (FISMADIM) - Fishing Effort Data Product - 2012 to 2021:
+      Read Me Gear Codes: ''
+    ? Fisheries Spawning and Nursery Areas 'Fishery Sensitivity Maps in British Waters'
+      Geographic Information System Layers - 1998
+    : Nursery Grounds 1998: ''
+      Read Me: ''
+      Spawning Grounds 1998: ''
+    Highly Mobile Fish Species Distributions in UK Waters:
+      MPA Half Rectangle Layer: ''
+      MPA Quarter Rectangle Layer: ''
+      MPA Rectangle Layer: ''
+    Inshore Longline Fisheries in the Southern North Sea - Fisheries Science Partnership - 2019/20:
+      Report 63 Inshore Longline Survey 2019 2020: ''
+    International (ICES) and National (UK) Fish Stock and Shellfish Stock Data from 2020 Assessment Year:
+      UKAssessment2020-Fish&Shellfish Stock Data: ''
+    International (ICES) and National (UK) Fish Stock and Shellfish Stock Data from 2021 Assessment Year:
+      Cefasdatadoi 130 V2: ''
+      Datafield Description-Fish&Shellfish Stock Assessment2021data: ''
+    Occurrences of Sensitive Fish Species in Scientific Trawl Surveys of the Northeast Atlantic - 1983-2020:
+      All Hauls: ''
+      Sensitive Fish Occurrence FC1: ''
+      Supplementary Read Me File: ''
+    Sea Angling - Shore and Private Boat Survey - 2012:
+      Ifca Surveys - Additional Data: ''
+      Ifca Surveys - Catch Data: ''
+      Ifca Surveys - Economic Data: ''
+      Ifca Surveys - Interviews: ''
+      Ifca Surveys - Site Visits: ''
+    Sea Angling - Synthesised Results for All Sea Angling 2012 Surveys - 2012:
+      Holding b'C6C2BF91-006D-40CB-9952-C5279DEEB886': ''
+    Spawning and Nursery Grounds Layers for Selected Fish in UK Waters - 2010:
+      Nursery Data 2010: ''
+      Nursery Grounds 2010: ''
+      Spawning Data 2010: ''
+      Spawning Grounds 2010: ''
+    Spawning and Nursery Grounds of Forage Fish in Welsh and Surrounding Waters from - 2008 to 2020:
+      Read Me: ''
+      Rspb Forage Fish Arcgis: ''
+      Rspb Forage Fish Qgis: ''
+      Tif Files: ''
+    ? Trophic Interaction Data and Taxonomic Information for Fish Predators and Their
+      Prey Spanning the North East Atlantic and Its Marginal Seas Between - 1836-2013
+    : Column Prey Taxonomy for Diet Matrix: ''
+      Diet Matrix for Feeding Guild Assessment: ''
+      Readme: ''
+      Row Predator Taxonomy for Diet Matrix: ''
+    UK ICES Data Limited Fish Stock Assessment Data:
+      UK Ices Data Limited Fish Stock Assessment Data: ''
+    UK ICES Fish Stock and Shellfish Stock Assessment Data - 2017:
+      Ices Fish Stock and Shellfish Stock Assessment Data 2017 Column Descriptions: ''
+      Spi Ct Stock data2 281117: ''
+      UK Ices Fish Stock and Shellfish Stock Assessment Data 2017: ''
+    UK Inshore Fishing Activities Intensity - Geographic Information System Data Layer - 2011-2012:
+      MB0117Inshore Fishing Data: ''
+  Aquaculture, Shellfish & Fish Health:
+    ? A Data Product Describing Carbon and Nitrogen Impacts of Seaweed and Mussel
+      Aquaculture Estimated Using Life Cycle Impact Assessment
+    : Mussel Lca Gwp Outputs: ''
+      Mussel Lca Mep Outputs: ''
+      Mussel Lca Simapro: ''
+      Mussels Lca Simapro: ''
+      Readme: ''
+      Readme Seaweed: ''
+      Seaweed Biochar Centralised Impacts: ''
+      Seaweed Biochar Centralised Inventoryof Emissions: ''
+      Seaweed Biodiesel Centralised Impacts: ''
+      Seaweed Biodiesel Centralised Inventoryof Emissions: ''
+    Antibiotic Susceptibility Results for Pathogen Yersinia Ruckeri 1967 - 2023:
+      Ast Data Yersinia Ruckeri CEFAS: ''
+    ? Catchment Boundaries for England and Wales Based on Existing Fish Health Inspectorate
+      (Fish Health Inspectorate) Catchments - British National Grid (BNG) - 2023
+    : Generation of the New Layer of Fhi Catchments Based on Ceh Integrated Hydrological Units: ''
+      Ihucatchments Fhi WFD Ew Bng: ''
+    ? Catchment Boundaries for England and Wales Based on Existing Fish Health Inspectorate
+      (Fish Health Inspectorate) Catchments 2023 (WGS84)
+    : Generation of the New Layer of Fhi Catchments Based on Ceh Integrated Hydrological Units: ''
+      Ihucatchments Fhi WFD Ew Wgs: ''
+    ? Catchment Boundaries for England, Scotland and Wales Based on Existing Fish
+      Health Inspectorate (Fish Health Inspectorate) and Scottish Environment Protection
+      Agency Catchments (BNG) 2023
+    : Ihucatchments Fhi WFD Gb Bng: ''
+    ? Catchment Boundaries for England, Scotland and Wales Based on Existing Fish
+      Health Inspectorate (Fish Health Inspectorate) and Scottish Environment Protection
+      Agency Catchments (WGS84) 2023
+    : Ihucatchments Fhi WFD Gb Wgs: ''
+    ? Catchment Boundaries for Scotland Based on Scottish Environment Protection Agency
+      (Scottish Environment Protection Agency) Catchments (WGS84) 2023
+    : Generation of the New Layer of Fhi Catchments Based on Ceh Integrated Hydrological Units: ''
+      Ihucatchments Fhi WFD Sc Wgs: ''
+    ? Catchment Boundaries for Scotland Based on Scottish Environment Protection Agency
+      (Scottish Environment Protection Agency) Catchments British National Grid (BNG)
+      2023
+    : Ihucatchments Fhi WFD Sc Bng: ''
+    Data Products Covering Precipitation and Temperature Suitable for Purposes of Aquaculture Under Climate Change Scenarios:
+      Disease Mapping Data Precipitation: ''
+      Disease Mapping Data Tiffs: ''
+    England and Wales - Shellfish Classification Zones of England and Wales:
+      Combined CZ Rectangle: ''
+      Combined CZ Region: ''
+    ? Marine Biotoxin Data Measured Within Crab and Lobster Flesh Taken from Samples
+      Gathered from the Northumberland Coast and 2022 - 2021
+    : Complete Results Summary: ''
+      Read Me for Results Summary: ''
+    ? Results of Aquanet-Mod for Projecting the Economic Burden of the World Organisation
+      for Animal Health (World Organisation for Animal Health) Listed Diseases Across
+      English and Welsh Salmonid Industry
+    : Fallow Period: ''
+      Fishery Cull: ''
+      N Sims: ''
+      Scenarios: ''
+      Sensitivity Tests: ''
+    ? Scores Representing Magallana Gigas (Pacific Oyster) Environmental Suitability
+      and Introduction / Spread Risk for UK Waters Based on Data from 2013 to 2015.
+    : C7699 Grid Scores Suitability Risk: ''
+  Pollution:
+    ? Abundance of Microlitter (Including Microplastics) in Riverine Samples (Sediment,
+      Surface Waters and Biota) at Selected Locations Across the Orange-Senqu River
+      Basin and Associated Land Use Data - 2021
+    : All Microlitter Data JBS3 Nbp Readme Column Headers: ''
+      List Microlitter Biota: ''
+      List Microlitter Sediment: ''
+      List Microlitter Surface Waters: ''
+      Locations: ''
+      Lu Data: ''
+    Glaven and Stiffkey Estuarine and Coastal Investigation - - Nutrients - 2017:
+      Glaven and Stiffkey Estuarine and Coastal Investigation Jun 2016 Sep 2017 Nutrients: ''
+    Glaven and Stiffkey Estuarine and Coastal Investigation - - Profiler Data - 2017:
+      Stiffkey 04 17 07 17 08 17: ''
+    Glaven and Stiffkey Estuarine and Coastal Investigation - 2016-2017 - Nutrients:
+      Glaven and Stiffkey Estuarine and Coastal Investigation 2016 2017 Nutrients: ''
+    Glaven and Stiffkey Estuarine and Coastal Investigation - 2016-2017 - Phytoplankton:
+      Glaven and Stiffkey Estuarine and Coastal Investigation 2016 2017 Phytoplankton: ''
+    Glaven and Stiffkey Estuarine and Coastal Investigation - 2016-2017 - Profiler Data:
+      Stiffkey 1 16: ''
+      Stiffkey 1 17: ''
+      Stiffkey 2 16: ''
+    Glaven and Stiffkey Estuarine and Coastal Investigation - 2017-2018 - Phytoplankton:
+      Glaven and Stiffkey Estuarine and Coastal Investigation Jun 2017 Sep 2017 Phytoplankton: ''
+    Glaven and Stiffkey Estuarine and Coastal Investigation - Microbiological Analysis:
+      Glaven and Stiffkey Estuarine and Coastal Investigation 2016 2017 Microbiology: ''
+    Glaven and Stiffkey Estuarine and Coastal Investigation - Microbiological Data:
+      Glaven and Stiffkey Estuarine and Coastal Investigation 2016 2017 Microbiology: ''
+    Inputs of Mercury, Cadmium and Lead Via Water and Air to the Greater North Sea Between 1990 and - 2014:
+      Data Metal Inputs Indicator Assessment: ''
+      Rid Data Input of Hg Cd Pb Indicator Assessment: ''
+    Macrofauna Abundance Matrix from Litter Samples from the North Sea - 2020-2021:
+      Litter Matrix: ''
+      Readme Column Headers Litter Matrix: ''
+      Readme Litter Code: ''
+      Station Locations: ''
+    Microplastic Contamination Data from Mussels from the UK - 2022:
+      Mp Abundance Mussel Data: ''
+      Mp Abundance Mussel Fluorescence Data: ''
+      Mp Fluorescent Item Descriptions: ''
+      Mp Item Descriptions: ''
+      Mps Readme: ''
+      Mpyn Readme: ''
+      Rinse Item Descriptions: ''
+      Rinse Results: ''
+    'Microplastic Effect Data. the World Is Your Oyster: Low-Dose, Long-Term Microplastic Exposure of Juvenile Oysters':
+      Condition Index: ''
+      Length Weight: ''
+      Lysomal Data Jb: ''
+    Microplastics Data in UK (England and Wales) Seafloor Sediments from - 2013 to 2021:
+      Column Headers Readme: ''
+      Abundance of Mps in Seafloor Sediment Csemp 2013 2021: ''
+    Microplastics in Sea Surface Waters in the Southern Bight of the North Sea - 2022:
+      Floating Microplastic Abundances: ''
+    Microplastics in Sediment Cores Data from the UK Continental Shelf and Slope - 2017:
+      Raw Data: ''
+      UK Seafloor Sediment Ftir: ''
+    Perfluoroalkyl Substances (PFAS) Concentration Data, Estuarine Fish Samples from September to November - 2020:
+      Fish Pfas Results: ''
+      Fish Pfas Results Header Explanation - Readme: ''
+    Seafloor Litter Data Collected Around the UK Coast from - 2016 to 2022:
+      Celtic Sea Seafloor Litter Aldfg: ''
+      North Sea Seafloor Litter Aldfg: ''
+      Readme Heading Descriptors: ''
+    Seafloor Marine Litter from UK Exclusive Economic Zone Zones Between 2012 and - 2017:
+      Seafloor Marine Litter MSFD 2017 Readme: ''
+      Seafloor Marine Litter MSFD 2017 v2: ''
+    UK Disposal Site Layer:
+      Disposal Sites25 v16: ''
+    ? Volumes, Dredged Area Measurements and Estimated Contaminants of Material Disposed
+      at Licensed Offshore Sites Around the UK Coast from - 2000 to 2020
+    : Datapaper Contaminant Load: ''
+      Datapaper Contaminant Load Readme: ''
+      Datapaper Licence Details: ''
+      Datapaper Licence Details Readme: ''
+      Datapaper Licence Disposal Return Quantities: ''
+      Disposal Sites Layer November 2020: ''
+  Physical & Chemical Oceanography:
+    ? Acoustic Backscatter Profile Data for Mixed Layer Depth for the Peltic Surveys
+      in the Eastern Celtic Seas and English Channel from - 2012 to 2019
+    : Coastal Health Hydro Vu AT200 Continuous River Water Sampling River Mole 20241113 20250331: ''
+      Peltic Survey Strata Bristol Channel: ''
+      Peltic Survey Strata English Channel North: ''
+      Svprofiles.Sv: ''
+    Coastal Temperature Network Data - 1892 to 2018:
+      Coastal Temperature Network Data 1892 to 2018: ''
+    ? Continuous River Water Quality Monitoring Data from the Rivers Taw and Torridge,
+      North Devon, UK Sampled Between November 2024 and March - 2025
+    : Coastal Health Hydro Vu AT200 Continuous River Water Sampling Upper Torridge 20241113 20250331: ''
+      Coastal Health Hydro Vu AT600 Continuous River Water Sampling Barnstaple Yeo 20241113 20250331: ''
+      Coastal Health Hydro Vu AT600 Continuous River Water Sampling Lower Taw 20241113 20250331: ''
+      Coastal Health Hydro Vu AT600 Continuous River Water Sampling Lower Torridge 20241113 20250331: ''
+      Coastal Health Hydro Vu AT600 Continuous River Water Sampling River Caen 20241113 20250331: ''
+    Database of Critical Oxygen Level (Pcrit) in Freshwater and Marine Fishes 1974 - 2015:
+      Contents Table: ''
+      Hypoxia Tolerance (Pcrit) in Fish: ''
+    Dissolved Oxygen, Temperature and Salinity Measurements in Coastal and Estuarine Waters in the UK from - 1990 to 2018:
+      Dissolved Oxygen in UK Coastal and Transitional Waters Readme: ''
+      Dissolved Oxygen UK Coastal&Transition Raw2nd Clean: ''
+      Dissolved Oxygen UK Raw1st Clean: ''
+    Historical Seabed Drifters Dataset:
+      Seabed Drifters Dataseries 15032019 Dataseries: ''
+      Seabed Drifters Dataseries 15032019 Seabed Count: ''
+    Monthly Average Non-Algal Suspended Particulate Matter Concentrations on the UK Shelf Waters:
+      Analysed Spim 199801 200109: ''
+      Analysed Spim 200110 200506: ''
+      Analysed Spim 200507 200903: ''
+      Analysed Spim 200904 201212: ''
+      Analysed Spim 201301 201506: ''
+      Analysed Spim Individual Years: ''
+      Spm: ''
+    Nutrient Data for Autumn 2018 and Spring 2019 in the Celtic Sea:
+      Nutrient Data for Autumn 2018 and Spring 2019 in the Celtic Sea: ''
+    Seawater Salinity Trend Analysis for the North East Atlantic (North West European Shelf):
+      Trend: ''
+    Seawater Temperature Records for the UK Shelf - "All" Cefas Seawater Temperature Data 1880 - 2014:
+      CEFAS Seawater Temperature Data 1880 - 2014: ''
+    Seawater Temperature Records for the UK Shelf - 01 - Cefas Coastal Temperature Network:
+      CEFAS SWTdata20170707source01: ''
+    Seawater Temperature Records for the UK Shelf - 02 - Cefas Fishing Survey System:
+      CEFAS SWTdata20170707source02: ''
+    Seawater Temperature Records for the UK Shelf - 03 - Cefas Oceanographic Archive:
+      CEFAS SWTdata20170707source03: ''
+    Seawater Temperature Records for the UK Shelf - 04 - Cefas Plankton Analysis System:
+      CEFAS SWTdata20170707source04: ''
+    Seawater Temperature Records for the UK Shelf - 05 - Cefas Fisheries Ecology Research Programme:
+      CEFAS SWTdata20170707source05: ''
+    Seawater Temperature Records for the UK Shelf - 06 - Cefas SmartBuoy Autonomous Monitoring Network:
+      CEFAS SWTdata20170707source06: ''
+    Seawater Temperature Records for the UK Shelf - 07 - Defra Strategic Wave Monitoring Network (WaveNet):
+      CEFAS SWTdata20170707source07: ''
+    Seawater Temperature Records for the UK Shelf - 08 - Ferry Route Monitoring System (Historical):
+      CEFAS SWTdata20170707source08: ''
+    Seawater Temperature Records for the UK Shelf - 09 - Electronic Data Storage Tag Database:
+      CEFAS SWTdata20170707source09: ''
+    Seawater Temperature Records for the UK Shelf - 10 - Citizen Science Diver Recorded Temperatures:
+      CEFAS SWTdata20170707source10: ''
+    Seawater Temperature Records for the UK Shelf - 11 - Cefas Lowestoft Sample Data Management System:
+      CEFAS SWTdata20170707source11: ''
+    Seawater Temperature Records for the UK Shelf - 12 - Mnemiopsis Ecology Modelling and Observation Project:
+      CEFAS SWTdata20170707source12: ''
+    Seawater Temperature Records for the UK Shelf - 13 - Cefas Multibeam Acoustics - Sound Velocity Profile Temperature Data:
+      CEFAS SWTdata20170707source13: ''
+    Seawater Temperature Records for the UK Shelf - 14 - Intensive Plankton Surveys Off the North-East Coast of England - 1976:
+      CEFAS SWTdata20170707source14: ''
+    Seawater Temperature Records for the UK Shelf - 15 - Research Vessel Cefas Endeavour FerryBox Monitoring System:
+      CEFAS SWTdata20170707source15: ''
+    Seawater Temperature Records for the UK Shelf - 16 - Cefas ScanFish - North & Celtic Seas:
+      CEFAS SWTdata20170707source16: ''
+    Seawater Temperature Records for the UK Shelf - 17 - Cefas ESM2 Profiler/mini CTD Logger:
+      CEFAS SWTdata20170707source17: ''
+    Seawater Temperature Trend Analysis for the North East Atlantic (North West European Shelf):
+      Trend: ''
+    Shelf Sea Biogeochemistry - CANDYFLOSS SmartBuoy:
+      Candyfloss 2014 2015: ''
+      Candyfloss Ssb: ''
+    Shelf Sea Biogeochemistry - Celtic Deep 2 Lander:
+      CELTDEEP2L 2014 2015: ''
+      CELTDEEP2LANDER Ssb: ''
+    Shelf Sea Biogeochemistry - Celtic Deep 2 SmartBuoy:
+      CELTDEEP2 2014 2015: ''
+      CELTDEEP2 Ssb: ''
+    Shelf Sea Biogeochemistry - East of Celtic Deep Lander:
+      Eastceltdeep Ssb: ''
+      Eceltdeep 2014 2014: ''
+    Shelf Sea Biogeochemistry - East of Haig Fras Seabed Lander:
+      Easthaigfras Ssb: ''
+      Ehaigfras 2014 2015: ''
+    Shelf Sea Biogeochemistry - Nymph Bank Lander:
+      Nymphbank 2014 2014: ''
+      Nymphbank Ssb: ''
+    SmartBuoy Marine Observational Network - UK Waters Phytoplankton Data - 2001-2017:
+      Smart Buoy Phytoplankton Data 2001 to 2017: ''
+      Smart Buoy Phytoplankton Data 2001 to 2017 Dw C E Mo F: ''
+      Smart Buoy Phytoplankton Data 2001 to 2017 Dw C Events: ''
+      Smart Buoy Phytoplankton Data 2001 to 2017 Dw C Occurrences: ''
+      Smart Buoy Phytoplankton Data 2001 to 2017 Osparformat: ''
+    SmartBuoy Marine Observational Network - UK Waters Phytoplankton Data - 2018-2019:
+      Smart Buoy Phytoplankton Data 2018 to 2019 Osparformat: ''
+      Smart Buoy Phytoplankton Data 2018 to 2019 V2: ''
+    SmartBuoy Marine Observational Network - UK Waters Phytoplankton Data 2020 - 2023:
+      Smartbuoy Phytoplankton Data 2020 to Aug 2023: ''
+    Underway (Ferrybox) Data Collected in North West European Shelf Waters - 2010 Onwards:
+      Ferrybox Data v1.01: ''
+    WaveNet Near Real-Time Data Feed - from the Past 48 Hours:
+      Wave Net - Last 48 Hours of Data: ''
+  Benthic & Planktonic Ecology:
+    Benthic Faunal Biomass with Environmental Data, Celtic Seas:
+      Biomass Data with Functional Group and Environmentals: ''
+      CEND/07/2007 Station Details: ''
+      CEND/08/2009 Station Details: ''
+      CEND/09/2010 Station Details: ''
+      CEND/10/2008 Station Details: ''
+      CEND/14/2007 Station Details: ''
+    Benthic Genera Presence and Absence in the North Sea from - 1990 to 2011:
+      Epifauna Genus Data: ''
+      Infauna Genus Data: ''
+    Biotope (Macrofaunal Assemblage) Map and Associated Confidence Layer Based on Grab and Core Data from - 1976 to 2020:
+      Macro Assemblages: ''
+      Macro Assemblages Confidence: ''
+    Ichthyoplankton Analysis Data from the UK's Western Coastal Shelf - 2016:
+      Ichthyoplankton Analysis Data Western Coastal Shelf 2016: ''
+      Icthyoplankton Survey Description Infographic: ''
+    Irish Sea Fish Egg Production Survey - 2010:
+      Irish Sea 2010 Fish Egg Production Survey Plankton Analysis Data: ''
+      Irish Sea 2010 Fish Egg Production Survey Station Details: ''
+    Macrobenthos Data from Shoreham, the Tyne and the Thames Estuaries, UK, - 2000 to 2006:
+      Shoreham Tyne Thames Macrobenthos 2000 2006: ''
+      Shoreham Tyne Thames Macrobenthos 2000 2006 Dw C E Mo F: ''
+      Shoreham Tyne Thames Macrobenthos 2000 2006 Dw C Events: ''
+      Shoreham Tyne Thames Macrobenthos 2000 2006 Dw C Occurrences: ''
+    Meso and Macrozooplankton Abundance in the Bristol Channel, Celtic Sea and English Channel - 2017-2023:
+      Peltic 2017 Mesozooplankton Abundance Data: ''
+      Peltic 2018 Mesozooplankton Abundance Data: ''
+      Peltic 2019 Mesozooplankton Abundance Data: ''
+      Peltic 2020 Mesozooplankton Abundance Data: ''
+      Peltic 2021 Mesozooplankton Abundance Data: ''
+      Peltic 2022 Mesozooplankton Abundance Data: ''
+      Peltic 2023 Mesozooplankton Abundance Data: ''
+    North Sea and English Channel Organic Carbon and Nitrogen in Sediments:
+      ME5301 2009 Organic Carbon Data: ''
+      ME5301 2010 Organic Carbon Data: ''
+      ME5301 2011 Organic Carbon Data: ''
+    North Sea and English Channel Sediment Oxygen Profiles - 2009-2011:
+      ME5301 2009 Sediment Oxygen Profiles: ''
+      ME5301 2009 Sediment Oxygen Profiles Adjusted Profiles: ''
+      ME5301 2010 Oxygen Penetration Depth: ''
+      ME5301 2011 Sediment Oxygen Data: ''
+      ME5301 2011 Sediment Oxygen Data Saturation Percentage: ''
+      ME5301 2011 Sediment Oxygen Profiles: ''
+    North Sea and English Channel Sediment Profiling Image Analysis - 2009-2011:
+      ME5301 2009 Sediment Profile Image Analysis: ''
+      ME5301 2010 Sediment Profile Image Analysis: ''
+    North Sea Cod Spawning - Plankton Survey:
+      North Sea 2004 Cod Spawning Study Plankton Data: ''
+      North Sea 2004 Cod Spawning Study Station Data: ''
+    Northwest European Shelf Seas - Phytoplankton Pigments - 2010 to 2019:
+      Phytopigment Abbreviations: ''
+      Phytopigment Surveys: ''
+      Phytopigments All 09012010 27102019: ''
+      Phytopigments Main 09012010 27102019: ''
+    Northwest European Shelf Seas - Phytoplankton Pigments - 2020 to 2023:
+      Phytopigment Abbreviations: ''
+      Phytopigment Surveys: ''
+      Phytopigments All 05102020 26102023: ''
+      Phytopigments Main 05102020 26102023: ''
+    Phytoplankton Abundance Data for Spring and Autumn of 2018 in the Celtic Sea:
+      Phytoplankton Abundance Data for Spring and Autumn of 2018 in the Celtic Sea: ''
+    Phytoplankton Abundance Data for the POSEIDON Project in the Celtic Seas and English Channel for Autumn - 2012 to 2016:
+      Posedion Phytoplankton Abundance Bydivision: ''
+      Posedion Phytoplankton Abundance Byspecies: ''
+      Posedion Phytoplankton Size: ''
+    ? Plankton Imager Zooplankton Data, Acoustic Fish Biomass Estimates, Chlorophyll
+      Measurements and CTD Data from the Celtic Sea and Western English Channel in
+      October - 2018
+    : Indicator Paper Chlorophyll Acoustics Ctddata: ''
+      Indicator Paper Plankton Imager Data: ''
+      Read Me: ''
+    ? Potentially Toxic Phytoplankton Counts from Water Samples Collected from Shellfish
+      Growing Areas in Jersey from - 2004 to 2019
+    : Jersey Toxic Algae Annual Results 2004-2019: ''
+    Predicting Marine Phytoplankton Community Size Structure from Empirical Relationships with Remotely Sensed Variables:
+      Primary Production Data with Finer Scale Environmentals: ''
+    Quantitative Sediment Composition Predictions for the North-West European Continental Shelf:
+      Sediment Composition Predictions Qgis Layer Formatting: ''
+      Sediment Predictions: ''
+    Sediment Particulate Organic Carbon in Marine Sediments Around England and Wales 1996 - 2017:
+      Sediment Organic Carbon 1996 2015 Column Header Descriptions V1.0: ''
+      Sediment Organic Carbon 1996 2015 V1.0: ''
+    Sublittoral Nematode and Copepod Assemblages from 12 Sites Around the UK Coast from May 1997 to November - 1999:
+      Abiotic Factors Sampling Sites 1997 1998: ''
+      Inshore Nematode Copepod Presence 1997 1998: ''
+      Offshore Nematode Copepod Presence 1997 1998: ''
+    Sublittoral Nematode Assemblages from Four Offshore Sites Around the UK Coast, May 1996 to June - 1999:
+      Abiotic Factors: ''
+      Nematode Assemblages: ''
+    UK Shelf and North Sea Quantitative Sediment Composition Predictions:
+      Stephens&Diesing2015 Component & Class Predictions Rasters: ''
+      Stephens&Diesing2015 Folk Sediment Class Shapefile: ''
+    West Gabbard Zooplankton Abundance Time Series Monitoring Using ZooScan from - 2016 to 2022:
+      West Gabbard Zooplankton 2016 2020 Osparformat: ''
+      Wgabbard CEND0221-0222 Abundance Results Final: ''
+    ? Zooplankton Abundance Data Derived from the Plankton Imager System from the
+      Western English Channel and Eastern Irish Sea from - 2016 to 2019
+    : CEFAS Plankton Imager Data 2016 2019: ''
+  Climate Change, Conservation & Human Impacts:
+    Climate Projections of Marine Non-Native Species in North-West Europe:
+      Climate Projections Input Data Doi: ''
+      Maxent Outputs 2055: ''
+      Maxent Outputs 2085: ''
+    FLOX Fisheries, Low Oxygen and Climate Change Climate Model Data:
+      Getm Ersem Decadal Avs: ''
+    'Georeferenced Data of Oil and Gas Platforms in the North Sea: 2011-2012':
+      North Sea Man Made Structures Platform: ''
+    'Georeferenced Data of Wind Turbines in the North Sea: 2015-2016':
+      North Sea Man Made Structures Turbine: ''
+    'Georeferenced Data of Wrecks in the North Sea: 2016':
+      North Sea Man Made Structures Wreck: ''
+    ? Hydrological Sections for England, Scotland and Wales with Associated River
+      Catchment 2023, Water Framework Directive (Water Framework Directive) Waterbody
+      and Regional Information (WGS84).
+    : Generation of the New Layer of Fhi Catchments Based on Ceh Integrated Hydrological Units: ''
+      Ihu Fhi Geopackage: ''
+    ? Hydrological Sections for England, Scotland and Wales with Associated River
+      Catchment 2023, Water Framework Directive (Water Framework Directive) Waterbody
+      and Regional Information British National Grid (BNG).
+    : Generation of the New Layer of Fhi Catchments Based on Ceh Integrated Hydrological Units: ''
+      Ihu Fhi Geopackage: ''
+    Modelled Projections of Habitat for Commercial Fish Around North-Western Europe Under Climate Change, - 2020 to 2060:
+      Enm Climate Projections: ''
+    ? Modelled Projections of Habitat for Fish Species Feeding Guilds Around North-Western
+      Europe Under Climate Change, - 2010 to 2095
+    : Modelled Projections of Habitat for Fish Species Feeding Guilds: ''
+    Non-Indigenous Species Introduction Records in UK Waters - 2003 to 2020:
+      Nis Introductions UK Data Ukms: ''
+      Read Me Column Headers: ''
+    Non-Indigenous Species Spatial Spread in UK Waters from - 1890 to 2020:
+      Nis Established Species Spread UK: ''
+    Non-Spatial Data for Non-Native Species with Regards Real-Time PCR Analysis:
+      Cgigas Spiked Results 20250516 075014: ''
+      Readme for Real-Time Results Tables: ''
+      Spiked: ''
+    Pacific Oyster Physiology Data with Different Microalgal Diets - 2020-2022:
+      Pacific Oyster Physiology 2020-2022: ''
+    ? Saltmarsh Areas in the Marine Protected Areas - South West - Marine Management
+      Organisation - Marine Plan Area Calculated - 2014
+    : Saltmarsh Mpas Sw Mmo Plan Area: ''
+    ? Seahorse Species Predicted Habitat Distributions and Associated Environmental
+      Data Layers Covering the Shelf Seas Surrounding the UK
+    : Bathy.Tif.Aux: ''
+      Bluemel Et Al 2023 Seahorse Habitat Distribution CEFAS: ''
+      Dist Co.Tif.Aux: ''
+      Distance from Seagrass.Tif.Aux: ''
+      Hippocampus Guttulatus Maxent.Asc: ''
+      Hippocampus Hippocampus Maxent.Asc: ''
+      Hippocampus Sp. Maxent.Asc: ''
+      Kriging Chla Max Summer Smooth Current.Tif: ''
+      Kriging Chla Min Winter Smooth.Tif.Aux: ''
+      Kriging Sst Summer Max.Tif.Aux: ''
+      Kriging Sst Winter Min.Tif.Aux: ''
+    ? Species Distribution Model Agreement Data for 19 Vulnerable Marine Species Under
+      Future Climate Change Scenarios in Northwest Europe from - 2020 to 2100
+    : Model Input Data Read Me: ''
+      Model Performance: ''
+      Model Performance Read Me: ''
+      Species: ''
+    UK Marine Strategy Descriptor 11 Ship Noise Assessment Data for - 2018 to 2022:
+      Bb P50 2018 Ukms: ''
+      Bb P50 2021 Ukms: ''
+      Percentages of Region Areas Exceeding Sound Levels: ''
 UKCEH:
-  COSMOS-UK 30-Minute Absolute Humidity: ""
-  COSMOS-UK 30-Minute Air Temperature: ""
-  COSMOS-UK 30-Minute Atmospheric Pressure: ""
-  COSMOS-UK 30-Minute Collection Metadata: ""
-  COSMOS-UK 30-Minute Longwave Radiation - Incoming: ""
-  COSMOS-UK 30-Minute Longwave Radiation - Outgoing: ""
-  COSMOS-UK 30-Minute Net Radiation: ""
-  COSMOS-UK 30-Minute Precipitation (Pluvio): ""
-  COSMOS-UK 30-Minute Precipitation (rainE): ""
-  COSMOS-UK 30-Minute Precipitation (Tipping Bucket): ""
-  COSMOS-UK 30-Minute Relative Humidity: ""
-  COSMOS-UK 30-Minute Shortwave Radiation - Incoming: ""
-  COSMOS-UK 30-Minute Shortwave Radiation - Outgoing: ""
-  COSMOS-UK 30-Minute Site Locations: ""
-  COSMOS-UK 30-Minute Snow Depth: ""
-  COSMOS-UK 30-Minute Soil Heat Flux 1: ""
-  COSMOS-UK 30-Minute Soil Heat Flux 2: ""
-  COSMOS-UK 30-Minute STP 01 Soil Temperature at 2cm: ""
-  COSMOS-UK 30-Minute STP 02 Soil Temperature at 5cm: ""
-  COSMOS-UK 30-Minute STP 03 Soil Temperature at 10cm: ""
-  COSMOS-UK 30-Minute STP 04 Soil Temperature at 20cm: ""
-  COSMOS-UK 30-Minute STP 05 Soil Temperature at 50cm: ""
-  COSMOS-UK 30-Minute TDT 01 - Soil Temperature at 10cm: ""
-  COSMOS-UK 30-Minute TDT 01 - Volumetric Water Content at 10cm: ""
-  COSMOS-UK 30-Minute TDT 02 - Soil Temperature at 10cm: ""
-  COSMOS-UK 30-Minute TDT 02 - Volumetric Water Content at 10cm: ""
-  COSMOS-UK 30-Minute TDT 03 - Soil Temperature at 5cm: ""
-  COSMOS-UK 30-Minute TDT 03 - Volumetric Water Content at 5cm: ""
-  COSMOS-UK 30-Minute TDT 04 - Soil Temperature at 5cm: ""
-  COSMOS-UK 30-Minute TDT 04 - Volumetric Water Content at 5cm: ""
-  COSMOS-UK 30-Minute TDT 05 - Soil Temperature at 15cm: ""
-  COSMOS-UK 30-Minute TDT 05 - Volumetric Water Content at 15cm: ""
-  COSMOS-UK 30-Minute TDT 06 - Soil Temperature at 15cm: ""
-  COSMOS-UK 30-Minute TDT 06 - Volumetric Water Content at 15cm: ""
-  COSMOS-UK 30-Minute TDT 07 - Soil Temperature at 25cm: ""
-  COSMOS-UK 30-Minute TDT 07 - Volumetric Water Content at 25cm: ""
-  COSMOS-UK 30-Minute TDT 08 - Soil Temperature at 25cm: ""
-  COSMOS-UK 30-Minute TDT 08 - Volumetric Water Content at 25cm: ""
-  COSMOS-UK 30-Minute TDT 09 - Soil Temperature at 50cm: ""
-  COSMOS-UK 30-Minute TDT 09 - Volumetric Water Content at 50cm: ""
-  COSMOS-UK 30-Minute TDT 10 - Soil Temperature at 50cm: ""
-  COSMOS-UK 30-Minute TDT 10 - Volumetric Water Content at 50cm: ""
-  COSMOS-UK 30-Minute Wind Direction: ""
-  COSMOS-UK 30-Minute Wind Speed: ""
-  COSMOS-UK 30-Minute Wind Speed - X Component: ""
-  COSMOS-UK 30-Minute Wind Speed - Y Component: ""
-  COSMOS-UK 30-Minute Wind Speed - Z Component: ""
-  COSMOS-UK Daily Absolute Humidity: ""
-  COSMOS-UK Daily Air Temperature: ""
-  COSMOS-UK Daily Air Temperature - Maximum: ""
-  COSMOS-UK Daily Air Temperature - Minimum: ""
-  COSMOS-UK Daily Albedo: ""
-  COSMOS-UK Daily Atmospheric Pressure: ""
-  COSMOS-UK Daily Collection Metadata: ""
-  COSMOS-UK Daily COSMOS Neutron Counts (corrected): ""
-  COSMOS-UK Daily COSMOS Volumetric Water Content: ""
-  COSMOS-UK Daily D86 75M: ""
-  COSMOS-UK Daily Longwave Radiation - Incoming: ""
-  COSMOS-UK Daily Longwave Radiation - Outgoing: ""
-  COSMOS-UK Daily Net Radiation: ""
-  COSMOS-UK Daily Potential Evaporation: ""
-  COSMOS-UK Daily Precipitation (Pluvio): ""
-  COSMOS-UK Daily Precipitation (rainE): ""
-  COSMOS-UK Daily Precipitation (Tipping Bucket): ""
-  COSMOS-UK Daily Relative Humidity: ""
-  COSMOS-UK Daily Shortwave Radiation - Incoming: ""
-  COSMOS-UK Daily Shortwave Radiation - Outgoing: ""
-  COSMOS-UK Daily Site Locations: ""
-  COSMOS-UK Daily Snow: ""
-  COSMOS-UK Daily Snow Depth: ""
-  COSMOS-UK Daily Snow Water Equivalent: ""
-  COSMOS-UK Daily Soil Heat Flux 1: ""
-  COSMOS-UK Daily Soil Heat Flux 2: ""
-  COSMOS-UK Daily STP 01 Soil Temperature at 2cm: ""
-  COSMOS-UK Daily STP 02 Soil Temperature at 5cm: ""
-  COSMOS-UK Daily STP 03 Soil Temperature at 10cm: ""
-  COSMOS-UK Daily STP 04 Soil Temperature at 20cm: ""
-  COSMOS-UK Daily STP 05 Soil Temperature at 50cm: ""
-  COSMOS-UK Daily TDT 01 - Soil Temperature at 10cm: ""
-  COSMOS-UK Daily TDT 01 - Volumetric Water Content at 10cm: ""
-  COSMOS-UK Daily TDT 02 - Soil Temperature at 10cm: ""
-  COSMOS-UK Daily TDT 02 - Volumetric Water Content at 10cm: ""
-  COSMOS-UK Daily TDT 03 - Soil Temperature at 5cm: ""
-  COSMOS-UK Daily TDT 03 - Volumetric Water Content at 5cm: ""
-  COSMOS-UK Daily TDT 04 - Soil Temperature at 5cm: ""
-  COSMOS-UK Daily TDT 04 - Volumetric Water Content at 5cm: ""
-  COSMOS-UK Daily TDT 05 - Soil Temperature at 15cm: ""
-  COSMOS-UK Daily TDT 05 - Volumetric Water Content at 15cm: ""
-  COSMOS-UK Daily TDT 06 - Soil Temperature at 15cm: ""
-  COSMOS-UK Daily TDT 06 - Volumetric Water Content at 15cm: ""
-  COSMOS-UK Daily TDT 07 - Soil Temperature at 25cm: ""
-  COSMOS-UK Daily TDT 07 - Volumetric Water Content at 25cm: ""
-  COSMOS-UK Daily TDT 08 - Soil Temperature at 25cm: ""
-  COSMOS-UK Daily TDT 08 - Volumetric Water Content at 25cm: ""
-  COSMOS-UK Daily TDT 09 - Soil Temperature at 50cm: ""
-  COSMOS-UK Daily TDT 09 - Volumetric Water Content at 50cm: ""
-  COSMOS-UK Daily TDT 10 - Soil Temperature at 50cm: ""
-  COSMOS-UK Daily TDT 10 - Volumetric Water Content at 50cm: ""
-  COSMOS-UK Daily Wind Direction: ""
-  COSMOS-UK Daily Wind Speed: ""
-  COSMOS-UK Data Collections List: ""
-  Oxford Rivers - All Datasets Metadata: ""
-  Oxford Rivers - All Determinands List: ""
-  Oxford Rivers - Water Level Sonde Sites: ""
-  Oxford Rivers - Water Quality Sonde Sites: ""
-  Oxford Rivers - EA Water Quality Spot Sample Sites: ""
-  Oxford Rivers - Storm Overflow (EDM) Sites: ""
-  Oxford Rivers - Bathing Water Sites: ""
-  Oxford Rivers - Rainfall Sites: ""
-  Oxford Rivers - Sewage Treatment Works (FFT) Sites: ""
-  Oxford Rivers - Flood Warning Sites: ""
-  Oxford Rivers - FreshWater Watch Citizen Science Sites: ""
-  Oxford Rivers - Water Testing River Thames Sites: ""
-  Oxford Rivers - UKCEH Thames Initiative Sites: ""
+  COSMOS-UK:
+    Atmospheric Parameters:
+      30-Minute:
+        30-Minute Absolute Humidity: ''
+        30-Minute Air Temperature: ''
+        30-Minute Atmospheric Pressure: ''
+        30-Minute Relative Humidity: ''
+        30-Minute Wind Direction: ''
+        30-Minute Wind Speed: ''
+        30-Minute Wind Speed - X Component: ''
+        30-Minute Wind Speed - Y Component: ''
+        30-Minute Wind Speed - Z Component: ''
+      Daily:
+        Daily Absolute Humidity: ''
+        Daily Air Temperature: ''
+        Daily Air Temperature - Maximum: ''
+        Daily Air Temperature - Minimum: ''
+        Daily Atmospheric Pressure: ''
+        Daily Relative Humidity: ''
+        Daily Wind Direction: ''
+        Daily Wind Speed: ''
+    Miscellaneous:
+      30-Minute Collection Metadata: ''
+      30-Minute Site Locations: ''
+      Daily Collection Metadata: ''
+      Daily COSMOS Neutron Counts (corrected): ''
+      Daily COSMOS Volumetric Water Content: ''
+      Daily D86 75M: ''
+      Daily Potential Evaporation: ''
+      Daily Site Locations: ''
+      Data Collections List: ''
+    Radiation & Energy Balance:
+      30-Minute:
+        30-Minute Longwave Radiation - Incoming: ''
+        30-Minute Longwave Radiation - Outgoing: ''
+        30-Minute Net Radiation: ''
+        30-Minute Shortwave Radiation - Incoming: ''
+        30-Minute Shortwave Radiation - Outgoing: ''
+        30-Minute Soil Heat Flux 1: ''
+        30-Minute Soil Heat Flux 2: ''
+      Daily:
+        Daily Albedo: ''
+        Daily Longwave Radiation - Incoming: ''
+        Daily Longwave Radiation - Outgoing: ''
+        Daily Net Radiation: ''
+        Daily Shortwave Radiation - Incoming: ''
+        Daily Shortwave Radiation - Outgoing: ''
+        Daily Soil Heat Flux 1: ''
+        Daily Soil Heat Flux 2: ''
+    Percipitation & Snow:
+      30-Minute:
+        30-Minute Precipitation (Pluvio): ''
+        30-Minute Precipitation (rainE): ''
+        30-Minute Precipitation (Tipping Bucket): ''
+        30-Minute Snow Depth: ''
+      Daily:
+        Daily Precipitation (Pluvio): ''
+        Daily Precipitation (rainE): ''
+        Daily Precipitation (Tipping Bucket): ''
+        Daily Snow: ''
+        Daily Snow Depth: ''
+        Daily Snow Water Equivalent: ''
+    Soil Temperature & Moisture:
+      30-Minute:
+        STP 01 Soil Temperature at 2cm: ''
+        STP 02 Soil Temperature at 5cm: ''
+        STP 03 Soil Temperature at 10cm: ''
+        STP 04 Soil Temperature at 20cm: ''
+        STP 05 Soil Temperature at 50cm: ''
+        TDT 01 - Soil Temperature at 10cm: ''
+        TDT 01 - Volumetric Water Content at 10cm: ''
+        TDT 02 - Soil Temperature at 10cm: ''
+        TDT 02 - Volumetric Water Content at 10cm: ''
+        TDT 03 - Soil Temperature at 5cm: ''
+        TDT 03 - Volumetric Water Content at 5cm: ''
+        TDT 04 - Soil Temperature at 5cm: ''
+        TDT 04 - Volumetric Water Content at 5cm: ''
+        TDT 05 - Soil Temperature at 15cm: ''
+        TDT 05 - Volumetric Water Content at 15cm: ''
+        TDT 06 - Soil Temperature at 15cm: ''
+        TDT 06 - Volumetric Water Content at 15cm: ''
+        TDT 07 - Soil Temperature at 25cm: ''
+        TDT 07 - Volumetric Water Content at 25cm: ''
+        TDT 08 - Soil Temperature at 25cm: ''
+        TDT 08 - Volumetric Water Content at 25cm: ''
+        TDT 09 - Soil Temperature at 50cm: ''
+        TDT 09 - Volumetric Water Content at 50cm: ''
+        TDT 10 - Soil Temperature at 50cm: ''
+        TDT 10 - Volumetric Water Content at 50cm: ''
+      Daily:
+        STP Soil Temperature at 2cm: ''
+        STP Soil Temperature at 5cm: ''
+        STP Soil Temperature at 10cm: ''
+        STP Soil Temperature at 20cm: ''
+        STP Soil Temperature at 50cm: ''
+        TDT 01 - Soil Temperature at 10cm: ''
+        TDT 01 - Volumetric Water Content at 10cm: ''
+        TDT 02 - Soil Temperature at 10cm: ''
+        TDT 02 - Volumetric Water Content at 10cm: ''
+        TDT 03 - Soil Temperature at 5cm: ''
+        TDT 03 - Volumetric Water Content at 5cm: ''
+        TDT 04 - Soil Temperature at 5cm: ''
+        TDT 04 - Volumetric Water Content at 5cm: ''
+        TDT 05 - Soil Temperature at 15cm: ''
+        TDT 05 - Volumetric Water Content at 15cm: ''
+        TDT 06 - Soil Temperature at 15cm: ''
+        TDT 06 - Volumetric Water Content at 15cm: ''
+        TDT 07 - Soil Temperature at 25cm: ''
+        TDT 07 - Volumetric Water Content at 25cm: ''
+        TDT 08 - Soil Temperature at 25cm: ''
+        TDT 08 - Volumetric Water Content at 25cm: ''
+        TDT 09 - Soil Temperature at 50cm: ''
+        TDT 09 - Volumetric Water Content at 50cm: ''
+        TDT 10 - Soil Temperature at 50cm: ''
+        TDT 10 - Volumetric Water Content at 50cm: ''
+  Oxford Rivers:
+    All Datasets Metadata: ''
+    All Determinands List: ''
+    Water Level Sonde Sites: ''
+    Water Quality Sonde Sites: ''
+    EA Water Quality Spot Sample Sites: ''
+    Storm Overflow (EDM) Sites: ''
+    Bathing Water Sites: ''
+    Rainfall Sites: ''
+    Sewage Treatment Works (FFT) Sites: ''
+    Flood Warning Sites: ''
+    FreshWater Watch Citizen Science Sites: ''
+    Water Testing River Thames Sites: ''
+    UKCEH Thames Initiative Sites: ''
+Environment Agency:
+  Bathing Waters:
+    Bathing Water Profiles: ''
+    Bathing Water Risk Predictions: ''
+    Bathing Water Samples - Latest: ''
+    Bathing Water Short Term Pollution Risk: ''
+    Bathing Water Advice Against Bathing: ''
+    Bathing Water Pollution Incidents: ''
+    Bathing Waters - All: ''
+    Bathing Waters - Coastal: ''
+    Bathing Waters - Inland: ''
+  Ecology:
+    Ecology Observable Properties: ''
+    Ecology Observation Types: ''
+    Ecology Observations: ''
+    Ecology Sites - All: ''
+    Ecology Sites - With Properties: ''
+    Ecology Species: ''
+    Ecology Surveys - All: ''
+    Ecology Taxa: ''
+  Flood monitoring:
+    Flood Areas - All: ''
+    Flood Measures - All: ''
+    Flood Readings - Flow Latest: ''
+    Flood Readings - Latest All: ''
+    Flood Readings - Level Latest: ''
+    Flood Readings - Today: ''
+    Flood Stations - Active: ''
+    Flood Stations - All: ''
+    Flood Stations - Coastal: ''
+    Flood Stations - Flow: ''
+    Flood Stations - Groundwater: ''
+    Flood Stations - Level: ''
+    Flood Stations - Tidal: ''
+    Flood Warnings - Active: ''
+    Flood Warnings - All Current: ''
+  Hydrology:
+    Hydrology Measures - All: ''
+    Hydrology Measures - Flow: ''
+    Hydrology Measures - Level: ''
+    Hydrology Stations - Active: ''
+    Hydrology Stations - All: ''
+    Hydrology Stations - Ammonium: ''
+    Hydrology Stations - Conductivity: ''
+    Hydrology Stations - Dissolved Oxygen: ''
+    Hydrology Stations - Flow: ''
+    Hydrology Stations - Groundwater: ''
+    Hydrology Stations - Level: ''
+    Hydrology Stations - Nitrate: ''
+    Hydrology Stations - pH: ''
+    Hydrology Stations - Rainfall: ''
+    Hydrology Stations - Temperature: ''
+    Hydrology Stations - Turbidity: ''
+  Rainfall:
+    Rainfall Measures - All: ''
+    Rainfall Readings - Latest: ''
+    Rainfall Readings - Today: ''
+    Rainfall Stations - All: ''
+  Tide Gauge:
+    Tide Gauge Measures - All: ''
+    Tide Gauge Readings - Latest: ''
+    Tide Gauge Readings - Today: ''
+    Tide Gauge Stations - All: ''
+    Tide Gauge Stations - mAOD: ''
+  Lakes: ''
+  Operational catchment outlines: ''
+  Rivers: ''
+  Transitional and coastal operational catchments: ''
+  Waterbody catchment outlines: ''
+EMODnet:
+  Human Activities:
+    Extraction & Dredging:
+      Aggregate Extraction Areas: ''
+      Aggregate Extraction Locations: ''
+      Dredge Spoil Dumping (Points): ''
+      Dredge Spoil Dumping (Polygons): ''
+      Dumped Munitions (Points): ''
+      Dumped Munitions (Polygons): ''
+      European Dredging Overview: ''
+    Aquaculture:
+      Aquaculture sites: ''
+      EU Shellfish Aquaculture Licenced Sites: ''
+      Freshwater Production: ''
+      Aquaculture - Macroalgae production: ''
+      Aquaculture - Microalgae Production: ''
+      Aquaculture - Spirulina Production: ''
+    Waste & Pollution Management:
+      Desalination Plants: ''
+      EU Waste at Ports (m3/tonnes): ''
+      'Urban Waste Water Treatment Discharge points ': ''
+      Waste Waster Treatment Plants: ''
+    Fisheries:
+      EU Fisheries and fishing intensity: ''
+      European Shellfish Production: ''
+      First Sales of Fish by Species: ''
+      Fish Catches by FAO Fishery Statistical Areas: ''
+      Fishing Effort by FAO Areas/GFCM Subareas and Country: ''
+      Fishing Effort by FAO Areas/GFCM Subareas and Vessel Type: ''
+      Fishing Quotas by FMZs: ''
+      Shellfish Protected Areas Under the Water Framework Directive: ''
+    Marine Planning & Protected Areas:
+      EU Marine Nationally Designated Areas: ''
+      EU Maritime Spatial Planning: ''
+      'EU Military Areas ': ''
+      MSFD marine regions and sub regions: ''
+      Natura 2000: ''
+      State of European Bathing Waters: ''
+      World Database on Marine Protected Areas: ''
+    Energy Infrastructure:
+      European Wind Farms (Points): ''
+      European Wind Farms (Polygons): ''
+      Nuclear Power Plants: ''
+      Ocean Energy - Project Locations: ''
+      Ocean Energy - Test Sites: ''
+      Oil and Gas Boreholes: ''
+      Oil and Gas Offshore Installations: ''
+    Maritime Heritage:
+      Heritage Ship Wrecks: ''
+      UNESCO World Heritage Convention: ''
+      Worldwide Wreck Locations (UK Hydrographic Office): ''
+    Marine Transport & Navigation:
+      Lighthouses: ''
+      Main Ports and Vessel Traffic: ''
+    Cables & Pipelines:
+      Pipelines: ''
+      DE BSH-CONTIS: ''
+      FR SHOM: ''
+      NL Rijkswaterstaat: ''
+      NO NVE: ''
+      Telecommunication Cables - DE BSH-CONTIS: ''
+      Telecommunication Cables - ES CICA: ''
+      Telecommunication Cables - FR SHOM: ''
+      Telecommunication Cables - FR SIGCables: ''
+      Telecommunication Cables - NL Rijkswaterstaat: ''
+      Telecommunication Cables - UK OGA: ''
+  Chemistry:
+    name:
+      All DDT Measurements Counts per Year: ''
+      Tributyltin (Measurements Counts) All Years: ''
+      Tributyltin (Measurements Counts) per Year: ''
+      Tributyltin (Median Values): ''
+      Triphenyltin (Measurements Counts) All Years: ''
+      Triphenyltin (Measurements Counts) per Year: ''
+      Triphenyltin (Median Values): ''
+      Benzo(a)pyrene Measurements Counts per Year: ''
+      CDI Acidity Records: ''
+      CDI Chlorophyll Records: ''
+      CDI Dissolved Gasses Records: ''
+      CDI Hydrocarbons Records: ''
+      CDI Metals and Metalloids Records: ''
+      CDI N+P Nutrients Records: ''
+      CDI Organic Matter Records: ''
+      CDI Organohalogens Records: ''
+      CDI Organometals Records: ''
+      CDI Pesticides Records: ''
+      CDI Radionuclides Records: ''
+      CDI Silicates Records: ''
+      Contaminants Monitored Matrices All Years: ''
+      Contaminants Monitored Matrices per Year: ''
+      Cadmium (Measurements Counts) All Years: ''
+      Cadmium (Measurements Counts) per Year: ''
+      Cadmium (Measurements Percentages): ''
+      Cadmium (Median Values): ''
+      Lead (Measurements Counts) All Years: ''
+      Lead (Measurements Counts) per Year: ''
+      Lead (Measurements Percentages): ''
+      Lead (Median Values): ''
+      Mercury (Measurements Counts) All Years: ''
+      Mercury (Measurements Counts) per Year: ''
+      Mercury (Measurements Percentages): ''
+      Mercury (Median Values): ''
+      Nickel (Measurements Counts) All Years: ''
+      Nickel (Measurements Counts) per Year: ''
+      Nickel (Measurements Percentages): ''
+      Nickel (Median Values): ''
+      Anthracene (Measurements Counts) All Years: ''
+      Anthracene (Measurements Counts) per Year: ''
+      Anthracene (Median Values): ''
+      Benzo(a)pyrene (Measurements Counts) All Years: ''
+      Benzo(a)pyrene (Measurements Counts) per Year: ''
+      Benzo(a)pyrene (Measurements Percentages): ''
+      Benzo(a)pyrene (Median Values): ''
+      Fluoranthene (Measurements Counts) All Years: ''
+      Fluoranthene (Measurements Counts) per Year: ''
+      Fluoranthene (Measurements Percentages): ''
+      Fluoranthene (Median Values): ''
+      Naphthalene (Measurements Counts) All Years: ''
+      Naphthalene (Measurements Counts) per Year: ''
+      Naphthalene (Median Values): ''
+      DDT-DDE-DDD (Measurements Counts) All Years: ''
+      DDT-DDE-DDD (Measurements Counts) per Year: ''
+      DDT-DDE-DDD (Measurements Percentages): ''
+      DDT-DDE-DDD (Median Values): ''
+      Hexachlorobenzene (Measurements Counts) All Years: ''
+      Hexachlorobenzene (Measurements Counts) per Year: ''
+      Hexachlorobenzene (Measurements Percentages): ''
+      Hexachlorobenzene (Median Values): ''
+    Beach Litter - Other Sources - Beaches Locations & Litter List Used: ''
+    ? Beach Litter - Other Sources - Median Number of Cigarette (Without UNEP_MARLIN)
+      Related Items Normalised per 100m & to 1 Survey
+    : ''
+    Beach Litter - Other Sources - Number of Surveys & Temporal Coverage per Beach: ''
+    CDI Marine Litter, Including Plastics Records: ''
+    Micro Litter - Other Specific Protocols - Density per Net Normalised in Grams per km¶ý: ''
+    Micro Litter - Other Specific Protocols - Density per Net Normalised per km¶ý: ''
+    Micro Litter - Other Specific Protocols - Density per Net Normalised per m¶ü: ''
+    Micro Litter - Other Specific Protocols - Nets Location & Mesh Size Used: ''
+    Micro Litter - Other Specific Protocols - Size of Litter per Net: ''
+    Micro Litter - Other Specific Protocols - Spatial Distribution of the Sampling Effort (Period 2017-2022): ''
+    Micro Litter - Other Specific Protocols - Type of Litter per Net: ''
+    Micro Litter - Research and Monitoring Protocols - Density per Net Normalised in Grams per km¶ý: ''
+    Micro Litter - Research and Monitoring Protocols - Density per Net Normalised per km¶ý: ''
+    Micro Litter - Research and Monitoring Protocols - Density per Net Normalised per m¶ü: ''
+    Micro Litter - Research and Monitoring Protocols - Nets Location & Mesh Size Used: ''
+    Micro Litter - Research and Monitoring Protocols - Size of Litter per Net: ''
+    Micro Litter - Research and Monitoring Protocols - Spatial Distribution of Litter Density Normalised per km¶ý: ''
+    Micro Litter - Research and Monitoring Protocols - Spatial Distribution of the Sampling Effort (Period 2017-2022): ''
+    Micro Litter - Research and Monitoring Protocols - Type of Litter per Net: ''
+    Seafloor Litter - Composition of Litter According to Material Categories in Percent per Trawl: ''
+    Seafloor Litter - Density per Trawl Normalised per km¶ý: ''
+    Seafloor Litter - Fishing Related Items Density Normalised per km¶ý: ''
+    Seafloor Litter - Plastic Bags Density Normalised per km¶ý: ''
+    Seafloor Litter - Spatial Distribution of Fishing Related Items Density Normalised per km¶ý: ''
+    Seafloor Litter - Spatial Distribution of Litter Density Normalised per km¶ý: ''
+    Seafloor Litter - Spatial Distribution of Plastic Bags Density Normalised per km¶ý: ''
+    Seafloor Litter - Spatial Distribution of the Sampling Effort (Period 2017-2022): ''
+    Seafloor Litter - Trawls Locations: ''
+  Biology:
+    Biogenic Substrate in European Waters - Points (2025): ''
+    Biogenic Substrate in European Waters - Polygons (2025): ''
+    ECoSS - Database of Annotated Data: ''
+    Emerald Network polygon: ''
+    Temporal Turnover in European Macrobenthos Communities: ''
+  Bathymetry:
+    European Bathymetry Contours 2022: ''
+  Physics:
+    Physics - Absolute Sea Level Trends - SONEL: ''
+    Physics - European Impulsive Noise Events Registry: ''
+    Physics - Global Sea Level Anomalies - ATLAS: ''
+    Physics - Global Sea Level Anomalies - PSMSL: ''
+    Physics - in situ European river gauging stations data platforms: ''
+    Physics - in situ SST data platforms: ''
+    Physics - in situ Water Salinity data platforms: ''
+    Physics - in situ waves data platforms: ''
+    Physics - in situ Wind data platforms: ''
+    Physics - Near Real Time Sea Level - 60m: ''
+    Physics - North Sea Concentration of total suspended matter: ''
+    Physics - Registry of Continuous Noise Monitoring Sites: ''
+Food Standards Agency:
+  FSA Approved Establishments Catalogue: ''
+  FSA Food Alerts: ''
+  FSA Food Hygiene Business Types: ''
+  FSA Food Hygiene Ratings - Authorities: ''
+  FSA Food Hygiene Ratings - Establishments: ''
+  FSA Food Hygiene Ratings Values: ''
+Historic England:
+  Protected wrecks: ''
+ICES:
+  Cetacean sightings all years: ''
+  Cetacean sightings per grid and year: ''
+  Cetacean species per grid and year: ''
+  Cetacean species richness per grid and year: ''
+  Cetacean survey effort (good conditions) per grid and year: ''
+  ICES rectangles: ''
+NBN Atlas:
+  Lower Organisms:
+    Algae Count: ''
+    Algae Species List: ''
+    Bacteria Count: ''
+    Bacteria Species List: ''
+    Chromista Count: ''
+    Chromista Species List: ''
+    Protozoa Count: ''
+    Protozoa Species List: ''
+  All Species:
+    All Occurrences Search: ''
+    All Species Groups Summary: ''
+  Vertebrates:
+    Amphibians Count: ''
+    Amphibians Species List: ''
+    Birds Count: ''
+    Birds Species List: ''
+    Fish Count: ''
+    Fish Species List: ''
+    Mammals Count: ''
+    Mammals Species List: ''
+    Reptiles Count: ''
+    Reptiles Species List: ''
+  Flora:
+    Bryophytes Count: ''
+    Bryophytes Species List: ''
+    Conifers Count: ''
+    Conifers Species List: ''
+    Ferns Count: ''
+    Ferns Species List: ''
+    Flowering Plants Count: ''
+    Flowering Plants Species List: ''
+    Lichens Count: ''
+    Lichens Species List: ''
+    Plants Count: ''
+    Plants Species List: ''
+  Invertebrates:
+    Crustaceans Count: ''
+    Crustaceans Species List: ''
+    Insects Count: ''
+    Insects Species List: ''
+    Molluscs Count: ''
+    Molluscs Species List: ''
+    Spiders Count: ''
+    Spiders Species List: ''
+  Fungi:
+    Fungi Count: ''
+    Fungi Species List: ''
+Natural England:
+  Ancient woodland: ''
+  Biosphere reserves: ''
+  Catchment Sensitive Farming Air Quality Priority Areas (England): ''
+  Chalk rivers: ''
+  England Peat Map Collated Peaty Soil Presence and Depth Observations: ''
+  England Peat Map Collated Vegetation Class Observations: ''
+  England Peat Map Peat Depth Surveys: ''
+  England Peat Map Soil Surveys: ''
+  England Peat Map Upland Peat Erosion and Drainage Grip Dams: ''
+  England Peat Map Upland Peat Erosion and Drainage Grips: ''
+  England Peat Map Upland Peat Erosion and Drainage Gullies: ''
+  England Peat Map Upland Peat Erosion and Drainage Haggs: ''
+  England Peat Map Vegetation Surveys: ''
+  Heritage coast: ''
+  Intertidal seagrass - Mixed/Unspecified Sp.: ''
+  Intertidal seagrass - Ruppia Sp.: ''
+  Intertidal seagrass - Zostera Sp.: ''
+  Local nature reserves: ''
+  Marine conservation zones (MCZs): ''
+  National landscapes (previously AONBs): ''
+  National parks (NPs): ''
+  Natural England Priority Habitats inventory: ''
+  Priority lake habitats: ''
+  Priority river habitat (headwater areas): ''
+  Priority river habitat (rivers): ''
+  Ramsar sites: ''
+  Sites of special scientific interest (SSSIs): ''
+  Special areas of conservation (SACs): ''
+  Special protection areas (SPAs): ''
+  Subtidal seagrass - Zostera Sp.: ''
+Stream:
+  Anglian Water Appointed Wastewater Boundary: ''
+  Anglian Water Appointed Water Supply Boundary: ''
+  Anglian Water Sewer Catchment Boundaries: ''
+  'Anglian Water Storm Overflow Activity ': ''
+  Northumbrian Water Storm Overflow Activity: ''
+  Severn Trent Water Appointed Water Supply Boundaries: ''
+  Severn Trent Water Sewer Catchment Boundaries: ''
+  'Severn Trent Water Storm Overflow Activity ': ''
+  South West Water Appointed Wastewater Boundary: ''
+  South West Water Appointed Water Supply Boundary: ''
+  South West Water Storm Overflow Activity: ''
+  Southern Water Appointed Supply Boundary: ''
+  Southern Water Sewer Catchment Boundaries: ''
+  Southern Water Storm Overflow Activity: ''
+  Thames Water Storm Overflow Activity: ''
+  United Utilities Appointed Wastewater Boundary: ''
+  United Utilities Appointed Water Supply Boundary: ''
+  United Utilities Storm Overflow Activity: ''
+  Wessex Water Appointed Supply Boundary: ''
+  Wessex Water Appointed Wastewater Boundary: ''
+  Wessex Water Environmental Water Quality: ''
+  Wessex Water Storm Overflow Activity: ''
+  Yorkshire Water Appointed Wastewater Boundaries: ''
+  Yorkshire Water Appointed Water Supply Boundaries: ''
+  Yorkshire Water Storm Overflow Activity: ''
+Crown Estate:
+  'Aggregates Site Agreements ': ''
+  'Carbon Capture and Storage Site Agreements ': ''
+  Celtic Sea Floating Offshore Wind - Area of Interest: ''
+  Celtic Sea Floating Offshore Wind - Refined Areas of Search: ''
+  'Fixed Wind Key Resource Areas ': ''
+  Future of Offshore Wind - Regional Areas of Potential Opportunity: ''
+  'Mining Site Agreements ': ''
+  'Natural Gas Storage Pipeline Agreements ': ''
+  'Natural Gas Storage Site Agreements ': ''
+  Tidal Stream Cable Agreements: ''
+  Tidal Stream Site Agreements: ''
+  Wind Cable Agreements: ''
+  Wind Site Agreements: ''
+Met Office:
+  HadUk Monthly Precipitation Observations 1991-2020 12km: ''
+  HadUk Annual Precipitation Observations 1991-2020 12km: ''
+  HadUk Monthly Precipitation Observations 1991-2020 2km: ''
+  HadUK Annual Count of 10mm Rainfall days 1991-2020 2km: ''
+  HadUK Monthly Temperature Observations 1991-2020 12km: ''
+  HadUK Annual Temperature Observations 1991-2020 12km: ''
+  HadUK Annual Min Temperature Observations 1991-2020 12km: ''
+  HadUK Annual Max Temperature Observations 1991-2020 12km: ''
+  HadUK Annual Count of Icing Days 1991-2020 12km: ''
+  HadUK Monthly Min Temperature Observations 1991-2020 12km: ''
+  HadUK Monthly Max Temperature Observations 1991-2020 12km: ''
+  'HadUK Annual Count of Frost Days 1991-2020 12km ': ''
+  'HadUK Annual Count of Summer Days 1991-2020 12km ': ''
+  UKCP18 Time-mean Sea Level Projections to 2100 (cm): ''
