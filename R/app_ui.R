@@ -8,7 +8,7 @@ app_ui <- function(request) {
   shiny::tagList(
     # Leave this function for adding external resources
     golem_add_external_resources(),
-    
+
     # Add window close handler
     tags$script(HTML("
       window.onbeforeunload = function() {
@@ -17,11 +17,11 @@ app_ui <- function(request) {
         });
       };           
     ")),
-    
+
     shinydashboard::dashboardPage(
       shinydashboard::dashboardHeader(
-         title = "Coastal Health Data Explorer",
-         titleWidth = 350
+        title = "Coastal Health Data Explorer",
+        titleWidth = 350
       ),
       shinydashboard::dashboardSidebar(
         div(
