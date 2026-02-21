@@ -89,8 +89,15 @@ mod_layerpopup_server <- function(id){
               shiny::tags$button(
                 type = "button",
                 class = "btn quit-btn",
-                "Close",
+                "Close table",
                 onclick = "$('.modal').modal('hide')" # Hides the modal
+              ),
+
+              shiny::tags$button(
+                type = "button",
+                class = "btn quit-btn",
+                "Quit CoHDEx",
+                onclick = "Shiny.setInputValue('quitApp', true, {priority: 'event'})"
               ),
               
               shiny::tags$script(HTML("
@@ -106,16 +113,60 @@ mod_layerpopup_server <- function(id){
             # Modal content
             shiny::tagList(
               # Brief instructions
+#              htmltools::p(
+#                "The following layers were selected. You can use the links to 
+#              navigate to the source webpage for each layer, or use the links to 
+#              download the data directly. Additionally, you can use the blue 
+#              download buttons to load the selected layer directly into your R
+#              session as an sf object."
+#              ),
+
               htmltools::p(
-                "The following layers were selected. You can use the links to 
-              navigate to the source webpage for each layer, or use the links to 
-              download the data directly. Additionally, you can use the blue 
-              download buttons to load the selected layer directly into your R
-              session as an sf object."
+                style = "font-weight: bold;",
+                "The following layers were selected."
               ),
+
+              shiny::actionLink(ns("table_help"), "Show additional information..."),
+
+              shiny::conditionalPanel(
+                condition = sprintf("input['%s'] %% 2 === 1", ns("table_help")),
+                style = "margin: 10px 0; padding: 10px; border: 1px solid #ddd; border-radius: 6px; background: #f7f7f7;",
+                htmltools::tags$ul(
+                  htmltools::tags$li("You can use this table to navigate to the 
+                  data sources, download the data to your machine, or load it 
+                  directly into your R session with sf."),
+                  htmltools::tags$li("Below is a description of each column:"),
+                  htmltools::tags$ul(
+                    htmltools::tags$li(htmltools::tags$strong("Layer name: "), "The name of the dataset."),
+                    htmltools::tags$li(htmltools::tags$strong("Web link: "), "A clickable hyperlink to the source webpage for the dataset. This webpage will normally contain additional relevant information about the dataset."),
+                    htmltools::tags$li(htmltools::tags$strong("Download link: "), "A clickable hyperlink that will download the dataset directly to your machine."),
+                    htmltools::tags$li(htmltools::tags$strong("Download format: "), "The file format in which the dataset will be downloaded."),
+                    htmltools::tags$li(htmltools::tags$strong("Load with sf: "), "Clicking this button loads the dataset directly into your R session with sf. The data will become available in your session once you close the app. (note that this may not work for all datasets, depending on the data source)")
+                  ),
+                  htmltools::tags$li("There all also some global action buttons provided:"),
+                  htmltools::tags$ul(
+                    htmltools::tags$li(htmltools::tags$strong("Download layer table: "), "Downloads the table of selected layers as a .csv file containing the relevant links to web pages."),
+                    htmltools::tags$li(htmltools::tags$strong("Download all layers to computer: "), "Downloads all selected layers to your machine via the browser. (note that this may not work for all datasets, depending on the data source)"),
+                    htmltools::tags$li(htmltools::tags$strong("Load all with sf: "), "Loads all selected layers directly into your R session with sf. The data will become available in your session once you close the app. (note that this may not work for all datasets, depending on the data source)"),
+                    htmltools::tags$li(htmltools::tags$strong("Close: "), "Closes this popup box.")
+                  )
+                )
+              ),
+
+              shiny::tags$script(HTML(sprintf(
+                "$(document).on('shiny:inputchanged', function(event) {
+                   if (event.name === '%s') {
+                     var val = event.value || 0;
+                     var label = (val %% 2 === 1) ? 'Hide additional information...' : 'Show additional information...';
+                     $('#%s').text(label);
+                   }
+                 });",
+                ns("table_help"), ns("table_help")
+              ))),
+
               htmltools::p(
-                style = "font-style: italic;",
-                "Note that data loaded into your R session will only become 
+                style = "font-style: italic; font-weight: bold;",
+                "\n\nNote that data loaded into your R session will only become 
               available once you close the app."
               ),
               

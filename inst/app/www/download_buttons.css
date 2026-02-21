@@ -1,4 +1,4 @@
- /* General button style */
+/* General button style */
 .btn-sfdownload {
   position: relative;
   display: inline-flex; /* Allows text and icon alignment */
@@ -163,4 +163,22 @@
   overflow-x: hidden;
 }
 
+:root {
+  --header-bg: #3C8DBC;
+  --header-text: #ffffff;
+}
 
+.main-header .navbar,
+.main-header .logo,
+.main-header .logo:hover {
+  background-color: var(--header-bg) !important;
+  color: var(--header-text) !important;
+}
+
+.main-header .navbar .sidebar-toggle {
+  color: var(--header-text) !important;
+}
+
+.main-header .navbar .sidebar-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}

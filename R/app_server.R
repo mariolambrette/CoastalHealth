@@ -6,14 +6,14 @@
 #' @noRd
 
 app_server <- function(input, output, session) {
-  
+
   # Add session end handler for browser window close
   session$onSessionEnded(function() {
     isolate({
       QuitApp()
     })
   })
-  
+
   # UI for Sidebar with Fixed buttons along the top
   output$dynamic_sidebar <- shiny::renderUI({
     # Create the buttons div that will always be present
@@ -56,7 +56,7 @@ app_server <- function(input, output, session) {
       # Empty div when no selection
       div(style = "flex-grow: 1;")
     }
-    
+
     # Return the combined layout
     shiny::tagList(
       div(
@@ -66,19 +66,19 @@ app_server <- function(input, output, session) {
       )
     )
   })
-  
+
   # Module servers
   mod_map_server("map_1")
   mod_area_server("area_1")
   mod_wbview_server("wbview_1")
   mod_layerselect_server("layerselect_1")
   mod_layerpopup_server("layerpopup_1")
-  
+
   # Call the area selection module when the area-btn is pressed
   shiny::observeEvent(input$AreaSelect, {
-   
+
     atlas_env$areatrigger(Sys.time())
-    
+
     shiny::showModal(
       shiny::modalDialog(
         title = "Select management catchments of interest",
@@ -89,12 +89,12 @@ app_server <- function(input, output, session) {
       )
     )
   })
-  
+
   # Quit the app when the quit button is pressed
   shiny::observeEvent(input$quitApp, {
     stopApp()
   })
-  
+
   # Recentre the map when the recentre button is pressed
   shiny::observeEvent(input$Recentre, {
     atlas_env$recentre_trigger(Sys.time())
