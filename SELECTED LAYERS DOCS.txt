@@ -1,0 +1,7 @@
+Layer name: The name of the selected layer
+Web link: A hyperlink to the webpage which hosts the dataset. This is usually the data provider's website, the page will give more information about the selected dataset.
+Download link: Clicking this hyperlink will download the selected dataset to your machine.
+Download format: This is the file format in which the selected dataset will be downloaded if you click the 'Download link' hyperlink.
+Load with sf: Clicking this button loads the selected dataset into your R session. The dataset will become available once you close the app.
+
+BUTTONS:
