@@ -43,15 +43,22 @@ process_url <- function(url) {
     )
   }
   
+  ## TODO: Update this processing to:
+  # (1) Look in the look up table to see if spatial filtering is enabled
+  # (2) Check the reference file for the filtering type pattern
+  # (3) Build the filter pattern accordinly (with bounds, centre and radius values)
+  # (4) Build final URL
+
   if ((grepl("\\{xmax\\}", url))) { # Check for spatial filtering
-    
+
     # Replace with values from atlas_env$bounds
     url <- gsub("\\{xmin\\}", atlas_env$bounds[[1]], url)
     url <- gsub("\\{ymin\\}", atlas_env$bounds[[2]], url)
     url <- gsub("\\{xmax\\}", atlas_env$bounds[[3]], url)
     url <- gsub("\\{ymax\\}", atlas_env$bounds[[4]], url)
-    
+
   }
-  return(url)
   
+  return(url)
+
 }

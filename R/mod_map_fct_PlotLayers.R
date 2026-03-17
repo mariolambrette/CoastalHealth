@@ -37,6 +37,8 @@ Plot_opcats <- function(map_proxy){
   # Get the bounds of the opcat layer
   atlas_env$bounds <- sf::st_union(isolate(atlas_env$opcats_spatial()), atlas_env$ices) %>%
     sf::st_bbox(.)
+
+  ## TODO: Also calculate centre point and radius of minimum bounding circle.
   
   map_proxy %>%
     leaflet::clearGroup("opcats") %>%

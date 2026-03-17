@@ -20,16 +20,12 @@
 #' @noRd
 
 load_sf <- function(url, id) {
-  
+
   assign(
-    x     = id, 
+    x     = id,
     value = sf::read_sf(url) %>%
-      sf::st_crop(., sf::st_as_sfc(atlas_env$bounds)), 
+      sf::st_crop(., sf::st_as_sfc(atlas_env$bounds)),
     envir = .GlobalEnv
   )
-  
+
 }
-
-
-
-

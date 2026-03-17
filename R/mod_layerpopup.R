@@ -43,19 +43,20 @@ mod_layerpopup_ui <- function(id) {
 mod_layerpopup_server <- function(id){
   shiny::moduleServer(id, function(input, output, session){
     ns <- session$ns
-    
+
     shiny::observeEvent(atlas_env$popuptrigger(), {
-      
+
       # Filter layers to those selected and create output table
-      layers <- data.table::fread(system.file("extdata", "layer_urls.csv", package = "CoastalHealth")) %>%
+      layers <- data.table::fread(
+        system.file("extdata", "layer_urls.csv", package = "CoastalHealth")
+      ) %>%
         dplyr::filter(name %in% atlas_env$selected_layers)
-      
-      
+
       if (nrow(layers) > 0) {
         output$table <- reactable::renderReactable({
           createtable(layers, ns = ns)
         })
-        
+
         # Define and show the modal dialog
         shiny::showModal(
           shiny::modalDialog(
@@ -64,28 +65,36 @@ mod_layerpopup_server <- function(id){
             easyClose = TRUE,  # Allow closing with Esc or clicking outside
             footer = shiny::div(
               class = "layerpopup-footer",
-              
-             shiny::downloadButton(
+
+              shiny::downloadButton(
                 outputId = ns("download_table"),
                 label = "Download layer table",
                 class = "btn neut-btn btn-allsf",
                 icon = NULL
               ),
-              
+
               shiny::tags$button(
                 type = "button",
                 class = "btn neut-btn btn-allsf",
                 "Download all layers to computer",
-                onclick = paste0("Shiny.setInputValue('", ns("all_download"), "', Date.now(), {priority: 'event'})")
+                onclick = paste0(
+                  "Shiny.setInputValue('",
+                  ns("all_download"),
+                  "', Date.now(), {priority: 'event'})"
+                )
               ),
-              
+
               shiny::tags$button(
                 type = "button",
                 class = "btn neut-btn",
                 "Load all with sf",
-                onclick = paste0("Shiny.setInputValue('", ns("all_sf_load"), "', Date.now(), {priority: 'event'})")
+                onclick = paste0(
+                  "Shiny.setInputValue('",
+                  ns("all_sf_load"),
+                  "', Date.now(), {priority: 'event'})"
+                )
               ),
-              
+
               shiny::tags$button(
                 type = "button",
                 class = "btn quit-btn",

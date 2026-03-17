@@ -39,9 +39,9 @@ env_setup <- function(reset = FALSE) {
   atlas_env$opcats_spatial <- shiny::reactiveVal(NULL)
   
   # Placeholder for map bounds, and area centre and radius
-  atlas_env$bounds        <- NULL
-  atlas_env$opcats_centre <- NULL
-  atlas_env$opcats_radius <- NULL
+  atlas_env$bounds      <- NULL
+  atlas_env$area_centre <- NULL
+  atlas_env$area_radius <- NULL
   
   # Trigger for recentring map
   atlas_env$recentre_trigger <- shiny::reactiveVal(NULL)
