@@ -157,10 +157,10 @@
   position: absolute;
   top: 50;
   left: 0;
-  width: 350px;
+  width: 450px;
   height: calc(100vh - 50px); /* Subtract header height */
   overflow-y: auto;
-  overflow-x: hidden;
+  overflow-x: auto;
 }
 
 :root {
