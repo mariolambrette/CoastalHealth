@@ -132,11 +132,11 @@
 .map-container {
   position: absolute;
   top: 50;
-  left: 350;
+  left: 450;
   right: 0;
   bottom: 0;
   height: calc(100vh - 50px); /* Subtract header height */
-  width: calc(100vw - 350px); /* Subtract sidebar width */
+  width: calc(100vw - 450px); /* Subtract sidebar width */
   overflow: hidden;
   transition: width 0.3s ease, height 0.3s ease;
 }
