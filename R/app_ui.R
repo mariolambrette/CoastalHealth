@@ -28,7 +28,7 @@ app_ui <- function(request) {
           shiny::uiOutput("dynamic_sidebar"),
           class = "sidebar-container"
         ),
-        width = 350
+        width = 450
       ),
       shinydashboard::dashboardBody(
         # Leaflet map container
