@@ -176,7 +176,7 @@ mod_layerpopup_server <- function(id){
               htmltools::p(
                 style = "font-style: italic; font-weight: bold;",
                 "  "
-              )
+              ),
 
               htmltools::p(
                 style = "font-style: italic; font-weight: bold;",
