@@ -60,7 +60,7 @@ mod_layerpopup_server <- function(id){
         # Define and show the modal dialog
         shiny::showModal(
           shiny::modalDialog(
-            title = "Selected layers",
+            title = "Selected layer(s) table",
             size = "l",  # Large modal
             easyClose = TRUE,  # Allow closing with Esc or clicking outside
             footer = shiny::div(
@@ -150,7 +150,7 @@ mod_layerpopup_server <- function(id){
                     htmltools::tags$li(htmltools::tags$strong("Web link: "), "A clickable hyperlink to the source webpage for the dataset. This webpage will normally contain additional relevant information about the dataset."),
                     htmltools::tags$li(htmltools::tags$strong("Download link: "), "A clickable hyperlink that will download the dataset directly to your machine."),
                     htmltools::tags$li(htmltools::tags$strong("Download format: "), "The file format in which the dataset will be downloaded."),
-                    htmltools::tags$li(htmltools::tags$strong("Load with sf: "), "Clicking this button loads the dataset directly into your R session with sf. The data will become available in your session once you close the app. (note that this may not work for all datasets, depending on the data source)")
+                    htmltools::tags$li(htmltools::tags$strong("Load with sf: "), "Clicking this button loads the dataset directly into your R session with sf. The data will become available in your session once you quit CoHDEx and return to your R session. (note that this may not work for all datasets, depending on the data source)")
                   ),
                   htmltools::tags$li("There all also some global action buttons provided:"),
                   htmltools::tags$ul(
@@ -175,8 +175,13 @@ mod_layerpopup_server <- function(id){
 
               htmltools::p(
                 style = "font-style: italic; font-weight: bold;",
+                "  "
+              )
+
+              htmltools::p(
+                style = "font-style: italic; font-weight: bold;",
                 "\n\nNote that data loaded into your R session will only become 
-              available once you close the app."
+              available once you quit CoHDEx and return to your R session."
               ),
               
               # Render the table
