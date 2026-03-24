@@ -21,7 +21,7 @@ app_ui <- function(request) {
     shinydashboard::dashboardPage(
       shinydashboard::dashboardHeader(
         title = "Coastal Health Data Explorer",
-        titleWidth = 350
+        titleWidth = 450
       ),
       shinydashboard::dashboardSidebar(
         div(
