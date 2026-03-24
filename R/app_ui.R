@@ -21,14 +21,14 @@ app_ui <- function(request) {
     shinydashboard::dashboardPage(
       shinydashboard::dashboardHeader(
         title = "Coastal Health Data Explorer",
-        titleWidth = 350
+        titleWidth = NULL
       ),
       shinydashboard::dashboardSidebar(
         div(
           shiny::uiOutput("dynamic_sidebar"),
           class = "sidebar-container"
         ),
-        width = 350
+        width = NULL
       ),
       shinydashboard::dashboardBody(
         # Leaflet map container
@@ -72,7 +72,45 @@ golem_add_external_resources <- function() {
       crossorigin = "anonymous"
     ),
     shiny::includeScript(system.file("app/www/sidebar_resize.js", package = "CoastalHealth")),
-    shiny::includeCSS(system.file("app/www/download_buttons.css", package = "CoastalHealth"))
-    # Add here other external resources
+    shiny::includeCSS(system.file("app/www/download_buttons.css", package = "CoastalHealth")),
+    tags$style(HTML("
+    /* Let JS control these widths instead of shinydashboard defaults */
+    .main-sidebar {
+      width: 300px;               /* starting fallback before JS runs */
+      transition: width 0.2s ease;
+    }
+    .main-sidebar .sidebar {
+      width: inherit;
+      overflow-x: auto;
+      overflow-y: auto;
+      white-space: nowrap;        /* prevent tree nodes from wrapping */
+    }
+    .main-header .logo {
+      width: 300px;
+      transition: width 0.2s ease;
+    }
+    .main-header .navbar {
+      margin-left: 300px;
+      transition: margin-left 0.2s ease;
+    }
+    .content-wrapper {
+      margin-left: 300px;
+      transition: margin-left 0.2s ease;
+    }
+
+    /* Make sure tree nodes can expand to full width */
+    .jstree-node,
+    .jstree-anchor {
+      white-space: nowrap;
+    }
+
+    /* Sidebar container should not constrain content */
+    .sidebar-container {
+      width: max-content;
+      min-width: 100%;
+    }
+  "))
   )
+    
+    # Add here other external resources
 }

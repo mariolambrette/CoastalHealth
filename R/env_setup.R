@@ -40,8 +40,9 @@ env_setup <- function(reset = FALSE) {
   
   # Placeholder for map bounds, and area centre and radius
   atlas_env$bounds      <- NULL
-  atlas_env$area_centre <- NULL
-  atlas_env$area_radius <- NULL
+  atlas_env$area_centre <- NULL # Centre coordinates of minimum bounding circle
+                                # [1] = x (lon), [2] = y (lat), in WGS84 
+  atlas_env$area_radius <- NULL # Radius of minimum bounding circle in km
   
   # Trigger for recentring map
   atlas_env$recentre_trigger <- shiny::reactiveVal(NULL)

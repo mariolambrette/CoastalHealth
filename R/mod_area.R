@@ -16,7 +16,7 @@ mod_area_ui <- function(id) {
     # Instructional text
     shiny::div(
       style = "margin-bottom: 10px;", # Optional: adds some space below the text
-      shiny::p("Note: you may select as many areas as you wish but selecting more than one or two management catchments will make the subsequent data retriveal/rendering process long. If you have selected several catchments allow up to 5-10mins for this process.")
+      shiny::p("Note: you may select as many areas as you wish but selecting more than one or two management catchments will make the subsequent data retrieval/rendering process longer. If you have selected several catchments allow up to 5-10mins for this process.")
     ),
     
     shinyTree::shinyTree(

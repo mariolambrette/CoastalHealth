@@ -150,7 +150,8 @@ mod_layerpopup_server <- function(id){
                     htmltools::tags$li(htmltools::tags$strong("Web link: "), "A clickable hyperlink to the source webpage for the dataset. This webpage will normally contain additional relevant information about the dataset."),
                     htmltools::tags$li(htmltools::tags$strong("Download link: "), "A clickable hyperlink that will download the dataset directly to your machine."),
                     htmltools::tags$li(htmltools::tags$strong("Download format: "), "The file format in which the dataset will be downloaded."),
-                    htmltools::tags$li(htmltools::tags$strong("Load with sf: "), "Clicking this button loads the dataset directly into your R session with sf. The data will become available in your session once you close the app. (note that this may not work for all datasets, depending on the data source)")
+                    htmltools::tags$li(htmltools::tags$strong("Load with sf: "), "Clicking this button loads the dataset directly into your R session with sf. The data will become available in your session once you close the app. (note that this may not work for all datasets, depending on the data source)"),
+                    htmltools::tags$li(htmltools::tags$strong("Spatial filtering?: "), "Indicates whether the dataset is filtered spatially at the API level. Note that when a datset is loaded with sf, if no API spatial filter is available the dataset will be filtered automatically to the selected area when loaded into your session with sf, only browser downloads will see no spatial filtering.")
                   ),
                   htmltools::tags$li("There all also some global action buttons provided:"),
                   htmltools::tags$ul(

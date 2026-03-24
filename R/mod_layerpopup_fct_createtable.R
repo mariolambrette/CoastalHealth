@@ -35,7 +35,8 @@ createtable <- function(layers, ns) {
     # Process all urls for place holders
     dplyr::mutate(
       url = process_url(url),
-      source = process_url(source)
+      source = process_url(source),
+      is_spatial_filtering = is_spatial_filtering(url)
     ) %>%
     dplyr::ungroup() %>%
     # Expand urls to lists where necessary
@@ -44,8 +45,7 @@ createtable <- function(layers, ns) {
       source_list = strsplit(source, ",")
     ) %>%
     dplyr::select(name, source_list, url_list, download_format, sf_compatible, id, url, source, 
-                  browser_compatible, spatial_filtering, temporal_filtering, 
-                  )
+                  browser_compatible, spatial_filtering, temporal_filtering)
   
   # Extract a vector of all urls and for bulk processing by browser
   atlas_env$selected_urls_browser <- layers %>%
@@ -212,6 +212,21 @@ createtable <- function(layers, ns) {
             )
         }
       }  
+    ),
+    
+    spatial_filtering = reactable::colDef(
+      name = "Spatial filtering?",
+      searchable = FALSE,
+      align = "left",
+      vAlign = "top",
+      
+      cell = function(value) {
+        if (value == "T") {
+          return("Yes")
+        } else {
+          return("No")
+        }
+      }
     ),
       
       id = reactable::colDef(

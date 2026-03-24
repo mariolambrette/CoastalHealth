@@ -24,7 +24,7 @@
 #' }
 #' 
 #' @importFrom leaflet clearGroup addPolygons fitBounds
-#' @importFrom sf st_bbox st_union
+#' @importFrom sf st_bbox st_union st_minimum_bounding_circle
 #' @import magrittr
 #' 
 #' @noRd
@@ -38,8 +38,19 @@ Plot_opcats <- function(map_proxy){
   atlas_env$bounds <- sf::st_union(isolate(atlas_env$opcats_spatial()), atlas_env$ices) %>%
     sf::st_bbox(.)
 
-  ## TODO: Also calculate centre point and radius of minimum bounding circle.
+  # Calculate the minimum bounding circle
+  circle <- sf::st_minimum_bounding_circle(
+    atlas_env$bounds %>% 
+      sf::st_as_sfc() %>%
+      sf::st_transform(3035)
+  )
   
+  atlas_env$area_radius <- as.numeric(sqrt(sf::st_area(circle) / pi)) / 1000
+  
+  atlas_env$area_centre <- sf::st_centroid(circle) %>%
+    sf::st_transform(4326) %>%
+    sf::st_coordinates()
+
   map_proxy %>%
     leaflet::clearGroup("opcats") %>%
     leaflet::addPolygons(

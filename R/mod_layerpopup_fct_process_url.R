@@ -42,12 +42,6 @@ process_url <- function(url) {
       collapse = ","
     )
   }
-  
-  ## TODO: Update this processing to:
-  # (1) Look in the look up table to see if spatial filtering is enabled
-  # (2) Check the reference file for the filtering type pattern
-  # (3) Build the filter pattern accordinly (with bounds, centre and radius values)
-  # (4) Build final URL
 
   if ((grepl("\\{xmax\\}", url))) { # Check for spatial filtering
 
@@ -59,6 +53,28 @@ process_url <- function(url) {
 
   }
   
+  if ((grepl("\\{x\\}", url))) {
+    url <- gsub("\\{x\\}", atlas_env$area_centre[, 1], url)
+  }
+  if ((grepl("\\{y\\}", url))) {
+    url <- gsub("\\{y\\}", atlas_env$area_centre[, 2], url)
+  }
+  if ((grepl("\\{radius_km\\}", url))) {
+    url <- gsub("\\{radius_km\\}", atlas_env$area_radius, url)
+  }
+  
   return(url)
 
+}
+
+
+is_spatial_filtering <- function(url) {
+  if ((grepl("\\{xmax\\}", url)) |
+      (grepl("\\{x\\}", url)) |
+      (grepl("\\{y\\}", url)) |
+      (grepl("\\{radius_km\\}", url))) {
+    return("T")
+  } else {
+    return("F")
+  }
 }
